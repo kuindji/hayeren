@@ -9,6 +9,7 @@ import {
   wordFileSchemaFor,
   CaseFileSchema,
   DeclensionsFileSchema,
+  ArticleFileSchema,
   type WordType,
   type WordFile,
   type WordCase,
@@ -219,11 +220,14 @@ export function writeData(out: ImportResult, root: string): void {
       );
   }
   for (const a of out.articles) {
+    const file = join("articles", a.case, `${a.slug}.md`);
+    // Same guard as the JSON kinds above: never write a file the schema rejects. safeParse rather
+    // than parse only so the message names the file the .md would have been written to.
+    const parsed = ArticleFileSchema.safeParse(a);
+    if (!parsed.success) throw new Error(`${file}: ${parsed.error.message}`);
+    const { title, language, position, text } = parsed.data;
     mkdirSync(join(root, "articles", a.case), { recursive: true });
-    writeFileSync(
-      join(root, "articles", a.case, `${a.slug}.md`),
-      serializeFrontmatter({ title: a.title, language: a.language, position: a.position }, a.text),
-    );
+    writeFileSync(join(root, file), serializeFrontmatter({ title, language, position }, text));
   }
 }
 
