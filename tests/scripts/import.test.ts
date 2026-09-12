@@ -1,6 +1,7 @@
-import { importDump } from "../../scripts/import-pg-dump";
+import { importDump, writeData } from "../../scripts/import-pg-dump";
 import { WORD_TYPES, wordFileSchemaFor } from "@/data/schema";
-import { readFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -60,5 +61,24 @@ describe("importDump", () => {
     expect(decl).toContain("ա");
     expect(decl.find((d) => typeof d === "object" && d.declension === "ու")).toBeDefined();
     expect(out.cases.possessive?.articles).toEqual(["forms", "usage"]);
+  });
+  it("refuses to write an article the schema rejects", () => {
+    const dir = mkdtempSync(join(tmpdir(), "hayeren-import-"));
+    try {
+      writeData(out, dir);
+      expect(readFileSync(join(dir, "articles", "dative", "forms.md"), "utf8")).toContain(
+        "position: 0",
+      );
+      const bad = structuredClone(out);
+      const dative = bad.articles.find((a) => a.case === "dative");
+      if (!dative) throw new Error("fixture changed: no dative article to corrupt");
+      dative.position = -1;
+      expect(() => {
+        writeData(bad, dir);
+      }).toThrow(/articles\/dative\/forms\.md/);
+      expect(existsSync(join(dir, "articles", "dative", "forms.md"))).toBe(false);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
   });
 });

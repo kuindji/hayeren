@@ -32,7 +32,7 @@ export interface ImportResult {
   articles: ArticleFile[];
 }
 
-const slug = (id: string) => id.replace("/", "-");
+const slug = (id: string) => id.replaceAll("/", "-");
 
 // Row values are `string | null`, but reading a column off a `Record<string, ...>` under
 // noUncheckedIndexedAccess also yields `undefined`, so both helpers accept that too.
@@ -123,15 +123,18 @@ export function importDump(sql: string): ImportResult {
 
   const groupRows = rows("case_noun_group");
   const groupNouns = rows("case_noun_group_noun");
-  const groupOf = (g: Row): CaseGroup =>
-    compact({
+  // `words` is required by CaseGroupSchema and may legitimately be empty, so — like `WordFile.cases`
+  // below — it is spread in after compaction, which drops empty arrays.
+  const groupOf = (g: Row): CaseGroup => ({
+    ...compact({
       name: localized(g.name),
       description: localized(g.description),
       comment: localized(g.comment),
-      words: groupNouns
-        .filter((gn) => gn.case_noun_group_id === g.id)
-        .map((gn) => slug(gn.noun_id ?? "")),
-    });
+    }),
+    words: groupNouns
+      .filter((gn) => gn.case_noun_group_id === g.id)
+      .map((gn) => slug(gn.noun_id ?? "")),
+  });
 
   const articleRows = rows("article");
   const articles: ArticleFile[] = articleRows.map((a) => {
@@ -142,7 +145,9 @@ export function importDump(sql: string): ImportResult {
       case: a.case_id ?? "",
       slug: s,
       title,
-      language: a.language === "english" ? "english" : "russian",
+      // Passed through as-is: an unexpected language must fail ArticleFileSchema in writeData,
+      // not be quietly relabelled as Russian.
+      language: (a.language ?? "") as ArticleFile["language"],
       position: Number(a.position),
       text: (a.text ?? "").trim() + "\n",
     };
