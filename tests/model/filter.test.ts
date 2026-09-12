@@ -14,6 +14,10 @@ it("createFilter is a reactive store that notifies on key change", () => {
 it("combineFilters merges later stores over earlier ones, skipping undefined but keeping explicit null", () => {
   const a = createFilter({ language: "russian", query: "x", word: "w1" });
   const b = createFilter({ language: "russian", word: "w2", pposition: null });
+  // Clear query the way the UI would: the store keeps the key with an undefined value, which must not override "x".
+  b.set("query", "y");
+  b.set("query", undefined);
+  expect(Object.keys(b.getData())).toContain("query");
   expect(combineFilters(a, b)).toEqual({ language: "russian", query: "x", word: "w2", pposition: null });
 });
 

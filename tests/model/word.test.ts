@@ -35,6 +35,8 @@ it("matchesFilter by query, by word pin, by pposition", () => {
   // untyped question with a prepostposition: matches any word type that has the prepostposition
   expect(table.matchesFilter({ language: "russian", pposition: { pposition: "for", type: undefined } })).toBe(true);
   expect(table.matchesFilter({ language: "russian", pposition: { pposition: "under", type: undefined } })).toBe(false);
+  // a pposition-less question matches words with a pposition-less example (old site: Postgres null === null)
+  expect(table.matchesFilter({ language: "russian", pposition: { pposition: null, type: "noun" } })).toBe(true);
 });
 
 it("getExamples filters by pposition", () => {

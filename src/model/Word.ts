@@ -32,11 +32,12 @@ export class Word {
   }
   matchesFilter(data: FilterData): boolean {
     const { query, pposition, language, word } = data;
-    if (pposition) {
-      // A question with a prepostposition but no type (the admin allows that shape) filters by prepostposition
-      // only; the old code compared types unconditionally and showed an empty case for such a click.
+    // An untyped question with no prepostposition (nominative's "кто"/"что") says nothing about which words
+    // apply, so clicking it filters nothing. The old code compared types unconditionally and showed an empty case.
+    if (pposition && (pposition.type !== undefined || pposition.pposition !== null)) {
+      // A question with a prepostposition but no type (the admin allows that shape) filters by prepostposition only.
       if (pposition.type !== undefined && this.type !== pposition.type) return false;
-      const has = this.cases.some((c) => (c.examples ?? []).some((e) => (e.pposition ?? null) === pposition.pposition));
+      const has = this.cases.some((c) => (c.examples ?? []).some((e) => matchPPosition(pposition, e)));
       if (!has) return false;
     }
     if (word) return this.id === word;

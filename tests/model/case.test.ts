@@ -76,6 +76,25 @@ it("a typed question without a matching questionGroups entry still shows up, in 
   expect(c.questionGroups.map((g) => [g.type, g.name, g.questions.length])).toEqual([["pronoun", undefined, 1], ["noun", undefined, 1]]);
 });
 
+it("clicking an untyped question with no prepostposition (nominative's shape) filters nothing", () => {
+  const nominative = { ...files.cases[0]!, questions: [{ question: { russian: "кто" } }, { question: { russian: "что" } }] };
+  const c = new Database({ ...files, cases: [nominative, files.cases[1]!] }).case.get("nominative")!;
+  const q = c.questionGroups[0]!.questions[0]!;
+  const clicked = c.getData({ language: "russian", pposition: { pposition: q.pposition ?? null, type: q.type } });
+  const ids = (v: typeof clicked) => [...v.nouns, ...v.pronouns].map((w) => w.id);
+  expect(ids(clicked)).toEqual(["table", "wine", "water", "history", "dog", "i"]);
+  expect(clicked).toEqual(c.getData({ language: "russian" }));
+});
+
+it("an untyped question with a prepostposition still filters by prepostposition only", () => {
+  const withFor = (w: (typeof files.words.noun)[number]) =>
+    w.id === "wine" ? { ...w, cases: w.cases.map((wc) => (wc.case === "possessive" ? { ...wc, examples: [{ pposition: "for", armenian: "x" }] } : wc)) } : w;
+  const c = new Database({ ...files, words: { ...files.words, noun: files.words.noun.map(withFor) } }).case.get("possessive")!;
+  const view = c.getData({ language: "russian", pposition: { pposition: "for", type: undefined } });
+  expect(view.declensions.flatMap((d) => d.groups.flatMap((g) => g.words.map((w) => w.id)))).toEqual(["wine"]);
+  expect([...view.nouns, ...view.pronouns, ...view.wordGroups.flatMap((g) => g.words)]).toEqual([]);
+});
+
 it("getData applies the filter everywhere", () => {
   const view = poss.getData({ language: "russian", query: "вин" });
   expect(view.nouns).toEqual([]);
