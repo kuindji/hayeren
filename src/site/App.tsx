@@ -8,6 +8,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ChaptersMenu } from "./components/ChaptersMenu";
 import { Alphabet } from "./pages/Alphabet";
+import { Cases } from "./pages/Cases";
 import "@/styles/index.scss";
 
 const database = new Database(loadDataFiles());
@@ -21,7 +22,7 @@ function Layout() {
 export const routes: RouteObject[] = [
   { element: <Layout />, children: [
     { path: "/", element: <Navigate to="/cases" replace /> },
-    { path: "/cases", element: <div className="page-cases-placeholder" /> }, // replaced in Task 8
+    { path: "/cases", element: <Cases /> },
     { path: "/alphabet", element: <Alphabet /> },
   ] },
 ];
