@@ -110,7 +110,9 @@ stored. Armenian strings mark the case ending with asterisks: `սեղան*ի*`.
 ### 4.2 Word file
 
 Same shape for all five word types. `declension` exists only for nouns.
-`plural` never exists for prepostpositions. `type` is not stored; the loader
+`plural` never exists for prepostpositions. Both rules are enforced by a
+type-aware schema (`wordFileSchemaFor(type)`) in the loader, validator and
+admin API. `type` is not stored; the loader
 sets it from the folder name.
 
 ```json
@@ -142,7 +144,7 @@ word, and `comment` on a case entry, are optional and omitted when empty.
   "position": 1,
   "name": { "russian": "Родительный падеж" },
   "description": { "russian": "..." },
-  "articles": ["forms", "articles"],
+  "articles": ["forms", "usage"],
   "questionGroups": [
     { "type": "noun", "name": { "russian": "Для существительных" } },
     { "type": "pronoun", "name": { "russian": "Для местоимений" } }
@@ -166,6 +168,8 @@ word, and `comment` on a case entry, are optional and omitted when empty.
   declension in this case, one default group"; an object adds named groups
   inside the declension, and the loader puts ungrouped nouns of that
   declension into a leading unnamed group (existing `Case.js` behaviour).
+  List order is display order. The import keeps the order the old live site
+  showed (first appearance in the `noun_case` table).
 - `groups` are custom noun groups not tied to a declension.
 - `questionGroups` names are data, not hardcoded as in `loadRemote()`.
 
