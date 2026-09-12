@@ -263,8 +263,8 @@ const alphabet: Letter[] = [
     },
     {
         armenian: {
-            lower: "o",
-            upper: "O"
+            lower: "օ",
+            upper: "Օ"
         },
         russian: "о"
     },

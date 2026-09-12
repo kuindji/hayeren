@@ -14,4 +14,6 @@ it("renders bold markers and picks the language", () => {
 it("renders plain strings and empty for undefined", () => {
   const { container } = wrap(<Text t={undefined} />);
   expect(container.textContent).toBe("");
+  const plain = wrap(<Text t="a*b*" />);
+  expect(plain.container.innerHTML).toBe("a<b>b</b>");
 });
