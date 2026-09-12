@@ -1,4 +1,7 @@
 import { checkReferences, readDataFromDisk, type DataFiles } from "@/data/validate";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 
 const base = (): DataFiles => ({
   declensions: [{ id: "ա", name: { russian: "ա" } }],
@@ -58,6 +61,41 @@ it("reports an article file that its case does not list (invisible on the site)"
   const d = base();
   d.articles.push({ case: "possessive", slug: "draft", title: "t", language: "russian", position: 1, text: "" });
   expect(checkReferences(d)).toEqual(['articles/possessive/draft.md: not listed in cases/possessive.json articles']);
+});
+
+it("reports an unknown noun inside a declension group (a different code path from a custom group)", () => {
+  const d = base();
+  d.cases[1]!.declensions = [{ declension: "ա", groups: [{ words: ["ghost"] }] }];
+  expect(checkReferences(d)).toEqual(['cases/possessive.json: unknown noun "ghost" in group']);
+});
+
+it("reports an article referencing an unknown case", () => {
+  const d = base();
+  d.cases[1]!.articles = undefined; // isolate the unknown-case check from the "not listed" one
+  d.articles[0]!.case = "genitive";
+  expect(checkReferences(d)).toEqual(['articles/genitive/forms.md: unknown case "genitive"']);
+});
+
+it("readDataFromDisk throws with the offending file's path on a schema violation", () => {
+  const dir = mkdtempSync(join(tmpdir(), "hayeren-validate-"));
+  try {
+    writeFileSync(join(dir, "declensions.json"), JSON.stringify([{ id: 123, name: {} }]));
+    expect(() => readDataFromDisk(dir)).toThrow(/declensions\.json/);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+it("readDataFromDisk throws with the offending file's path when a case id does not match its filename", () => {
+  const dir = mkdtempSync(join(tmpdir(), "hayeren-validate-"));
+  try {
+    writeFileSync(join(dir, "declensions.json"), "[]");
+    mkdirSync(join(dir, "cases"));
+    writeFileSync(join(dir, "cases", "foo.json"), JSON.stringify({ id: "bar", position: 0, name: {} }));
+    expect(() => readDataFromDisk(dir)).toThrow(/cases\/foo\.json/);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
 });
 
 it("the real data/ folder is valid", () => {
