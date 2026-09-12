@@ -26,3 +26,11 @@ it("rejects articles with a non-slug folder or filename", () => {
   expect(() => buildDataFiles({ "/data/articles/possessive/Bad.md": md })).toThrow(/articles\/possessive\/Bad\.md/);
   expect(() => buildDataFiles({ "/data/articles/Poss/forms.md": md })).toThrow(/articles\/Poss\/forms\.md/);
 });
+
+it("throws on a file under an unrecognized top-level folder, rather than silently skipping it", () => {
+  expect(() => buildDataFiles({ "/data/verbs/x.json": { id: "x" } })).toThrow(/verbs\/x\.json/);
+});
+
+it("throws on a .md file outside articles/, rather than silently dropping it", () => {
+  expect(() => buildDataFiles({ "/data/nouns/readme.md": "not an article" })).toThrow(/nouns\/readme\.md/);
+});
