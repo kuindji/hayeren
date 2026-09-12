@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "հանդիպումներ",
+        "russian": "встречи",
+        "transcription": "handipumner"
+      },
+      "single": {
+        "armenian": "հանդիպում",
+        "russian": "встреча",
+        "transcription": "handipum"
+      }
+    },
+    {
+      "case": "possessive",
+      "plural": {
+        "armenian": "հանդիպումների",
+        "russian": "встреч",
+        "transcription": "handipumneri"
+      },
+      "single": {
+        "armenian": "հանդիպման",
+        "russian": "встречи",
+        "transcription": "handipman"
+      }
+    }
+  ],
+  "id": "meeting"
+}

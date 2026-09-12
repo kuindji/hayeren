@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "ովքե՞ր",
+        "russian": "кто",
+        "transcription": "ovk'ér"
+      },
+      "single": {
+        "armenian": "ո՞վ",
+        "russian": "кто",
+        "transcription": "ov"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "ո՞ւմ",
+        "russian": "чей",
+        "transcription": "um"
+      }
+    }
+  ],
+  "id": "who"
+}

@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "աղջիկներ",
+        "russian": "девочки",
+        "transcription": "aghchikner"
+      },
+      "single": {
+        "armenian": "աղջիկ",
+        "russian": "девочка",
+        "transcription": "aghchik"
+      }
+    },
+    {
+      "case": "possessive",
+      "plural": {
+        "armenian": "աղջիկներ*ի*",
+        "russian": "девочек",
+        "transcription": "aghchikneri"
+      },
+      "single": {
+        "armenian": "աղջկ*ա*",
+        "russian": "девочки",
+        "transcription": "aghchka"
+      }
+    }
+  ],
+  "id": "girl"
+}

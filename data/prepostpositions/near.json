@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "մոտ",
+        "russian": "у",
+        "transcription": "mot"
+      }
+    },
+    {
+      "case": "possessive",
+      "examples": [
+        {
+          "armenian": "տան մոտի խանութն եմ գնում",
+          "russian": "иду в магазин в окрестностях дома"
+        }
+      ],
+      "single": {
+        "armenian": "մոտ*ի*",
+        "russian": "у",
+        "transcription": "moti"
+      }
+    }
+  ],
+  "id": "near",
+  "name": {
+    "armenian": "կողքին",
+    "russian": "рядом с"
+  }
+}

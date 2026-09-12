@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "գարուններ",
+        "russian": "вёсны",
+        "transcription": "garunner"
+      },
+      "single": {
+        "armenian": "գարուն",
+        "russian": "весна",
+        "transcription": "garun"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ան",
+      "plural": {
+        "armenian": "գարուններ*ի*",
+        "russian": "вёсен",
+        "transcription": "garunneri"
+      },
+      "single": {
+        "armenian": "գարն*ան*",
+        "russian": "весны",
+        "transcription": "garnan"
+      }
+    }
+  ],
+  "id": "spring"
+}

@@ -1,0 +1,35 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "մարդիկ",
+        "russian": "люди",
+        "transcription": "mardik"
+      },
+      "single": {
+        "armenian": "մարդ",
+        "russian": "человек",
+        "transcription": "mard"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ու",
+      "plural": {
+        "armenian": "մարդկ*անց*",
+        "comment": {
+          "russian": "исключение"
+        },
+        "russian": "людей",
+        "transcription": "mardkants"
+      },
+      "single": {
+        "armenian": "մարդ*ու*",
+        "russian": "человека",
+        "transcription": "mardu"
+      }
+    }
+  ],
+  "id": "man"
+}

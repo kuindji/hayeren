@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "ո՞ր",
+        "russian": "котóрый",
+        "transcription": "vor"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "որի՞",
+        "russian": "котóрого",
+        "transcription": "vorí"
+      }
+    }
+  ],
+  "id": "which"
+}

@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "տակ",
+        "russian": "под",
+        "transcription": "tak"
+      }
+    },
+    {
+      "case": "possessive",
+      "examples": [
+        {
+          "armenian": "սեղանի տակի գնդակը",
+          "russian": "мяч, который под столом"
+        }
+      ],
+      "single": {
+        "armenian": "տակ*ի*",
+        "russian": "под",
+        "transcription": "taki"
+      }
+    }
+  ],
+  "id": "under",
+  "name": {
+    "armenian": "տակ",
+    "russian": "под"
+  }
+}

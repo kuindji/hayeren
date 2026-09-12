@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "հազար",
+        "russian": "тысяча",
+        "transcription": "hazar"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "հազար*ի*",
+        "russian": "тысячи",
+        "transcription": "hazari"
+      }
+    }
+  ],
+  "id": "1000"
+}

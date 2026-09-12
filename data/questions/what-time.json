@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "քանի՞ս",
+        "russian": "скóлько",
+        "transcription": "k'anís"
+      }
+    },
+    {
+      "case": "possessive",
+      "examples": [
+        {
+          "armenian": "Ժամը քանիս*ի՞* համար եք սեղան ուզում։",
+          "pposition": "for",
+          "russian": "К какому времени приготовить стол?"
+        }
+      ],
+      "single": {
+        "armenian": "քանիսի՞",
+        "russian": "скóлько",
+        "transcription": "k'anisí"
+      }
+    }
+  ],
+  "comment": {
+    "russian": "времени"
+  },
+  "id": "what-time"
+}

@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "դուք",
+        "russian": "вы",
+        "transcription": "duk'"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "ձեր",
+        "russian": "ваш",
+        "transcription": "dzer"
+      }
+    },
+    {
+      "case": "dative",
+      "single": {
+        "armenian": "ձեզ",
+        "russian": "вам/вас",
+        "transcription": "dzez"
+      }
+    }
+  ],
+  "id": "you-plural"
+}

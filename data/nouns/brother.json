@@ -1,0 +1,36 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "եղբայրներ",
+        "informal": "ախպերներ",
+        "russian": "братья",
+        "transcription": "eghbairner / ahperner"
+      },
+      "single": {
+        "armenian": "եղբայր",
+        "informal": "ախպեր",
+        "russian": "брат",
+        "transcription": "eghbair / ahper"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ո",
+      "plural": {
+        "armenian": "եղբայրներ*ի*",
+        "informal": "ախպերներ*ի*",
+        "russian": "братьев",
+        "transcription": "eghbairneri / ahperneri"
+      },
+      "single": {
+        "armenian": "եղբ*ո*ր",
+        "informal": "ախպ*ո*ր",
+        "russian": "брата",
+        "transcription": "eghbor / ahpor"
+      }
+    }
+  ],
+  "id": "brother"
+}

@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "ձերոնք",
+        "comment": {
+          "russian": "как группа, объединенная чем-то"
+        },
+        "russian": "вы/ваши",
+        "transcription": "dzeronk"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ց",
+      "single": {
+        "armenian": "ձերոն*ց*",
+        "russian": "ваших",
+        "transcription": "dzernats"
+      }
+    }
+  ],
+  "comment": {
+    "russian": "как общность"
+  },
+  "id": "you-group"
+}

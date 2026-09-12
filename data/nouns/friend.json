@@ -1,0 +1,92 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "ընկերներ",
+        "russian": "друзья",
+        "transcription": "enkerner"
+      },
+      "single": {
+        "armenian": "ընկեր",
+        "russian": "друг",
+        "transcription": "enker"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ոջ",
+      "examples": [
+        {
+          "armenian": "ընկեր*ոջ* տակ",
+          "pposition": "under",
+          "russian": "под другом",
+          "transcription": "enkeroch tak"
+        },
+        {
+          "armenian": "ընկեր*ոջ* տունը",
+          "russian": "дом друга",
+          "transcription": "enkeroch tune"
+        },
+        {
+          "armenian": "ընկերներ*ի* միջև",
+          "pposition": "between",
+          "russian": "между друзьями",
+          "transcription": "enkerneri michev"
+        },
+        {
+          "armenian": "ընկեր*ոջ* մասին",
+          "pposition": "about",
+          "russian": "про друга",
+          "transcription": "enkeroch masin"
+        },
+        {
+          "armenian": "ընկեր*ոջ* մեջ",
+          "pposition": "in",
+          "russian": "в друге",
+          "transcription": "enkeroch mech"
+        },
+        {
+          "armenian": "ընկեր*ոջ* փոխարեն",
+          "russian": "вместо друга",
+          "transcription": "enkeroch poharen"
+        },
+        {
+          "armenian": "ընկեր*ոջ* վրա",
+          "pposition": "on",
+          "russian": "на друге",
+          "transcription": "enkeroch vra"
+        },
+        {
+          "armenian": "ընկեր*ոջ* կողքին",
+          "pposition": "near",
+          "russian": "рядом с другом",
+          "transcription": "enkeroch koghk'in"
+        },
+        {
+          "armenian": "ընկեր*ոջ* մոտ",
+          "pposition": "at",
+          "russian": "у друга",
+          "transcription": "enkeroch mot"
+        },
+        {
+          "armenian": "ընկեր*ոջ* համար",
+          "pposition": "for",
+          "russian": "для друга",
+          "transcription": "enkeroch hamar"
+        }
+      ],
+      "plural": {
+        "armenian": "ընկերներ*ի*",
+        "russian": "друзей",
+        "transcription": "enkerneri"
+      },
+      "single": {
+        "armenian": "ընկեր*ոջ*",
+        "russian": "друга",
+        "transcription": "enkeroch"
+      }
+    }
+  ],
+  "id": "friend"
+}

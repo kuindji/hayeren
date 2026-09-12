@@ -1,0 +1,35 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "քեռիներ",
+        "russian": "дяди",
+        "transcription": "k'eriner"
+      },
+      "single": {
+        "armenian": "քեռի",
+        "russian": "дядя",
+        "transcription": "k'eri"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ու",
+      "plural": {
+        "armenian": "քեռիներ*ի*",
+        "russian": "дядей",
+        "transcription": "k'erineri"
+      },
+      "single": {
+        "armenian": "քեռ*ու*",
+        "russian": "дяди",
+        "transcription": "k'eru"
+      }
+    }
+  ],
+  "comment": {
+    "russian": "со стороны матери"
+  },
+  "id": "uncle-mother"
+}

@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "երեկ",
+        "russian": "вчера",
+        "transcription": "yerek"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "վա",
+      "single": {
+        "armenian": "երեկ*վա*",
+        "russian": "вчерашний",
+        "transcription": "yerekva"
+      }
+    }
+  ],
+  "id": "yesterday"
+}

@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "քույրեր",
+        "russian": "сестры",
+        "transcription": "k'uirer"
+      },
+      "single": {
+        "armenian": "քույր",
+        "russian": "сестра",
+        "transcription": "k'uir"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ոջ",
+      "plural": {
+        "armenian": "քույրեր*ի*",
+        "russian": "сестéр",
+        "transcription": "k'uireri"
+      },
+      "single": {
+        "armenian": "քր*ոջ*",
+        "russian": "сестры́",
+        "transcription": "k'roch"
+      }
+    }
+  ],
+  "id": "sister"
+}

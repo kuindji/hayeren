@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "սեր",
+        "russian": "любовь",
+        "transcription": "ser"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "սիրո",
+        "russian": "любви",
+        "transcription": "siro"
+      }
+    }
+  ],
+  "id": "love"
+}

@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "քամիներ",
+        "russian": "ветры",
+        "transcription": "k'aminer"
+      },
+      "single": {
+        "armenian": "քամի",
+        "russian": "ветер",
+        "transcription": "k'ami"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ու",
+      "plural": {
+        "armenian": "քամիներ*ի*",
+        "russian": "ветров",
+        "transcription": "k'aminneri"
+      },
+      "single": {
+        "armenian": "քամ*ու*",
+        "russian": "ветра",
+        "transcription": "k'amu"
+      }
+    }
+  ],
+  "id": "wind"
+}

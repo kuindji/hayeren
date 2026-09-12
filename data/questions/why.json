@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "ինչուներ",
+        "comment": {
+          "russian": "существительное"
+        },
+        "russian": "(тысяча) почему́",
+        "transcription": "inchunér"
+      },
+      "single": {
+        "armenian": "ինչո՞ւ",
+        "russian": "почему́",
+        "transcription": "inchú"
+      }
+    }
+  ],
+  "id": "why"
+}

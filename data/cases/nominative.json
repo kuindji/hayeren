@@ -1,0 +1,19 @@
+{
+  "id": "nominative",
+  "name": {
+    "russian": "Именительный падеж"
+  },
+  "position": 0,
+  "questions": [
+    {
+      "question": {
+        "russian": "кто"
+      }
+    },
+    {
+      "question": {
+        "russian": "что"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "երկուսներ",
+        "russian": "двойки",
+        "transcription": "yerkusnér"
+      },
+      "single": {
+        "armenian": "երկու",
+        "russian": "два",
+        "transcription": "yerkú"
+      }
+    },
+    {
+      "case": "possessive",
+      "plural": {
+        "armenian": "երկուսներ*ի*",
+        "russian": "двóек",
+        "transcription": "yerkusnerí"
+      },
+      "single": {
+        "armenian": "երկու*սի*",
+        "russian": "двух",
+        "transcription": "yerkusí"
+      }
+    }
+  ],
+  "id": "2"
+}

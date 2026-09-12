@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "աստվածներ",
+        "russian": "боги",
+        "transcription": "astvatsner"
+      },
+      "single": {
+        "armenian": "աստված",
+        "russian": "бог",
+        "transcription": "astvats"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ու",
+      "plural": {
+        "armenian": "աստվածներ*ի*",
+        "russian": "богов",
+        "transcription": "astvatsneri"
+      },
+      "single": {
+        "armenian": "աստծ*ու*",
+        "russian": "бога",
+        "transcription": "asttsu"
+      }
+    }
+  ],
+  "id": "god"
+}

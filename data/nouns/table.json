@@ -1,0 +1,159 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "սեղաններ",
+        "russian": "столы́",
+        "transcription": "seghannér"
+      },
+      "single": {
+        "armenian": "սեղան",
+        "russian": "стол",
+        "transcription": "seghán"
+      }
+    },
+    {
+      "case": "possessive",
+      "examples": [
+        {
+          "armenian": "սեղան*ի* համար",
+          "pposition": "for",
+          "russian": "для стола́",
+          "transcription": "seghani hamar"
+        },
+        {
+          "armenian": "սեղան*ի* մոտ",
+          "pposition": "at",
+          "russian": "у стола́",
+          "transcription": "seghani mot"
+        },
+        {
+          "armenian": "սեղան*ի* կողքին",
+          "pposition": "near",
+          "russian": "рядом со столóм",
+          "transcription": "seghani koghk'in"
+        },
+        {
+          "armenian": "սեղան*ի* վրա",
+          "informal": "սեղանին",
+          "pposition": "on",
+          "russian": "на столé",
+          "transcription": "seghani vra / seghanin"
+        },
+        {
+          "armenian": "սեղան*ի* փոխարեն",
+          "pposition": "instead",
+          "russian": "вместо стола́",
+          "transcription": "seghani poharen"
+        },
+        {
+          "armenian": "սեղան*ի* մեջ",
+          "pposition": "in",
+          "russian": "в столé",
+          "transcription": "seghani mech"
+        },
+        {
+          "armenian": "սեղաններ*ի* միջև",
+          "pposition": "between",
+          "russian": "между стола́ми",
+          "transcription": "seghani michev"
+        },
+        {
+          "armenian": "սեղան*ի* տակ",
+          "pposition": "under",
+          "russian": "под столóм",
+          "transcription": "serghani tak"
+        },
+        {
+          "armenian": "սեղան*ի* առաջ",
+          "pposition": "before",
+          "russian": "перед столóм",
+          "transcription": "seghani arach"
+        },
+        {
+          "armenian": "սեղան*ի* գույն*ը*",
+          "russian": "цвет стола́",
+          "transcription": "seghani k'uine"
+        },
+        {
+          "armenian": "սեղան*ի* մասին",
+          "pposition": "about",
+          "russian": "про стол",
+          "transcription": "seghani masin"
+        },
+        {
+          "armenian": "Այս սեղան*ի* հետ կապված ինձ ամեն ինչ հետաքրքիր է",
+          "pposition": "with",
+          "russian": "Мне интересно все, связанное с этим столом",
+          "transcription": "ais seghani het vapvats inz amen inch hetak'rk'ir e"
+        },
+        {
+          "armenian": "սեղան*ի* պատճառով",
+          "comment": {
+            "russian": "по причине"
+          },
+          "pposition": "because-of",
+          "russian": "из-за стола",
+          "transcription": "seghani patjarov"
+        },
+        {
+          "armenian": "սեղան*ի* նման/պես ",
+          "pposition": "like",
+          "russian": "как стол",
+          "transcription": "seghani nman/pes"
+        }
+      ],
+      "plural": {
+        "armenian": "սեղաններ*ի*",
+        "russian": "столóв",
+        "transcription": "seghannerí"
+      },
+      "single": {
+        "armenian": "սեղան*ի*",
+        "russian": "стола́",
+        "transcription": "seghaní"
+      }
+    },
+    {
+      "case": "dative",
+      "plural": {
+        "armenian": "սեղաններ*ին*",
+        "russian": "столы́",
+        "transcription": "seghannerín"
+      },
+      "single": {
+        "armenian": "սեղան*ին*",
+        "russian": "стол",
+        "transcription": "seghanín"
+      }
+    },
+    {
+      "case": "ablative",
+      "plural": {
+        "armenian": "սեղաններ*ից*",
+        "russian": "столóв",
+        "transcription": "seghanneríts"
+      },
+      "single": {
+        "armenian": "սեղան*ից*",
+        "russian": "стола́",
+        "transcription": "seghaníts"
+      }
+    },
+    {
+      "case": "locative",
+      "plural": {
+        "armenian": "սեղաններ*ում*",
+        "russian": "стола́х",
+        "transcription": "seghannerúm"
+      },
+      "single": {
+        "armenian": "սեղան*ում*",
+        "russian": "столé",
+        "transcription": "seghanúm"
+      }
+    }
+  ],
+  "id": "table"
+}

@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "արյուններ",
+        "russian": "крóви",
+        "transcription": "ariunner"
+      },
+      "single": {
+        "armenian": "արյուն",
+        "russian": "кровь",
+        "transcription": "ariun"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ա",
+      "plural": {
+        "armenian": "արյուններ*ի*",
+        "russian": "кровей",
+        "transcription": "ariunneri"
+      },
+      "single": {
+        "armenian": "արյ*ա*ն",
+        "russian": "крóви",
+        "transcription": "arian"
+      }
+    }
+  ],
+  "id": "blood"
+}

@@ -1,0 +1,39 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "գինիներ",
+        "russian": "ви́на",
+        "transcription": "gininér"
+      },
+      "single": {
+        "armenian": "գինի",
+        "russian": "винó",
+        "transcription": "giní"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ու",
+      "examples": [
+        {
+          "armenian": "գինու համը",
+          "russian": "вкус вина",
+          "transcription": "ginu ham@"
+        }
+      ],
+      "plural": {
+        "armenian": "գինիներ*ի*",
+        "russian": "ви́н",
+        "transcription": "gininerí"
+      },
+      "single": {
+        "armenian": "գինու",
+        "russian": "вина́",
+        "transcription": "ginú"
+      }
+    }
+  ],
+  "id": "wine"
+}

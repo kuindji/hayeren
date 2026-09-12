@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "ինչե՞ր",
+        "russian": "что",
+        "transcription": "inchér"
+      },
+      "single": {
+        "armenian": "ի՞նչ",
+        "russian": "что",
+        "transcription": "inch"
+      }
+    },
+    {
+      "case": "possessive",
+      "plural": {
+        "armenian": "ինչերի՞",
+        "russian": "чегó",
+        "transcription": "incherí"
+      },
+      "single": {
+        "armenian": "ինչի՞",
+        "russian": "чегó",
+        "transcription": "inchí"
+      }
+    },
+    {
+      "case": "instrumental",
+      "plural": {
+        "armenian": "ինչերո՞վ",
+        "russian": "чем",
+        "transcription": "inchov"
+      },
+      "single": {
+        "armenian": "ինչո՞վ",
+        "russian": "чем",
+        "transcription": "inchov"
+      }
+    }
+  ],
+  "id": "what"
+}

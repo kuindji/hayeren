@@ -1,0 +1,30 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "որտե՞ղ",
+        "russian": "где",
+        "transcription": "vortégh"
+      }
+    },
+    {
+      "case": "possessive",
+      "examples": [
+        {
+          "armenian": "Որտեղի՞ գինի է։",
+          "russian": "Какого региона вино?"
+        }
+      ],
+      "single": {
+        "armenian": "որտեղի՞",
+        "comment": {
+          "russian": "из какого места/региона"
+        },
+        "russian": "откуда",
+        "transcription": "vorteghí"
+      }
+    }
+  ],
+  "id": "where"
+}

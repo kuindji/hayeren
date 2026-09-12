@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "օրեր",
+        "russian": "дни",
+        "transcription": "orer"
+      },
+      "single": {
+        "armenian": "օր",
+        "russian": "день",
+        "transcription": "or"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "վա",
+      "plural": {
+        "armenian": "օրեր*ի*",
+        "russian": "дней",
+        "transcription": "orereri"
+      },
+      "single": {
+        "armenian": "օր*վա*",
+        "russian": "дня",
+        "transcription": "orva"
+      }
+    }
+  ],
+  "id": "day"
+}

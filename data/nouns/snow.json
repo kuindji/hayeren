@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "ձյուններ",
+        "russian": "снега́",
+        "transcription": "dziunner"
+      },
+      "single": {
+        "armenian": "ձյուն",
+        "russian": "снег",
+        "transcription": "dziun"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ա",
+      "plural": {
+        "armenian": "ձյուններ*ի*",
+        "russian": "снегов",
+        "transcription": "dziunner"
+      },
+      "single": {
+        "armenian": "ձյ*ա*ն",
+        "russian": "снéга",
+        "transcription": "dzian"
+      }
+    }
+  ],
+  "id": "snow"
+}

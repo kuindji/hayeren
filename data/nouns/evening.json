@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "երեկոներ",
+        "russian": "вечера",
+        "transcription": "yerekoner"
+      },
+      "single": {
+        "armenian": "երեկո",
+        "russian": "вечер",
+        "transcription": "yereko"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "վա",
+      "plural": {
+        "armenian": "երեկոներ*ի*",
+        "russian": "вечеров",
+        "transcription": "yerekoneri"
+      },
+      "single": {
+        "armenian": "երեկոյ*ի*",
+        "russian": "вечера",
+        "transcription": "yereko'i"
+      }
+    }
+  ],
+  "id": "evening"
+}

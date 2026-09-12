@@ -1,0 +1,86 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "դրանք",
+        "russian": "те",
+        "transcription": "drank"
+      },
+      "single": {
+        "armenian": "դա",
+        "russian": "то",
+        "transcription": "da"
+      }
+    },
+    {
+      "case": "possessive",
+      "plural": {
+        "armenian": "դր*անց*",
+        "russian": "тех",
+        "transcription": "drants"
+      },
+      "single": {
+        "armenian": "դր*ա*",
+        "russian": "того",
+        "transcription": "dra"
+      }
+    },
+    {
+      "case": "dative",
+      "plural": {
+        "armenian": "դրա*նց*",
+        "russian": "те",
+        "transcription": "drants"
+      },
+      "single": {
+        "armenian": "դրա*ն*",
+        "comment": {
+          "russian": "не употребляется в отношении людей"
+        },
+        "russian": "то",
+        "transcription": "dran"
+      }
+    },
+    {
+      "case": "ablative",
+      "plural": {
+        "armenian": "դրան*ցից*",
+        "russian": "тех",
+        "transcription": "drantsits"
+      },
+      "single": {
+        "armenian": "դրան*ից*",
+        "russian": "того",
+        "transcription": "dranits"
+      }
+    },
+    {
+      "case": "instrumental",
+      "plural": {
+        "armenian": "դրան*ցով*",
+        "russian": "теми",
+        "transcription": "drantsov"
+      },
+      "single": {
+        "armenian": "դրան*ով*",
+        "russian": "тем",
+        "transcription": "dranov"
+      }
+    },
+    {
+      "case": "locative",
+      "plural": {
+        "armenian": "դրանց*ում՛*",
+        "russian": "тех",
+        "transcription": "drantsum"
+      },
+      "single": {
+        "armenian": "դրան*ում*",
+        "russian": "том",
+        "transcription": "dranum"
+      }
+    }
+  ],
+  "id": "that"
+}

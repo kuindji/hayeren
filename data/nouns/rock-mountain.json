@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "լեռներ",
+        "russian": "ска́лы",
+        "transcription": "lerner"
+      },
+      "single": {
+        "armenian": "լեռ",
+        "russian": "скала",
+        "transcription": "ler"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ան",
+      "plural": {
+        "armenian": "լեռներ*ի*",
+        "russian": "скал",
+        "transcription": "lerneri"
+      },
+      "single": {
+        "armenian": "լեռ*ան*",
+        "russian": "скалы́",
+        "transcription": "leran"
+      }
+    }
+  ],
+  "id": "rock-mountain"
+}

@@ -1,0 +1,13 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "ո՞ւր",
+        "russian": "куда",
+        "transcription": "ur"
+      }
+    }
+  ],
+  "id": "where-to"
+}

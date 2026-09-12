@@ -1,0 +1,33 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "ձմեռներ",
+        "russian": "зи́мы",
+        "transcription": "dzmerner"
+      },
+      "single": {
+        "armenian": "ձմեռ",
+        "russian": "зима",
+        "transcription": "dzmer"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ան",
+      "plural": {
+        "armenian": "ձմեռներ*ի*",
+        "russian": "зим",
+        "transcription": "dzmerneri"
+      },
+      "single": {
+        "armenian": "ձմռ*ան*",
+        "informal": "ձմեռվա",
+        "russian": "зимы́",
+        "transcription": "dzmran / dzmerva"
+      }
+    }
+  ],
+  "id": "winter"
+}

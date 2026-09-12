@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "դարեր",
+        "russian": "века́",
+        "transcription": "darer"
+      },
+      "single": {
+        "armenian": "դար",
+        "russian": "век",
+        "transcription": "dar"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "վա",
+      "plural": {
+        "armenian": "դարեր*ի*",
+        "russian": "веков",
+        "transcription": "dareri"
+      },
+      "single": {
+        "armenian": "դար*ի*",
+        "russian": "вéка",
+        "transcription": "dari"
+      }
+    }
+  ],
+  "id": "century"
+}

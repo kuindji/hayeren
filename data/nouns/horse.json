@@ -1,0 +1,35 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "ձներ",
+        "comment": {
+          "russian": "беглая гласная ի"
+        },
+        "russian": "лошади",
+        "transcription": "dzner"
+      },
+      "single": {
+        "armenian": "ձի",
+        "russian": "лошадь",
+        "transcription": "dzi"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ու",
+      "plural": {
+        "armenian": "ձներ*ի*",
+        "russian": "лошадей",
+        "transcription": "dzneri"
+      },
+      "single": {
+        "armenian": "ձի*ու*",
+        "russian": "лошади",
+        "transcription": "dzu"
+      }
+    }
+  ],
+  "id": "horse"
+}

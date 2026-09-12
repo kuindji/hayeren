@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "ե՞րբ",
+        "russian": "когда́",
+        "transcription": "yerb"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "երբվա՞",
+        "russian": "какóго времени",
+        "transcription": "yerbvá"
+      }
+    }
+  ],
+  "id": "when"
+}

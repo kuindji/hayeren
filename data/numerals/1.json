@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "մեկեր",
+        "russian": "едини́цы",
+        "transcription": "meker"
+      },
+      "single": {
+        "armenian": "մեկ",
+        "russian": "оди́н",
+        "transcription": "mek"
+      }
+    },
+    {
+      "case": "possessive",
+      "plural": {
+        "armenian": "մեկեր*ի*",
+        "russian": "едини́ц",
+        "transcription": "mekerí"
+      },
+      "single": {
+        "armenian": "մեկ*ի*",
+        "russian": "одногó",
+        "transcription": "mekí"
+      }
+    }
+  ],
+  "id": "1"
+}

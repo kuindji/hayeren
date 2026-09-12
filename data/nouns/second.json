@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "վայրկյաններ",
+        "russian": "секунды",
+        "transcription": "vairkianner"
+      },
+      "single": {
+        "armenian": "վայրկյան",
+        "russian": "секунда",
+        "transcription": "vairkian"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "վա",
+      "plural": {
+        "armenian": "վայրկյաններ*ի*",
+        "russian": "секунд",
+        "transcription": "vairkianneri"
+      },
+      "single": {
+        "armenian": "վայրկյան*ի*",
+        "russian": "секунды",
+        "transcription": "vairkiani"
+      }
+    }
+  ],
+  "id": "second"
+}

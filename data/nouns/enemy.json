@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "թշնամիներ",
+        "russian": "враги",
+        "transcription": "t'shaminer"
+      },
+      "single": {
+        "armenian": "թշնամի",
+        "russian": "враг",
+        "transcription": "t'shami"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ու",
+      "plural": {
+        "armenian": "թշնամիներ*ի*",
+        "russian": "врагов",
+        "transcription": "t'shaminneri"
+      },
+      "single": {
+        "armenian": "թշնամ*ու*",
+        "russian": "врага",
+        "transcription": "t'shamu"
+      }
+    }
+  ],
+  "id": "enemy"
+}

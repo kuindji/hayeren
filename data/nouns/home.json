@@ -1,0 +1,35 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "տներ",
+        "russian": "дома́",
+        "transcription": "tnér"
+      },
+      "single": {
+        "armenian": "տուն",
+        "russian": "дом",
+        "transcription": "tun"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ա",
+      "plural": {
+        "armenian": "տներ*ի*",
+        "russian": "домóв",
+        "transcription": "tnerí"
+      },
+      "single": {
+        "armenian": "տ*ա*ն",
+        "russian": "дóма",
+        "transcription": "tan"
+      }
+    }
+  ],
+  "comment": {
+    "russian": "в значении места"
+  },
+  "id": "home"
+}

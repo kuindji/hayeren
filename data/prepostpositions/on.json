@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "վրա",
+        "russian": "на",
+        "transcription": "vra"
+      }
+    },
+    {
+      "case": "possessive",
+      "examples": [
+        {
+          "armenian": "սեղանի վրայի գիրքը",
+          "russian": "книга, которая на столе"
+        }
+      ],
+      "single": {
+        "armenian": "վրա*յի*",
+        "russian": "на",
+        "transcription": "vra'i"
+      }
+    }
+  ],
+  "id": "on",
+  "name": {
+    "armenian": "վրա",
+    "russian": "на"
+  }
+}

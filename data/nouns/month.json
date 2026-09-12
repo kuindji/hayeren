@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "ամիսներ",
+        "russian": "месяцы",
+        "transcription": "amisner"
+      },
+      "single": {
+        "armenian": "ամիս",
+        "russian": "месяц",
+        "transcription": "amis"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "վա",
+      "plural": {
+        "armenian": "ամիսներ*ի*",
+        "russian": "месяцев",
+        "transcription": "amisneri"
+      },
+      "single": {
+        "armenian": "ամս*վա*",
+        "russian": "месяца",
+        "transcription": "amsva"
+      }
+    }
+  ],
+  "id": "month"
+}

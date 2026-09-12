@@ -1,0 +1,76 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "դու",
+        "russian": "ты",
+        "transcription": "du"
+      }
+    },
+    {
+      "case": "possessive",
+      "examples": [
+        {
+          "armenian": "քո մասին",
+          "pposition": "about",
+          "russian": "про тебя́",
+          "transcription": "k'o masín"
+        },
+        {
+          "armenian": "քո փոխարեն",
+          "pposition": "instead",
+          "russian": "вместо тебя́",
+          "transcription": "k'o p'okharen"
+        },
+        {
+          "armenian": "քո տակ",
+          "pposition": "under",
+          "russian": "под тобóй",
+          "transcription": "k'o tak"
+        },
+        {
+          "armenian": "քո մեջ",
+          "pposition": "in",
+          "russian": "в тебé",
+          "transcription": "k'o metch"
+        },
+        {
+          "armenian": "իմ ու քո միջև",
+          "pposition": "between",
+          "russian": "между тобóй и мнóй",
+          "transcription": "im u k'o michév"
+        },
+        {
+          "armenian": "քո պատճառով",
+          "comment": {
+            "russian": "по причине"
+          },
+          "pposition": "because-of",
+          "russian": "из-за тебя",
+          "transcription": "k'o patjarov"
+        },
+        {
+          "armenian": "քո նման/պես",
+          "pposition": "like",
+          "russian": "как ты",
+          "transcription": "k'o nman/pes"
+        }
+      ],
+      "single": {
+        "armenian": "քո",
+        "russian": "твой",
+        "transcription": "k'o"
+      }
+    },
+    {
+      "case": "dative",
+      "single": {
+        "armenian": "քեզ",
+        "russian": "тебе/тебя",
+        "transcription": "kez"
+      }
+    }
+  ],
+  "id": "you"
+}

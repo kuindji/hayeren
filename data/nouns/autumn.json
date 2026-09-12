@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "աշուններ",
+        "russian": "осени",
+        "transcription": "ashunner"
+      },
+      "single": {
+        "armenian": "աշուն",
+        "russian": "осень",
+        "transcription": "ashun"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ան",
+      "plural": {
+        "armenian": "աշուններ*ի*",
+        "russian": "осеней",
+        "transcription": "ashunneri"
+      },
+      "single": {
+        "armenian": "աշն*ան*",
+        "russian": "осени",
+        "transcription": "ashnan"
+      }
+    }
+  ],
+  "id": "autumn"
+}

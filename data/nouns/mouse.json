@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "մկներ",
+        "russian": "мыши",
+        "transcription": "mkner"
+      },
+      "single": {
+        "armenian": "մուկ",
+        "russian": "мышь",
+        "transcription": "muk"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ան",
+      "plural": {
+        "armenian": "մկներ*ի*",
+        "russian": "мышей",
+        "transcription": "mkneri"
+      },
+      "single": {
+        "armenian": "մկ*ան*",
+        "russian": "мыши",
+        "transcription": "mkan"
+      }
+    }
+  ],
+  "id": "mouse"
+}

@@ -1,0 +1,13 @@
+{
+  "articles": [
+    "forms"
+  ],
+  "description": {
+    "russian": "Выражает действие, направленное к предмету."
+  },
+  "id": "dative",
+  "name": {
+    "russian": "Дательный падеж"
+  },
+  "position": 2
+}

@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "տարիներ",
+        "russian": "гóды/года́",
+        "transcription": "tariner"
+      },
+      "single": {
+        "armenian": "տարի",
+        "russian": "год",
+        "transcription": "tari"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "վա",
+      "plural": {
+        "armenian": "տարիներ*ի*",
+        "russian": "годóв",
+        "transcription": "tarineri"
+      },
+      "single": {
+        "armenian": "տար*վա*",
+        "russian": "гóда",
+        "transcription": "tarva"
+      }
+    }
+  ],
+  "id": "year"
+}

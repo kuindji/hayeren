@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "երեսուն",
+        "russian": "тридцать",
+        "transcription": "yeresun"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "երեսուն*ի*",
+        "russian": "тридцати",
+        "transcription": "yeresuni"
+      }
+    }
+  ],
+  "id": "30"
+}

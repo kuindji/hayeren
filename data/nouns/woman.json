@@ -1,0 +1,35 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "կան*այք*",
+        "russian": "жéнщины, жéны",
+        "transcription": "kanáyk"
+      },
+      "single": {
+        "armenian": "կին",
+        "russian": "жéнщина, жена́",
+        "transcription": "kin"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ոջ",
+      "plural": {
+        "armenian": "կան*անց*",
+        "comment": {
+          "russian": "исключение"
+        },
+        "russian": "жéнщин",
+        "transcription": "kanánts"
+      },
+      "single": {
+        "armenian": "կն*ոջ*",
+        "russian": "жéнщины",
+        "transcription": "knoch"
+      }
+    }
+  ],
+  "id": "woman"
+}

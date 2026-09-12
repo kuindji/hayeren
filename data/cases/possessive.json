@@ -1,0 +1,283 @@
+{
+  "articles": [
+    "forms",
+    "usage"
+  ],
+  "declensions": [
+    {
+      "declension": "ու",
+      "groups": [
+        {
+          "name": {
+            "russian": "Слова заканчивающиеся на ի"
+          },
+          "words": [
+            "wine",
+            "enemy",
+            "wind",
+            "uncle-mother",
+            "villager"
+          ]
+        },
+        {
+          "name": {
+            "russian": "Следующие пять слов"
+          },
+          "words": [
+            "man",
+            "husband",
+            "horse",
+            "god"
+          ]
+        }
+      ]
+    },
+    "ոջ",
+    "ա",
+    "ո",
+    {
+      "declension": "ան",
+      "groups": [
+        {
+          "name": {
+            "russian": "Односложные слова с неправильной формой множественного числа"
+          },
+          "words": [
+            "door",
+            "rock-mountain",
+            "fish",
+            "mouse",
+            "pomegranate",
+            "grandchild"
+          ]
+        }
+      ]
+    },
+    {
+      "declension": "վա",
+      "groups": [
+        {
+          "name": {
+            "russian": "Исключения"
+          },
+          "words": [
+            "minute",
+            "second",
+            "century",
+            "evening"
+          ]
+        }
+      ]
+    },
+    "ց"
+  ],
+  "description": {
+    "russian": "Родительный падеж чаще всего выражает принадлежность предмета."
+  },
+  "groups": [
+    {
+      "name": {
+        "russian": "Все существительные с суффиксом ություն"
+      },
+      "words": [
+        "history"
+      ]
+    },
+    {
+      "name": {
+        "russian": "Исключения"
+      },
+      "words": [
+        "girl",
+        "love"
+      ]
+    },
+    {
+      "name": {
+        "russian": "Слова заканчивающиеся на -ում"
+      },
+      "words": [
+        "meeting"
+      ]
+    }
+  ],
+  "id": "possessive",
+  "name": {
+    "russian": "Родительный падеж"
+  },
+  "position": 1,
+  "questionGroups": [
+    {
+      "name": {
+        "russian": "Для существительных"
+      },
+      "type": "noun"
+    },
+    {
+      "name": {
+        "russian": "Для местоимений"
+      },
+      "type": "pronoun"
+    }
+  ],
+  "questions": [
+    {
+      "question": {
+        "russian": "чегó"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "for",
+      "question": {
+        "russian": "для чегó"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "about",
+      "question": {
+        "russian": "про что"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "at",
+      "question": {
+        "russian": "у чегó"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "on",
+      "question": {
+        "russian": "на чем"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "instead",
+      "question": {
+        "russian": "вместо чегó"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "in",
+      "question": {
+        "russian": "в чем"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "between",
+      "question": {
+        "russian": "между чем"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "under",
+      "question": {
+        "russian": "под чем"
+      },
+      "type": "noun"
+    },
+    {
+      "comment": {
+        "russian": "в контексте места"
+      },
+      "pposition": "before",
+      "question": {
+        "russian": "перед чем"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "about",
+      "question": {
+        "russian": "про когó"
+      },
+      "type": "pronoun"
+    },
+    {
+      "pposition": "instead",
+      "question": {
+        "russian": "вместо когó"
+      },
+      "type": "pronoun"
+    },
+    {
+      "pposition": "under",
+      "question": {
+        "russian": "под кем"
+      },
+      "type": "pronoun"
+    },
+    {
+      "pposition": "in",
+      "question": {
+        "russian": "в ком"
+      },
+      "type": "pronoun"
+    },
+    {
+      "pposition": "between",
+      "question": {
+        "russian": "между кем"
+      },
+      "type": "pronoun"
+    },
+    {
+      "comment": {
+        "russian": "чаще для одушевленных"
+      },
+      "pposition": "with",
+      "question": {
+        "russian": "с чем"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "through",
+      "question": {
+        "russian": "через что/по чему"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "because-of",
+      "question": {
+        "russian": "из-за чего"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "because-of",
+      "question": {
+        "russian": "из-за кого"
+      },
+      "type": "pronoun"
+    },
+    {
+      "pposition": "like",
+      "question": {
+        "russian": "как что"
+      },
+      "type": "noun"
+    },
+    {
+      "pposition": "like",
+      "question": {
+        "russian": "как кто"
+      },
+      "type": "pronoun"
+    },
+    {
+      "question": {
+        "russian": "чей"
+      },
+      "type": "pronoun"
+    }
+  ]
+}

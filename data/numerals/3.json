@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "երեքներ",
+        "russian": "трóйки",
+        "transcription": "yerek'nér"
+      },
+      "single": {
+        "armenian": "երեք",
+        "russian": "три",
+        "transcription": "yerek'"
+      }
+    },
+    {
+      "case": "possessive",
+      "plural": {
+        "armenian": "երեքներ*ի*",
+        "russian": "трóек",
+        "transcription": "yerek'nerí"
+      },
+      "single": {
+        "armenian": "երեք*ի*",
+        "russian": "трёх",
+        "transcription": "yerek'í"
+      }
+    }
+  ],
+  "id": "3"
+}

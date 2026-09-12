@@ -1,0 +1,29 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "մենք",
+        "russian": "мы",
+        "transcription": "menk"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "մեր",
+        "russian": "наш",
+        "transcription": "mer"
+      }
+    },
+    {
+      "case": "dative",
+      "single": {
+        "armenian": "մեզ",
+        "russian": "нам/нас",
+        "transcription": "mez"
+      }
+    }
+  ],
+  "id": "we"
+}

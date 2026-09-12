@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "նրանք",
+        "russian": "они́",
+        "transcription": "nrank"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "նրանց",
+        "informal": "իրենց",
+        "russian": "их/свои́(их)",
+        "transcription": "nrants/irénts"
+      }
+    },
+    {
+      "case": "dative",
+      "single": {
+        "armenian": "նրանց",
+        "informal": "իրենց",
+        "russian": "им/их/ними",
+        "transcription": "nrants / irents"
+      }
+    }
+  ],
+  "id": "they"
+}

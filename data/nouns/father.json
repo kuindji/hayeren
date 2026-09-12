@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "Հայրեր",
+        "russian": "отцы",
+        "transcription": "hairer"
+      },
+      "single": {
+        "armenian": "Հայր",
+        "russian": "отец",
+        "transcription": "hair"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ո",
+      "plural": {
+        "armenian": "Հայրեր*ի*",
+        "russian": "отцов",
+        "transcription": "haireri"
+      },
+      "single": {
+        "armenian": "հ*ո*ր",
+        "russian": "отца",
+        "transcription": "hor"
+      }
+    }
+  ],
+  "id": "father"
+}

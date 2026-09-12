@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "թոռներ",
+        "russian": "внуки",
+        "transcription": "torner"
+      },
+      "single": {
+        "armenian": "թոռ",
+        "russian": "внук",
+        "transcription": "tor"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ան",
+      "plural": {
+        "armenian": "թոռներ*ի*",
+        "russian": "внуков",
+        "transcription": "torneri"
+      },
+      "single": {
+        "armenian": "թոռ*ան*",
+        "russian": "внука",
+        "transcription": "toran"
+      }
+    }
+  ],
+  "id": "grandchild"
+}

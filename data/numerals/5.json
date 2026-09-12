@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "Հինգ",
+        "russian": "пять",
+        "transcription": "hing"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "Հինգ*ի*",
+        "russian": "пяти́",
+        "transcription": "hingí"
+      }
+    }
+  ],
+  "id": "5"
+}

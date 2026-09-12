@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "նռներ",
+        "comment": {
+          "russian": "беглая гласная ու"
+        },
+        "russian": "гранаты",
+        "transcription": "nrner"
+      },
+      "single": {
+        "armenian": "նուռ",
+        "russian": "гранат",
+        "transcription": "nur"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ան",
+      "examples": [
+        {
+          "armenian": "նռ*ան* գույն*ը*",
+          "russian": "цвет граната"
+        }
+      ],
+      "plural": {
+        "armenian": "նռներ*ի*",
+        "russian": "гранатов",
+        "transcription": "nrneri"
+      },
+      "single": {
+        "armenian": "նռ*ան*",
+        "russian": "граната",
+        "transcription": "nran"
+      }
+    }
+  ],
+  "id": "pomegranate"
+}

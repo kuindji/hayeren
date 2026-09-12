@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "անկյուններ",
+        "russian": "углы",
+        "transcription": "angiunner"
+      },
+      "single": {
+        "armenian": "անկյուն",
+        "russian": "угол",
+        "transcription": "angiun"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ա",
+      "plural": {
+        "armenian": "անկյուններ*ի*",
+        "russian": "углов",
+        "transcription": "angiunneri"
+      },
+      "single": {
+        "armenian": "անկյ*ա*ն",
+        "russian": "угла",
+        "transcription": "angian"
+      }
+    }
+  ],
+  "id": "angle"
+}

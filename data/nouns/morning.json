@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "առավոտներ",
+        "russian": "утра́",
+        "transcription": "aravotner"
+      },
+      "single": {
+        "armenian": "առավոտ",
+        "russian": "утро",
+        "transcription": "aravot"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "վա",
+      "plural": {
+        "armenian": "առավոտների",
+        "russian": "утр",
+        "transcription": "aravotneri"
+      },
+      "single": {
+        "armenian": "առավոտվա",
+        "russian": "у́тра",
+        "transcription": "aravotva"
+      }
+    }
+  ],
+  "id": "morning"
+}

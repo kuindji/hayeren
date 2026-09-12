@@ -1,0 +1,86 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "սրանք",
+        "russian": "эти",
+        "transcription": "srank'"
+      },
+      "single": {
+        "armenian": "սա",
+        "russian": "это",
+        "transcription": "sa"
+      }
+    },
+    {
+      "case": "possessive",
+      "plural": {
+        "armenian": "սր*անց*",
+        "russian": "этих",
+        "transcription": "srants"
+      },
+      "single": {
+        "armenian": "սր*ա*",
+        "russian": "этого",
+        "transcription": "sra"
+      }
+    },
+    {
+      "case": "dative",
+      "plural": {
+        "armenian": "սրա*նց*",
+        "russian": "эти",
+        "transcription": "srants"
+      },
+      "single": {
+        "armenian": "սրա*ն*",
+        "comment": {
+          "russian": "не употребяется в отношении людей"
+        },
+        "russian": "это",
+        "transcription": "sran"
+      }
+    },
+    {
+      "case": "ablative",
+      "plural": {
+        "armenian": "սրանց*ից*",
+        "russian": "этих",
+        "transcription": "srantsits"
+      },
+      "single": {
+        "armenian": "սրան*ից*",
+        "russian": "этого",
+        "transcription": "sranits"
+      }
+    },
+    {
+      "case": "instrumental",
+      "plural": {
+        "armenian": "սրանց*ով*",
+        "russian": "этими",
+        "transcription": "srantsov"
+      },
+      "single": {
+        "armenian": "սրան*ով*",
+        "russian": "этим",
+        "transcription": "sranov"
+      }
+    },
+    {
+      "case": "locative",
+      "plural": {
+        "armenian": "սրանց*ում*",
+        "russian": "этих",
+        "transcription": "srantsum"
+      },
+      "single": {
+        "armenian": "սրան*ում*",
+        "russian": "этом",
+        "transcription": "sranum"
+      }
+    }
+  ],
+  "id": "this"
+}

@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "թունելներ",
+        "russian": "тоннели",
+        "transcription": "tunelner"
+      },
+      "single": {
+        "armenian": "թունել",
+        "russian": "тоннель",
+        "transcription": "tunel"
+      }
+    },
+    {
+      "case": "possessive",
+      "examples": [
+        {
+          "armenian": "թունել*ի* միջով",
+          "comment": {
+            "russian": "здесь միջով это մեջ (в) в творительном падеже"
+          },
+          "pposition": "through",
+          "russian": "через тоннель / по тоннелю"
+        }
+      ],
+      "plural": {
+        "armenian": "թունելներ*ի*",
+        "russian": "тоннели",
+        "transcription": "tunelneri"
+      },
+      "single": {
+        "armenian": "թունել*ի*",
+        "russian": "тоннеля",
+        "transcription": "tuneli"
+      }
+    }
+  ],
+  "id": "tunnel"
+}

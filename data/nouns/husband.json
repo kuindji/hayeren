@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "ամուսիններ",
+        "russian": "мужья",
+        "transcription": "amusinner"
+      },
+      "single": {
+        "armenian": "ամուսին",
+        "russian": "муж",
+        "transcription": "amusin"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ու",
+      "plural": {
+        "armenian": "ամուսիններ*ի*",
+        "russian": "мужей",
+        "transcription": "amusinneri"
+      },
+      "single": {
+        "armenian": "ամուսն*ու*",
+        "russian": "мужа",
+        "transcription": "amusnu"
+      }
+    }
+  ],
+  "id": "husband"
+}

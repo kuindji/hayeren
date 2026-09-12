@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "հետ",
+        "russian": "с",
+        "transcription": "het"
+      }
+    },
+    {
+      "case": "possessive",
+      "examples": [
+        {
+          "armenian": "քո հետի տղան",
+          "russian": "мальчик, который с тобой"
+        }
+      ],
+      "single": {
+        "armenian": "հետ*ի*",
+        "russian": "с",
+        "transcription": "heti"
+      }
+    }
+  ],
+  "id": "with",
+  "name": {
+    "armenian": "հետ",
+    "russian": "с"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "տասներեք",
+        "russian": "тринадцать",
+        "transcription": "tasnerek'"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "տասներեք*ի*",
+        "russian": "тринадцати",
+        "transcription": "tasnereki"
+      }
+    }
+  ],
+  "id": "13"
+}

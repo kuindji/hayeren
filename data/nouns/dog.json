@@ -1,0 +1,35 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "շներ",
+        "comment": {
+          "russian": "беглая гласная *ու*"
+        },
+        "russian": "собаки",
+        "transcription": "shner"
+      },
+      "single": {
+        "armenian": "շուն",
+        "russian": "собака",
+        "transcription": "shun"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ա",
+      "plural": {
+        "armenian": "շներ*ի*",
+        "russian": "собак",
+        "transcription": "shneri"
+      },
+      "single": {
+        "armenian": "շ*ա*ն",
+        "russian": "собаки",
+        "transcription": "shan"
+      }
+    }
+  ],
+  "id": "dog"
+}

@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "քանի՞",
+        "russian": "скóлько",
+        "transcription": "k'aní"
+      }
+    }
+  ],
+  "comment": {
+    "russian": "исчисляемое"
+  },
+  "id": "how-many"
+}

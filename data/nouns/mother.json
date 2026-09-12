@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "մայրեր",
+        "russian": "матери",
+        "transcription": "mairer"
+      },
+      "single": {
+        "armenian": "մայր",
+        "russian": "мать",
+        "transcription": "mair"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ո",
+      "plural": {
+        "armenian": "մայրեր*ի*",
+        "russian": "матерей",
+        "transcription": "maireri"
+      },
+      "single": {
+        "armenian": "մ*ո*ր",
+        "russian": "матери",
+        "transcription": "mor"
+      }
+    }
+  ],
+  "id": "mother"
+}

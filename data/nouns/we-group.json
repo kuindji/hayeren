@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "մերոնք",
+        "comment": {
+          "russian": "как группа, объединенная чем-то"
+        },
+        "russian": "мы/наши",
+        "transcription": "meronk"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ց",
+      "single": {
+        "armenian": "մերոն*ց*",
+        "russian": "нас/наших",
+        "transcription": "meronts"
+      }
+    }
+  ],
+  "comment": {
+    "russian": "как общность"
+  },
+  "id": "we-group"
+}

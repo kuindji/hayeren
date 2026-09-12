@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "գյուղացիներ",
+        "russian": "жители деревни",
+        "transcription": "giughatsiner"
+      },
+      "single": {
+        "armenian": "գյուղացի",
+        "russian": "житель деревни",
+        "transcription": "giughatsi"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ու",
+      "plural": {
+        "armenian": "գյուղացիներ*ի*",
+        "russian": "жителей деревни",
+        "transcription": "giughatsineri"
+      },
+      "single": {
+        "armenian": "գյուղաց*ու*",
+        "russian": "жителя деревни",
+        "transcription": "giughatsu"
+      }
+    }
+  ],
+  "id": "villager"
+}

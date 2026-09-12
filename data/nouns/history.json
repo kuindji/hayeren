@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "պատմություն",
+        "russian": "истóрия",
+        "transcription": "patmut'yún"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "պատմության",
+        "russian": "истóрии",
+        "transcription": "patmut'yán"
+      }
+    }
+  ],
+  "id": "history"
+}

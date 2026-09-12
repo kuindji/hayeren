@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "նա",
+        "russian": "он/она",
+        "transcription": "na"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "նրա",
+        "informal": "իր",
+        "russian": "его/её/свой(его)",
+        "transcription": "nra/ir"
+      }
+    },
+    {
+      "case": "dative",
+      "single": {
+        "armenian": "նրան",
+        "informal": "իրեն",
+        "russian": "ему/ей/его/ее",
+        "transcription": "nran / iren"
+      }
+    }
+  ],
+  "id": "he-she"
+}

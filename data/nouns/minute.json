@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "րոպեներ",
+        "russian": "минуты",
+        "transcription": "ropener"
+      },
+      "single": {
+        "armenian": "րոպե",
+        "russian": "минута",
+        "transcription": "rope"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "վա",
+      "plural": {
+        "armenian": "րոպեներ*ի*",
+        "russian": "минут",
+        "transcription": "ropeneri"
+      },
+      "single": {
+        "armenian": "րոպե*ի*",
+        "russian": "минуты",
+        "transcription": "rope'i"
+      }
+    }
+  ],
+  "id": "minute"
+}

@@ -1,0 +1,38 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "ես",
+        "russian": "я",
+        "transcription": "yes"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "իմ",
+        "russian": "мой",
+        "transcription": "im"
+      }
+    },
+    {
+      "case": "dative",
+      "single": {
+        "armenian": "ինձ",
+        "russian": "мне/меня",
+        "transcription": "inz"
+      }
+    },
+    {
+      "case": "ablative",
+      "single": {
+        "armenian": "ինձանից",
+        "informal": "ինձնից",
+        "russian": "меня",
+        "transcription": "inzanits / inznits"
+      }
+    }
+  ],
+  "id": "i"
+}

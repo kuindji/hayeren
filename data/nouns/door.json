@@ -1,0 +1,35 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "դռներ",
+        "comment": {
+          "russian": "беглая гласная ու"
+        },
+        "russian": "двери",
+        "transcription": "drner"
+      },
+      "single": {
+        "armenian": "դուռ",
+        "russian": "дверь",
+        "transcription": "dur"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ան",
+      "plural": {
+        "armenian": "դռներ*ի*",
+        "russian": "дверей",
+        "transcription": "drneri"
+      },
+      "single": {
+        "armenian": "դռ*ան*",
+        "russian": "двери",
+        "transcription": "dran"
+      }
+    }
+  ],
+  "id": "door"
+}

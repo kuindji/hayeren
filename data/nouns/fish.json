@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "ձկներ",
+        "russian": "рыбы",
+        "transcription": "dzkner"
+      },
+      "single": {
+        "armenian": "ձուկ",
+        "russian": "рыба",
+        "transcription": "dzuk"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ան",
+      "plural": {
+        "armenian": "ձկներ*ի*",
+        "russian": "рыб",
+        "transcription": "dzkneri"
+      },
+      "single": {
+        "armenian": "ձկ*ան*",
+        "russian": "рыбы",
+        "transcription": "dzkan"
+      }
+    }
+  ],
+  "id": "fish"
+}

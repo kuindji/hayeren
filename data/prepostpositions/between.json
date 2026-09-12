@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "մեջ",
+        "russian": "в",
+        "transcription": "mech"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "մեջ*ի*",
+        "russian": "в",
+        "transcription": "mechi"
+      }
+    }
+  ],
+  "id": "between",
+  "name": {
+    "armenian": "միջև",
+    "russian": "между"
+  }
+}

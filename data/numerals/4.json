@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "չորսեր",
+        "russian": "четверки",
+        "transcription": "chorsér"
+      },
+      "single": {
+        "armenian": "չորս",
+        "russian": "четы́ре",
+        "transcription": "chors"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "չորս*ի*",
+        "russian": "четырéх",
+        "transcription": "chorsí"
+      }
+    }
+  ],
+  "id": "4"
+}

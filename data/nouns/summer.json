@@ -1,0 +1,33 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "ամառներ",
+        "russian": "лета́",
+        "transcription": "amarner"
+      },
+      "single": {
+        "armenian": "ամառ",
+        "russian": "лето",
+        "transcription": "amar"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ան",
+      "plural": {
+        "armenian": "ամառներ*ի*",
+        "russian": "лéт",
+        "transcription": "amarneri"
+      },
+      "single": {
+        "armenian": "ամռ*ան*",
+        "informal": "ամառ*վա*",
+        "russian": "лéта",
+        "transcription": "amaran / amarva"
+      }
+    }
+  ],
+  "id": "summer"
+}

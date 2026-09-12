@@ -1,0 +1,27 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "ինչքա՞ն",
+        "russian": "скóлько",
+        "transcription": "inchk'án"
+      }
+    },
+    {
+      "case": "possessive",
+      "single": {
+        "armenian": "ինչքանի՞",
+        "comment": {
+          "russian": "на сколько положить"
+        },
+        "russian": "на скóлько",
+        "transcription": "inchk'aní"
+      }
+    }
+  ],
+  "comment": {
+    "russian": "неисчисляемое"
+  },
+  "id": "how-much"
+}

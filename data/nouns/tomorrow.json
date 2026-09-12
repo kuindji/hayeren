@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "վաղը",
+        "russian": "завтра",
+        "transcription": "vaghe"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "վա",
+      "single": {
+        "armenian": "վաղ*վա*",
+        "russian": "завтрашний",
+        "transcription": "vaghva"
+      }
+    }
+  ],
+  "id": "tomorrow"
+}

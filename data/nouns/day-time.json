@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "single": {
+        "armenian": "ցերեկ",
+        "russian": "день",
+        "transcription": "tserek"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "վա",
+      "single": {
+        "armenian": "ցերեկ*վա*",
+        "russian": "дневной / денный",
+        "transcription": "tserekva"
+      }
+    }
+  ],
+  "comment": {
+    "russian": "время дня"
+  },
+  "id": "day-time"
+}

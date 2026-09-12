@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {
+      "case": "nominative",
+      "plural": {
+        "armenian": "տերեր",
+        "russian": "владельцы",
+        "transcription": "terer"
+      },
+      "single": {
+        "armenian": "տեր",
+        "russian": "владелец",
+        "transcription": "ter"
+      }
+    },
+    {
+      "case": "possessive",
+      "declension": "ոջ",
+      "plural": {
+        "armenian": "տերեր*ի*",
+        "russian": "владельцев",
+        "transcription": "tereri"
+      },
+      "single": {
+        "armenian": "տիր*ոջ*",
+        "russian": "владельца",
+        "transcription": "trnoch"
+      }
+    }
+  ],
+  "id": "owner"
+}
