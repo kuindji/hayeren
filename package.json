@@ -1,0 +1,45 @@
+{
+  "name": "hayeren",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "admin": "vite --config vite.admin.config.ts",
+    "build": "vite build && cp dist/index.html dist/404.html",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "validate": "bun run scripts/validate.ts",
+    "test": "vitest run",
+    "check": "bun run lint && bun run typecheck && bun run validate && bun run test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/bun": "^1.4.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.1",
+    "eslint": "^10",
+    "eslint-plugin-react-hooks": "^7.1",
+    "eslint-plugin-react-refresh": "^0.5",
+    "globals": "^17.12.0",
+    "jsdom": "^30.0.1",
+    "prettier": "^3.9",
+    "sass": "^1.104",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.70",
+    "vite": "^8.3",
+    "vite-plugin-svgr": "^5.2",
+    "vitest": "^5.0"
+  },
+  "dependencies": {
+    "@kuindji/reactive": "^1.3",
+    "marked": "^18",
+    "react": "^19.3",
+    "react-dom": "^19.3",
+    "react-router": "^8.3",
+    "zod": "^4.6"
+  }
+}
