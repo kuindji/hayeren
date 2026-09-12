@@ -1,0 +1,75 @@
+@use "../variables" as *;
+
+$gap: 0.4rem;
+$gapSmall: 0.2rem;
+
+.alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: $font_main;
+    margin-top: $spacing_big;
+    margin-bottom: $spacing_big;
+    margin-left: $spacing_big;
+    margin-right: $spacing_big;
+    gap: $gap;
+
+    @media screen and (min-width: $bp_desktop) {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        gap: $gapSmall;
+    }
+}
+
+.alphabet-letter {
+    width: calc(50% - $gap);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 0.4rem;
+    background-color: rgba($color_paper, 0.7);
+    box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.1);
+
+    @media screen and (min-width: $bp_tablet) {
+        width: calc((100% / 4) - ($gap * 3));
+    }
+
+    @media screen and (min-width: $bp_desktop) {
+        width: calc((100% / 6) - ($gapSmall * 5));
+    }
+
+    .index {
+        font-size: 1rem;
+        font-family: $font_secondary;
+        color: rgba($color_secondary, 0.3);
+        position: absolute;
+        top: 0;
+        left: 0.2rem;
+    }
+
+    .armenian {
+        font-size: 3rem;
+        font-weight: 500;
+        display: flex;
+        align-items: flex-end;
+        gap: 0.5rem;
+
+        span:first-child {
+            font-size: 4rem;
+        }
+        span:last-child {
+            font-weight: 300;
+            color: $color_secondary;
+        }
+    }
+
+    .russian {
+        font-size: 2rem;
+        font-weight: 300;
+        font-family: $font_secondary;
+    }
+}

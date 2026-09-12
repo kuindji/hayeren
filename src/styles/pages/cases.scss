@@ -1,0 +1,53 @@
+@use "../variables" as *;
+
+.full-case-list-scrollable {
+    overflow-x: auto;
+    //width: 100%;
+    //padding-left: $spacing_big;
+    //margin-right: $spacing_big;
+    margin-top: $spacing_main;
+    padding-bottom: $spacing_main;
+    scroll-behavior: smooth;
+    display: flex;
+    scroll-snap-type: x mandatory;
+
+
+    @media screen and (min-width: $bp_tablet) {
+        //scroll-snap-type: none;
+    }
+}
+
+.full-case-list {
+    margin-left: auto;
+    margin-right: auto;
+    
+    display: flex;
+    justify-content: flex-start;
+    gap: $spacing_main;
+    
+    .full-case {
+        scroll-snap-align: center;
+    }
+
+    .full-case:first-child {
+        margin-left: $spacing_big;
+    }
+    .full-case:last-child {
+        margin-right: $spacing_big;
+    }
+}
+
+.full-case-list-scroll-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 $spacing_big;
+    a {
+        font-size: 2rem;
+        color: rgba($color_primary, 0.5);
+        transition: color 0.2s;
+
+        &:hover {
+            color: rgba($color_primary, 1);
+        }
+    }
+}

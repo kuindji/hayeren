@@ -1,0 +1,55 @@
+@use "variables" as *;
+
+html, body {
+    background-color: $color_light;
+    font-family: $font_main;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 0;
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#root {
+    min-height: 100vh;
+    padding-bottom: $spacing_big;
+}
+
+a {
+    color: $color_primary;
+    text-decoration: none;
+
+    // &:active {
+    //     transform: translate(0, 2px);
+    // }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    line-height: 1.2;
+}
+
+b {
+    font-weight: 900;
+}
+
+input {
+    outline: none;
+}

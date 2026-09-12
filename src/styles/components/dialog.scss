@@ -1,0 +1,18 @@
+@use "../variables" as *;
+
+.dialog {
+    opacity: 0;
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 0 1rem rgba(0,0,0,.05);
+    border-radius: $border_radius_main;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+
+    transition: opacity 0.2s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
+    &.active {
+        opacity: 1;
+    }
+}

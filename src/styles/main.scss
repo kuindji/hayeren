@@ -1,0 +1,23 @@
+@use "variables" as *;
+
+html {
+    font-size: 12px;
+}
+
+@media screen and (min-width: $bp_tablet) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: $bp_desktop) {
+    html {
+        font-size: 16px;
+    }
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

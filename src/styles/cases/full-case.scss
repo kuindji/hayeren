@@ -1,0 +1,121 @@
+@use "../variables" as *;
+
+.full-case {
+    background-color: $color_paper;
+    padding: $spacing_main;
+    border-radius: $border_radius_main;
+
+    flex: 1;
+    max-width: none;
+    min-width: 100vw;
+
+    @media screen and (min-width: $bp_tablet) {
+        flex: none;
+        max-width: 50vw;
+        min-width: 30vw;    
+    }
+
+    box-shadow: 0 0 1rem rgba(0,0,0,.05);
+
+    h2, h3, h4 {
+        margin-top: $spacing_small;
+        margin-bottom: 0.25rem;
+        line-height: 1;
+    }
+
+    p.description {
+        font-family: $font_secondary;
+    }
+}
+
+.full-case__qgroup {
+    h4 {
+        color: $color_secondary;
+        font-family: $font_secondary;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 0;
+        margin-top: 0.6rem;
+        margin-bottom: 0.5rem;
+        padding-left: 0.25rem;
+    }
+    ul {
+        display: flex;
+        gap: 0.2rem;
+        flex-wrap: wrap;
+    }
+    li {
+        display: block;
+        text-decoration-color: $color_dark_secondary;
+        font-style: italic;
+        letter-spacing: 0;
+        border-radius: 0.5rem;
+        padding: 0.2rem 0.5rem;
+        line-height: 1rem;
+        transition: background-color 0.2s;
+
+        background-color: rgba($color_light, 0.25);
+
+        &.clickable {
+            background-color: $color_light;
+        }
+
+        &.active {
+            background-color: rgba($color_dark, 0.5);
+        }
+
+        .comment {
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-left: 5px;
+            color: $color_secondary;
+            &::before {
+                display: inline;
+                content: "("
+            }
+            &::after {
+                display: inline;
+                content: ")"
+            }
+        }
+    }
+}
+
+.full-case__declension {
+
+    h3 {
+        .comment {
+            color: $color_secondary;
+            font-size: 0.8rem;
+            font-weight: 400;
+            font-style: italic;
+            margin-left: 0.5rem;
+        }
+    }
+
+    h4 {
+        color: $color_secondary;
+        font-family: $font_secondary;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 0;
+        margin-top: 0.5rem;
+        margin-bottom: 0.4rem;
+        margin-left: 0.6rem;
+    }
+}
+
+.full-case__group {
+    h3 {
+        font-size: 1rem;
+    }
+}
+
+.full-case__articles {
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-top: 1px solid rgba($color_primary, 0.15);
+    border-bottom: 1px solid rgba($color_primary, 0.15);
+}
