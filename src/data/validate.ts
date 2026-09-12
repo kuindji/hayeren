@@ -2,16 +2,12 @@ import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join, basename } from "node:path";
 import {
   WORD_TYPES, WORD_FOLDERS, wordFileSchemaFor, CaseFileSchema, DeclensionsFileSchema, ArticleFileSchema,
-  type WordType, type WordFile, type CaseFile, type Declension, type ArticleFile,
+  type ArticleFile,
+  type DataFiles,
 } from "./schema";
 import { parseFrontmatter } from "./frontmatter";
 
-export interface DataFiles {
-  declensions: Declension[];
-  cases: CaseFile[];
-  words: Record<WordType, WordFile[]>;
-  articles: ArticleFile[];
-}
+export type { DataFiles };
 
 function parseJsonFile<T>(path: string, parse: (v: unknown) => T): T {
   try {

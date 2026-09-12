@@ -136,3 +136,10 @@ export const ArticleFrontmatterSchema = z
 export type ArticleFrontmatter = z.infer<typeof ArticleFrontmatterSchema>;
 export const ArticleFileSchema = ArticleFrontmatterSchema.extend({ case: Slug, slug: Slug, text: z.string() }).strict();
 export type ArticleFile = z.infer<typeof ArticleFileSchema>;
+
+export interface DataFiles {
+  declensions: Declension[];
+  cases: CaseFile[];
+  words: Record<WordType, WordFile[]>;
+  articles: ArticleFile[];
+}
