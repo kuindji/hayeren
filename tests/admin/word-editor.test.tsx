@@ -179,7 +179,7 @@ const page = (files: ReturnType<typeof buildDataFiles>) => (
 const okFetch = () => vi.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve({ ok: true }) });
 const bodyOf = (fetchMock: ReturnType<typeof vi.fn>, call = 0) =>
   JSON.parse((fetchMock.mock.calls[call] as [string, RequestInit])[1].body as string) as { cases: { case: string; single?: object; examples?: object[] }[] };
-const CONFLICT = "Слово изменилось на диске. Перезагрузите его, чтобы не потерять изменения.";
+const CONFLICT = "Слово изменилось на диске. Перезагрузка отменит ваши несохранённые изменения.";
 
 describe("external data changes for the open word (finding 1)", () => {
   it("adopts newer on-disk content silently when there are no unsaved edits, and the next save sends it", async () => {
@@ -389,4 +389,26 @@ it("does not report a conflict when HMR echoes the editor's own save before the 
   expect(screen.getByText("Сохранено")).toBeInTheDocument();
   expect(screen.queryByText(CONFLICT)).not.toBeInTheDocument();
   expect(screen.getByText("Сохранить")).toBeEnabled();
+});
+
+it("cannot reload mid-save, so the save resolving afterwards cannot leave the other version as a saveable draft (decision 1a)", async () => {
+  let resolve!: (v: unknown) => void;
+  const fetchMock = vi.fn().mockImplementation(() => new Promise((r) => { resolve = r; }));
+  vi.stubGlobal("fetch", fetchMock);
+  const { rerender } = render(page(tableData({ russian: "стол" })));
+  fireEvent.click(screen.getByText("стол"));
+  fireEvent.change(screen.getAllByPlaceholderText("English")[0]!, { target: { value: "mine" } });
+  fireEvent.click(screen.getByText("Сохранить"));
+  // Someone else's version lands while the save is in flight.
+  rerender(page(tableData({ russian: "стол", english: "theirs" })));
+  expect(screen.getByText(CONFLICT)).toBeInTheDocument();
+  expect(screen.getByText("Перезагрузить слово")).toBeDisabled();
+  fireEvent.click(screen.getByText("Перезагрузить слово"));
+  expect(screen.getAllByPlaceholderText("English")[0]).toHaveValue("mine");
+  await act(async () => { resolve({ ok: true, json: () => Promise.resolve({}) }); await Promise.resolve(); });
+  // The HMR echo of the saved file arrives; the draft is still "mine", so nothing that was just written can be lost.
+  rerender(page(tableData({ russian: "стол", english: "mine" })));
+  expect(screen.getAllByPlaceholderText("English")[0]).toHaveValue("mine");
+  expect(screen.getByText("Сохранить")).toBeEnabled();
+  expect(fetchMock).toHaveBeenCalledTimes(1);
 });

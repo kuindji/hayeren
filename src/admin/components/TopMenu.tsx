@@ -6,6 +6,8 @@ const LINKS: [to: string, label: string][] = [
   ["/numerals", "Числительные"],
   ["/questions", "Вопросительные слова"],
   ["/prepostpositions", "Пре/послелоги"],
+  ["/cases", "Падежи"],
+  ["/declensions", "Склонения"],
 ];
 
 export function TopMenu() {

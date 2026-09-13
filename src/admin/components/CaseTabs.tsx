@@ -1,4 +1,5 @@
 import type { CaseFile } from "@/data/schema";
+import { Tabs } from "./Tabs";
 
 export function CaseTabs({ cases, current, onChange, withInfo = false }: {
   cases: CaseFile[];
@@ -10,13 +11,5 @@ export function CaseTabs({ cases, current, onChange, withInfo = false }: {
     ...(withInfo ? [{ id: "info", label: "Общая информация" }] : []),
     ...cases.map((c) => ({ id: c.id, label: c.name.russian ?? c.id })),
   ];
-  return (
-    <div role="tablist" className="case-tabs">
-      {tabs.map((t) => (
-        <button key={t.id} type="button" role="tab" aria-selected={t.id === current} onClick={() => onChange(t.id)}>
-          {t.label}
-        </button>
-      ))}
-    </div>
-  );
+  return <Tabs tabs={tabs} current={current} onChange={onChange} />;
 }

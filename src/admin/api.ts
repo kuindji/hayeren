@@ -7,6 +7,8 @@ async function call(method: string, path: string, body?: unknown): Promise<unkno
   if (!res.ok) throw new Error(json.error ?? `HTTP ${res.status}`);
   return json;
 }
+export const errorText = (e: unknown) => (e instanceof Error ? e.message : String(e));
+
 export const api = {
   putWord: (type: WordType, w: WordFile) => call("PUT", `/words/${WORD_FOLDERS[type]}/${w.id}`, w),
   deleteWord: (type: WordType, id: string) => call("DELETE", `/words/${WORD_FOLDERS[type]}/${id}`),

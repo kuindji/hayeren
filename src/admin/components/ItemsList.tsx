@@ -1,26 +1,21 @@
-import { useMemo, useState } from "react";
-import type { WordFile, WordType } from "@/data/schema";
-import { Word } from "@/model/Word";
+import { useState } from "react";
 
-export function ItemsList({ type, words, selectedId, onSelect }: {
-  type: WordType;
-  words: WordFile[];
+export interface ListItem {
+  id: string;
+  name: string;
+  /** Extra strings the search box matches besides the name and id. */
+  search?: string[];
+}
+
+/** A searchable list of items, shown in the given order. */
+export function ItemsList({ items, selectedId, onSelect }: {
+  items: ListItem[];
   selectedId: string | null;
   onSelect: (id: string) => void;
 }) {
   const [query, setQuery] = useState("");
-  const items = useMemo(
-    () =>
-      words
-        .map((w) => {
-          const nominative = new Word(type, w).nominative();
-          return { id: w.id, name: nominative.russian ?? w.id, armenian: nominative.armenian ?? "" };
-        })
-        .sort((a, b) => a.name.localeCompare(b.name)),
-    [type, words],
-  );
   const q = query.trim().toLowerCase();
-  const visible = q === "" ? items : items.filter((i) => [i.name, i.id, i.armenian].some((s) => s.toLowerCase().includes(q)));
+  const visible = q === "" ? items : items.filter((i) => [i.name, i.id, ...(i.search ?? [])].some((s) => s.toLowerCase().includes(q)));
 
   return (
     <div className="items-list">

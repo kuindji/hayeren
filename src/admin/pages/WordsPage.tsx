@@ -1,23 +1,18 @@
-import { useEffect, useMemo, useRef, useState } from "react";
-import type { Example, Form, Localized, WordCase, WordFile, WordType } from "@/data/schema";
+import { useMemo, useState } from "react";
+import type { Example, Form, WordCase, WordFile, WordType } from "@/data/schema";
 import { compact, stableStringify } from "@/data/json";
-import { api } from "@/admin/api";
+import { api, errorText } from "@/admin/api";
 import { useAdminData } from "@/admin/contexts";
+import { compactLocalized, setOptional } from "@/admin/compact";
+import { useDraft } from "@/admin/hooks/useDraft";
+import { Word } from "@/model/Word";
 import { ItemsList } from "@/admin/components/ItemsList";
 import { CaseTabs } from "@/admin/components/CaseTabs";
 import { LocalizedInput } from "@/admin/components/LocalizedInput";
 import { FormEditor } from "@/admin/components/FormEditor";
 import { ExamplesEditor } from "@/admin/components/ExamplesEditor";
 import { DeclensionSelector } from "@/admin/components/DeclensionSelector";
-
-const SAVED_MS = 2000;
-const errorText = (e: unknown) => (e instanceof Error ? e.message : String(e));
-
-function compactLocalized<T extends Localized>(l: T | undefined): T | undefined {
-  if (!l) return undefined;
-  const out = Object.fromEntries(Object.entries(l).filter(([, v]) => v !== undefined && v !== "")) as T;
-  return Object.keys(out).length > 0 ? out : undefined;
-}
+import { SaveActions } from "@/admin/components/DraftStatus";
 
 function compactForm<T extends Form>(f: T | undefined): T | undefined {
   if (!f) return undefined;
@@ -65,13 +60,6 @@ export function compactWord(w: WordFile): WordFile {
   };
 }
 
-function setOptional<T extends object, K extends keyof T>(o: T, key: K, value: T[K] | undefined): T {
-  const out = { ...o };
-  if (value === undefined) delete out[key];
-  else out[key] = value;
-  return out;
-}
-
 function patchCase(word: WordFile, caseId: string, caseOrder: string[], patch: (c: WordCase) => WordCase): WordFile {
   const index = word.cases.findIndex((c) => c.case === caseId);
   if (index !== -1) return { ...word, cases: word.cases.map((c, i) => (i === index ? patch(c) : c)) };
@@ -90,108 +78,24 @@ function WordEditor({ type, word, onDeleted }: { type: WordType; word: WordFile;
   const data = useAdminData();
   const cases = useMemo(() => [...data.cases].sort((a, b) => a.position - b.position), [data.cases]);
   const caseOrder = useMemo(() => cases.map((c) => c.id), [cases]);
-  // `base` is the on-disk word the draft was started from (or last saved as). Comparing the two tells whether there
-  // are unsaved edits when newer data for this word arrives.
-  const [base, setBase] = useState<WordFile>(word);
-  const [draft, setDraft] = useState<WordFile>(word);
-  const [conflict, setConflict] = useState(false);
-  // The word being written right now. Vite can push the saved file back before the PUT response resolves, and that
-  // echo must not count as someone else's change.
-  const [pending, setPending] = useState<WordFile | null>(null);
-  const [seenWord, setSeenWord] = useState<WordFile>(word);
-  if (word !== seenWord) {
-    // Adjusting state while rendering (React's "storing information from previous renders" pattern): no effect, no
-    // extra paint with stale values.
-    setSeenWord(word);
-    if (sameWord(word, base)) {
-      setConflict(false);
-    } else if (pending !== null && sameWord(word, pending)) {
-      setBase(word);
-      setConflict(false);
-    } else if (sameWord(draft, base)) {
-      setBase(word);
-      setDraft(word);
-      setConflict(false);
-    } else {
-      setConflict(true);
-    }
-  }
+  const state = useDraft(word, sameWord);
+  const { draft, setDraft } = state;
   const [tab, setTab] = useState(() => cases[0]?.id ?? "info");
-  const [saving, setSaving] = useState(false);
-  const [saved, setSaved] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const savedTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
-  // Only the latest request may update the status: an earlier one resolving late must not show a stale result.
-  const requestSeq = useRef(0);
-  useEffect(() => () => clearTimeout(savedTimer.current), []);
 
-  const save = async (next: WordFile) => {
-    if (saving || conflict) return;
-    const seq = ++requestSeq.current;
-    clearTimeout(savedTimer.current);
-    setSaving(true);
-    setPending(next);
-    setSaved(false);
-    setError(null);
-    try {
-      await api.putWord(type, compactWord(next));
-      if (seq !== requestSeq.current) return;
-      setBase(next);
-      setSaved(true);
-      savedTimer.current = setTimeout(() => setSaved(false), SAVED_MS);
-    } catch (e) {
-      if (seq !== requestSeq.current) return;
-      // The draft is left untouched so the user can fix it and retry.
-      setError(`Не удалось сохранить: ${errorText(e)}`);
-    } finally {
-      if (seq === requestSeq.current) {
-        setSaving(false);
-        setPending(null);
-      }
-    }
-  };
-
-  const reload = () => {
-    setBase(word);
-    setDraft(word);
-    setConflict(false);
-    setSaved(false);
-    setError(null);
-  };
+  const save = (next: WordFile) => state.save(next, (w) => api.putWord(type, compactWord(w)));
 
   const remove = async () => {
-    if (saving || !window.confirm("Вы уверены?")) return;
-    const seq = ++requestSeq.current;
-    setSaving(true);
-    setSaved(false);
-    setError(null);
-    try {
-      await api.deleteWord(type, word.id);
-      onDeleted();
-    } catch (e) {
-      if (seq !== requestSeq.current) return;
-      setError(`Не удалось удалить слово: ${errorText(e)}`);
-      setSaving(false);
-    }
+    if (state.saving || !window.confirm("Вы уверены?")) return;
+    if (await state.run(() => api.deleteWord(type, word.id), "Не удалось удалить слово")) onDeleted();
   };
 
-  const status = (
-    <>
-      {conflict && (
-        <span className="save-error" role="alert">
-          Слово изменилось на диске. Перезагрузите его, чтобы не потерять изменения.
-          <button type="button" onClick={reload}>Перезагрузить слово</button>
-        </span>
-      )}
-      {saved && <span className="save-status" role="status">Сохранено</span>}
-      {error && <span className="save-error" role="alert">{error}</span>}
-    </>
-  );
   const saveButton = (
-    <div className="word-actions">
-      <button type="button" onClick={() => void save(draft)} disabled={saving || conflict}>Сохранить</button>
-      {status}
-    </div>
+    <SaveActions
+      state={state}
+      onSave={() => void save(draft)}
+      conflictMessage="Слово изменилось на диске."
+      reloadLabel="Перезагрузить слово"
+    />
   );
   const wordCase = draft.cases.find((c) => c.case === tab);
 
@@ -211,7 +115,7 @@ function WordEditor({ type, word, onDeleted }: { type: WordType; word: WordFile;
             />
           )}
           {saveButton}
-          <button type="button" className="danger" onClick={() => void remove()} disabled={saving}>Удалить слово</button>
+          <button type="button" className="danger" onClick={() => void remove()} disabled={state.saving}>Удалить слово</button>
         </div>
       ) : (
         <div className="word-case">
@@ -245,7 +149,7 @@ function WordEditor({ type, word, onDeleted }: { type: WordType; word: WordFile;
             key={tab}
             examples={wordCase?.examples}
             showPposition={type !== "prepostposition"}
-            disabled={saving || conflict}
+            disabled={state.saving || state.conflict}
             onChange={(v) => {
               // Like the old admin, saving an example persists it right away (together with the rest of the draft).
               const next = patchCase(draft, tab, caseOrder, (c) => setOptional(c, "examples", v));
@@ -267,6 +171,16 @@ export function WordsPage({ type, title }: { type: WordType; title: string }) {
   const [adding, setAdding] = useState(false);
   const [addError, setAddError] = useState<string | null>(null);
   const selected = words.find((w) => w.id === selectedId);
+  const items = useMemo(
+    () =>
+      words
+        .map((w) => {
+          const nominative = new Word(type, w).nominative();
+          return { id: w.id, name: nominative.russian ?? w.id, search: [nominative.armenian ?? ""] };
+        })
+        .sort((a, b) => a.name.localeCompare(b.name)),
+    [type, words],
+  );
 
   const add = async () => {
     const id = newId;
@@ -309,7 +223,7 @@ export function WordsPage({ type, title }: { type: WordType; title: string }) {
       </div>
       <div className="page-2col">
         <div>
-          <ItemsList type={type} words={words} selectedId={selectedId} onSelect={setSelectedId} />
+          <ItemsList items={items} selectedId={selectedId} onSelect={setSelectedId} />
         </div>
         <div>
           {selected && <WordEditor key={selected.id} type={type} word={selected} onDeleted={() => setSelectedId(null)} />}

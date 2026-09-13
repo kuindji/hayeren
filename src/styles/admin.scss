@@ -196,3 +196,88 @@ h5 {
 .case-example-form {
     margin-bottom: $spacing_main;
 }
+
+.admin-header {
+    background-color: $color_paper;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, .05);
+
+    .top-menu {
+        box-shadow: none;
+    }
+}
+
+.git-status {
+    padding: 0 $spacing_main;
+
+    &:empty {
+        display: none;
+    }
+
+    .git-status-files {
+        color: $color_secondary;
+        cursor: help;
+    }
+}
+
+.validate-problems {
+    padding: $spacing_small 0;
+    color: $color_dark;
+    font-weight: 700;
+}
+
+.case-question,
+.case-group {
+    margin-bottom: $spacing_main;
+    padding: $spacing_small $spacing_main;
+    border: 1px solid #f0f0f0;
+}
+
+.case-group select[multiple] {
+    min-height: 8rem;
+}
+
+.case-group-add {
+    display: flex;
+    align-items: center;
+    gap: $spacing_small;
+
+    select {
+        width: 10rem;
+    }
+}
+
+.case-articles-list li {
+    display: flex;
+    align-items: center;
+    gap: $spacing_small;
+    padding: 0.2rem 0;
+
+    & > span {
+        margin-right: auto;
+    }
+}
+
+.article-editor-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing_main;
+
+    textarea {
+        width: 100%;
+        min-height: 20rem;
+        font-family: $font_secondary;
+    }
+}
+
+.declensions-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+        text-align: left;
+    }
+
+    td {
+        padding: 0 $spacing_small 0 0;
+    }
+}
