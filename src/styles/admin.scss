@@ -269,6 +269,22 @@ h5 {
     }
 }
 
+// 00_reset strips list markers and padding from every ul/li; Markdown lists in the preview need them back.
+.article-preview {
+    ul, ol {
+        margin: $spacing_small 0;
+        padding-left: 1.5rem;
+    }
+
+    ul li {
+        list-style: disc;
+    }
+
+    ol li {
+        list-style: decimal;
+    }
+}
+
 .declensions-table {
     width: 100%;
     border-collapse: collapse;

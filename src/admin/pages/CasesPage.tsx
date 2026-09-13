@@ -25,10 +25,10 @@ const sameCase = (a: CaseFile, b: CaseFile) => stableStringify(compactCaseFile(a
 function CaseEditor({ caseFile }: { caseFile: CaseFile }) {
   const state = useDraft(caseFile, sameCase);
   const [tab, setTab] = useState("info");
-  const saveCase = (next: CaseFile) => state.save(next, (c) => api.putCase(compactCaseFile(c)));
+  const writeCase = (c: CaseFile) => api.putCase(compactCaseFile(c));
   // One draft for the whole case: every tab's "Сохранить" writes all of it.
   const actions = (
-    <SaveActions state={state} onSave={() => void saveCase(state.draft)} conflictMessage="Падеж изменился на диске." reloadLabel="Перезагрузить падеж" />
+    <SaveActions state={state} onSave={() => void state.save(state.draft, writeCase)} conflictMessage="Падеж изменился на диске." reloadLabel="Перезагрузить падеж" />
   );
   const props = { value: state.draft, onChange: state.setDraft, actions };
 
@@ -38,7 +38,7 @@ function CaseEditor({ caseFile }: { caseFile: CaseFile }) {
       {tab === "info" && <InfoTab {...props} />}
       {tab === "questions" && <QuestionsTab {...props} />}
       {tab === "groups" && <GroupsTab {...props} />}
-      {tab === "articles" && <ArticlesTab state={state} saveCase={saveCase} actions={actions} />}
+      {tab === "articles" && <ArticlesTab state={state} writeCase={writeCase} actions={actions} />}
     </div>
   );
 }

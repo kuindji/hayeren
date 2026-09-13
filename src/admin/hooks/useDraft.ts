@@ -1,11 +1,20 @@
-import { useEffect, useRef, useState, type Dispatch, type SetStateAction } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type Dispatch, type SetStateAction } from "react";
 import { errorText } from "@/admin/api";
 
 const SAVED_MS = 2000;
 
+export interface SaveSteps {
+  /** Runs first, under this draft's in-flight state; resolving to false stops before this draft is written. */
+  before?: () => Promise<boolean>;
+  /** Runs after this draft was written, still in flight; its result is the result of the whole save. */
+  after?: () => Promise<boolean>;
+}
+
 export interface Draft<T> {
   draft: T;
   setDraft: Dispatch<SetStateAction<T>>;
+  /** The draft as of the latest render, for code that resumes after an await. */
+  latest: () => T;
   /** The on-disk value changed while the draft has unsaved edits. Saving is blocked until `reload`. */
   conflict: boolean;
   /** A write is in flight: every write button should be disabled. */
@@ -14,6 +23,12 @@ export interface Draft<T> {
   error: string | null;
   /** Writes `next` with `write`; on success `next` becomes the base. Resolves to whether it succeeded. */
   save: (next: T, write: (value: T) => Promise<unknown>) => Promise<boolean>;
+  /**
+   * A multi-step save: `before` runs first, then `build` is applied to the draft as it is at that moment (so on-disk
+   * changes adopted meanwhile are kept) and the result is written and applied to the draft, then `after` runs. The
+   * whole sequence counts as in flight, and a conflict raised during `before` stops it before this draft is written.
+   */
+  saveLatest: (build: (latest: T) => T, write: (value: T) => Promise<unknown>, steps?: SaveSteps) => Promise<boolean>;
   /** Runs another write (e.g. a delete) under the same in-flight guard; a failure shows `${failure}: ${error}`. */
   run: (action: () => Promise<unknown>, failure: string) => Promise<boolean>;
   /** Drops the draft and adopts the current on-disk value. Does nothing while a write is in flight. */
@@ -58,23 +73,42 @@ export function useDraft<T>(source: T, same: (a: T, b: T) => boolean): Draft<T> 
   const savedTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   // Only the latest request may update the status: an earlier one resolving late must not show a stale result.
   const requestSeq = useRef(0);
+  // The guards below run in handlers that may resume after an await, when this render's `draft`, `conflict` and
+  // `saving` are stale; they read these mirrors instead.
+  const draftRef = useRef(draft);
+  const conflictRef = useRef(conflict);
+  const savingRef = useRef(false);
+  useLayoutEffect(() => {
+    draftRef.current = draft;
+    conflictRef.current = conflict;
+  });
   useEffect(() => () => clearTimeout(savedTimer.current), []);
 
-  const save = async (next: T, write: (value: T) => Promise<unknown>) => {
-    if (saving || conflict) return false;
+  const setBusy = (busy: boolean) => {
+    savingRef.current = busy;
+    setSaving(busy);
+  };
+
+  const perform = async (build: (latest: T) => T, write: (value: T) => Promise<unknown>, applyToDraft: boolean, steps: SaveSteps = {}) => {
+    if (savingRef.current || conflictRef.current) return false;
     const seq = ++requestSeq.current;
     clearTimeout(savedTimer.current);
-    setSaving(true);
-    setPending({ value: next });
+    setBusy(true);
     setSaved(false);
     setError(null);
     try {
+      if (steps.before && !(await steps.before())) return false;
+      // A conflict raised while `before` ran blocks the write; its notice is already shown.
+      if (seq !== requestSeq.current || conflictRef.current) return false;
+      const next = build(draftRef.current);
+      setPending({ value: next });
       await write(next);
       if (seq !== requestSeq.current) return false;
       setBase(next);
+      if (applyToDraft) setDraft(build);
       setSaved(true);
       savedTimer.current = setTimeout(() => setSaved(false), SAVED_MS);
-      return true;
+      return steps.after ? await steps.after() : true;
     } catch (e) {
       if (seq !== requestSeq.current) return false;
       // The draft is left untouched so the user can fix it and retry.
@@ -82,17 +116,20 @@ export function useDraft<T>(source: T, same: (a: T, b: T) => boolean): Draft<T> 
       return false;
     } finally {
       if (seq === requestSeq.current) {
-        setSaving(false);
+        setBusy(false);
         setPending(null);
       }
     }
   };
 
+  const save = (next: T, write: (value: T) => Promise<unknown>) => perform(() => next, write, false);
+  const saveLatest = (build: (latest: T) => T, write: (value: T) => Promise<unknown>, steps?: SaveSteps) => perform(build, write, true, steps);
+
   const run = async (action: () => Promise<unknown>, failure: string) => {
-    if (saving) return false;
+    if (savingRef.current) return false;
     const seq = ++requestSeq.current;
     clearTimeout(savedTimer.current);
-    setSaving(true);
+    setBusy(true);
     setSaved(false);
     setError(null);
     try {
@@ -102,7 +139,7 @@ export function useDraft<T>(source: T, same: (a: T, b: T) => boolean): Draft<T> 
       if (seq === requestSeq.current) setError(`${failure}: ${errorText(e)}`);
       return false;
     } finally {
-      if (seq === requestSeq.current) setSaving(false);
+      if (seq === requestSeq.current) setBusy(false);
     }
   };
 
@@ -110,7 +147,7 @@ export function useDraft<T>(source: T, same: (a: T, b: T) => boolean): Draft<T> 
     // Reloading mid-save would set base and draft to the other version, and the save resolving afterwards would make
     // base the saved value again: the conflict would then clear on the echo and the next save would silently replace
     // the edits that were just written.
-    if (saving) return;
+    if (savingRef.current) return;
     setBase(source);
     setDraft(source);
     setConflict(false);
@@ -118,5 +155,5 @@ export function useDraft<T>(source: T, same: (a: T, b: T) => boolean): Draft<T> 
     setError(null);
   };
 
-  return { draft, setDraft, conflict, saving, saved, error, save, run, reload };
+  return { draft, setDraft, latest: () => draftRef.current, conflict, saving, saved, error, save, saveLatest, run, reload };
 }

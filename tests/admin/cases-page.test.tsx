@@ -168,3 +168,85 @@ it("does not report a conflict when HMR echoes the case's own save before the PU
   expect(screen.getByText("Сохранено")).toBeInTheDocument();
   expect(screen.getByText("Сохранить")).toBeEnabled();
 });
+
+// ---- Fix round 1 ----
+
+describe("two-step article save (I1, I2)", () => {
+  const pendingFetch = () => {
+    const resolvers: ((v: unknown) => void)[] = [];
+    const fetchMock = vi.fn().mockImplementation(() => new Promise((r) => { resolvers.push(r); }));
+    vi.stubGlobal("fetch", fetchMock);
+    return { fetchMock, resolve: (i: number) => act(async () => { resolvers[i]!({ ok: true, json: () => Promise.resolve({}) }); await Promise.resolve(); await Promise.resolve(); }) };
+  };
+  const caseSaveOutside = (form: HTMLElement) => screen.getAllByText("Сохранить").find((b) => !form.contains(b))!;
+  const newArticle = () => {
+    fireEvent.click(screen.getByRole("tab", { name: "Статьи" }));
+    fireEvent.click(screen.getByText("Добавить статью"));
+    const form = screen.getByRole("group", { name: "Статья" });
+    fireEvent.change(within(form).getByLabelText("Идентификатор статьи"), { target: { value: "usage" } });
+    fireEvent.change(within(form).getByLabelText("Заголовок"), { target: { value: "Применение" } });
+    fireEvent.change(within(form).getByLabelText("Текст"), { target: { value: "x" } });
+    return form;
+  };
+
+  it("keeps the case's own Сохранить disabled through both writes, so no case PUT can overlap", async () => {
+    const { fetchMock, resolve } = pendingFetch();
+    render(page(caseData({})));
+    fireEvent.click(screen.getByText("Род"));
+    const form = newArticle();
+    fireEvent.click(within(form).getByText("Сохранить"));
+    expect(caseSaveOutside(form)).toBeDisabled(); // article PUT in flight
+    await resolve(0);
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(2));
+    expect(caseSaveOutside(form)).toBeDisabled(); // case PUT in flight
+    await resolve(1);
+    expect(caseSaveOutside(form)).toBeEnabled();
+  });
+
+  it("builds the case PUT from on-disk changes adopted while the article PUT was in flight", async () => {
+    const { fetchMock, resolve } = pendingFetch();
+    const { rerender } = render(page(caseData({})));
+    fireEvent.click(screen.getByText("Род"));
+    const form = newArticle();
+    fireEvent.click(within(form).getByText("Сохранить"));
+    // No unsaved case edits, so the editor adopts someone else's newer possessive.json.
+    rerender(page(caseData({ description: { russian: "чужое" } })));
+    await resolve(0);
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(2));
+    expect(body(fetchMock, 1)).toMatchObject({ description: { russian: "чужое" }, articles: ["usage"] });
+    await resolve(1);
+  });
+
+  it("does not write the case when it goes into conflict mid-flow; the conflict notice shows and the article draft is kept", async () => {
+    const { fetchMock, resolve } = pendingFetch();
+    const { rerender } = render(page(caseData({})));
+    fireEvent.click(screen.getByText("Род"));
+    fireEvent.change(screen.getByLabelText("Описание (russian)"), { target: { value: "моё" } }); // unsaved case edit
+    const form = newArticle();
+    fireEvent.click(within(form).getByText("Сохранить"));
+    rerender(page(caseData({ description: { russian: "чужое" } })));
+    expect(screen.getByText(/Падеж изменился на диске/)).toBeInTheDocument();
+    await resolve(0);
+    await act(async () => { await Promise.resolve(); });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(callOf(fetchMock, 0)).toBe("PUT /api/articles/possessive/usage");
+    expect(within(form).getByLabelText("Текст")).toHaveValue("x");
+  });
+});
+
+it("keeps a listed noun that fails the group filter visible and selected, so changing the selection does not drop it (M3)", async () => {
+  const fetchMock = okFetch();
+  vi.stubGlobal("fetch", fetchMock);
+  render(page(caseData({ groups: [{ words: ["cup"] }] })));
+  fireEvent.click(screen.getByText("Род"));
+  fireEvent.click(screen.getByRole("tab", { name: "Группы слов" }));
+  const group = screen.getByRole("group", { name: "Группа" });
+  expect(optionsOf(group)).toEqual(["стол", "стул", "(недопустимо) чашка"]);
+  const select = within(group).getByRole<HTMLSelectElement>("listbox", { name: "Слова" });
+  expect(Array.from(select.selectedOptions, (o) => o.value)).toEqual(["cup"]);
+  select.options[0]!.selected = true;
+  fireEvent.change(select);
+  fireEvent.click(screen.getByText("Сохранить"));
+  await waitFor(() => expect(fetchMock).toHaveBeenCalled());
+  expect(body(fetchMock, 0).groups).toEqual([{ words: ["table", "cup"] }]);
+});

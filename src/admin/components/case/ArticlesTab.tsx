@@ -17,9 +17,9 @@ const sameArticle = (a: ArticleValue, b: ArticleValue) => stableStringify(cleanA
 
 interface Editing { key: number; slug: string; isNew: boolean }
 
-function ArticleEditor({ caseState, saveCase, editing, onSaved, onDeleted, onClose }: {
+function ArticleEditor({ caseState, writeCase, editing, onSaved, onDeleted, onClose }: {
   caseState: Draft<CaseFile>;
-  saveCase: (next: CaseFile) => Promise<boolean>;
+  writeCase: (c: CaseFile) => Promise<unknown>;
   editing: Editing;
   onSaved: (slug: string) => void;
   onDeleted: () => void;
@@ -51,24 +51,31 @@ function ArticleEditor({ caseState, saveCase, editing, onSaved, onDeleted, onClo
         return;
       }
     }
-    const listed = caseState.draft.articles ?? [];
-    const articles = listed.includes(slug) ? listed : [...listed, slug];
-    // Article file first, then the case listing it: if the second write fails, the leftover is an unlisted article file,
-    // which the validator reports, not a case pointing at a missing file.
-    const written = await state.save(draft, (a) => api.putArticle(caseId, slug, { ...cleanArticle(a), position: articles.indexOf(slug) }));
-    if (!written) return;
-    onSaved(slug);
-    if (await saveCase({ ...caseState.draft, articles })) {
-      caseState.setDraft((c) => ((c.articles ?? []).includes(slug) ? c : { ...c, articles: [...(c.articles ?? []), slug] }));
-    }
+    const withSlug = (c: CaseFile): CaseFile => ((c.articles ?? []).includes(slug) ? c : { ...c, articles: [...(c.articles ?? []), slug] });
+    // Article file first, then the case listing it: if the second write fails (or the case goes into conflict in
+    // between), the leftover is an unlisted article file, which the validator reports, not a case pointing at a missing
+    // file. Both writes run as one case save, so the case's own write buttons stay disabled throughout, and the case
+    // is written from its draft as it is after the article write.
+    await caseState.saveLatest(withSlug, writeCase, {
+      before: async () => {
+        const position = (withSlug(caseState.latest()).articles ?? []).indexOf(slug);
+        const written = await state.save(draft, (a) => api.putArticle(caseId, slug, { ...cleanArticle(a), position }));
+        if (written) onSaved(slug);
+        return written;
+      },
+    });
   };
 
   const remove = async () => {
-    if (busy || !window.confirm("Вы уверены?")) return;
+    if (busy || state.conflict || !window.confirm("Вы уверены?")) return;
     // Unlist first, then delete the file: a failed delete leaves an unlisted file the validator reports.
-    if (!(await saveCase({ ...caseState.draft, articles: (caseState.draft.articles ?? []).filter((s) => s !== slug) }))) return;
-    caseState.setDraft((c) => ({ ...c, articles: (c.articles ?? []).filter((s) => s !== slug) }));
-    if (await state.run(() => api.deleteArticle(caseId, slug), "Не удалось удалить статью")) onDeleted();
+    await caseState.saveLatest((c) => ({ ...c, articles: (c.articles ?? []).filter((s) => s !== slug) }), writeCase, {
+      after: async () => {
+        const deleted = await state.run(() => api.deleteArticle(caseId, slug), "Не удалось удалить статью");
+        if (deleted) onDeleted();
+        return deleted;
+      },
+    });
   };
 
   return (
@@ -106,7 +113,9 @@ function ArticleEditor({ caseState, saveCase, editing, onSaved, onDeleted, onClo
       </div>
       <div className="word-actions">
         <button type="button" onClick={() => void save()} disabled={busy || state.conflict || caseState.conflict}>Сохранить</button>
-        {!editing.isNew && <button type="button" className="danger" onClick={() => void remove()} disabled={busy}>Удалить</button>}
+        {!editing.isNew && (
+          <button type="button" className="danger" onClick={() => void remove()} disabled={busy || state.conflict}>Удалить</button>
+        )}
         <button type="button" onClick={onClose} disabled={busy}>Закрыть</button>
         <DraftStatus state={state} conflictMessage="Статья изменилась на диске." reloadLabel="Перезагрузить статью" />
       </div>
@@ -114,9 +123,9 @@ function ArticleEditor({ caseState, saveCase, editing, onSaved, onDeleted, onClo
   );
 }
 
-export function ArticlesTab({ state, saveCase, actions }: {
+export function ArticlesTab({ state, writeCase, actions }: {
   state: Draft<CaseFile>;
-  saveCase: (next: CaseFile) => Promise<boolean>;
+  writeCase: (c: CaseFile) => Promise<unknown>;
   actions: ReactNode;
 }) {
   const data = useAdminData();
@@ -157,7 +166,7 @@ export function ArticlesTab({ state, saveCase, actions }: {
         <ArticleEditor
           key={editing.key}
           caseState={state}
-          saveCase={saveCase}
+          writeCase={writeCase}
           editing={editing}
           onSaved={(slug) => setEditing((e) => (e ? { ...e, slug, isNew: false } : e))}
           onDeleted={() => setEditing(null)}

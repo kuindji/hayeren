@@ -22,13 +22,22 @@ function addGroup(c: CaseFile, declension: string | undefined): CaseFile {
   };
 }
 
-function GroupEditor({ group, nouns, onChange, onRemove }: {
+function GroupEditor({ group, nouns, labels, onChange, onRemove }: {
   group: CaseGroup;
   /** The nouns this group may list, as [id, label]. */
   nouns: [string, string][];
+  /** Labels of all nouns by id. */
+  labels: Map<string, string>;
   onChange: (next: CaseGroup) => void;
   onRemove: () => void;
 }) {
+  // A listed noun the filter excludes (data the validator reports) stays offered and selected, so changing the selection
+  // never drops it silently; it goes only when deliberately deselected.
+  const offered = new Set(nouns.map(([id]) => id));
+  const options: [string, string][] = [
+    ...nouns,
+    ...group.words.filter((id) => !offered.has(id)).map((id): [string, string] => [id, `(недопустимо) ${labels.get(id) ?? id}`]),
+  ];
   return (
     <fieldset aria-label="Группа" className="case-group">
       <LocalizedInput label="Название" value={group.name} onChange={(v) => onChange(setOptional(group, "name", v))} />
@@ -41,7 +50,7 @@ function GroupEditor({ group, nouns, onChange, onRemove }: {
         value={group.words}
         onChange={(e) => onChange({ ...group, words: Array.from(e.target.selectedOptions, (o) => o.value) })}
       >
-        {nouns.map(([id, label]) => <option key={id} value={id}>{label}</option>)}
+        {options.map(([id, label]) => <option key={id} value={id}>{label}</option>)}
       </select>
       <button type="button" className="danger" onClick={onRemove}>Удалить группу</button>
     </fieldset>
@@ -59,6 +68,7 @@ export function GroupsTab({ value, onChange, actions }: { value: CaseFile; onCha
         .sort((a, b) => a.label.localeCompare(b.label)),
     [data.words.noun],
   );
+  const labels = useMemo(() => new Map(nouns.map(({ file, label }) => [file.id, label])), [nouns]);
   // The validator rejects (and the site hides or blanks) any other noun: a custom group may only list nouns with an entry
   // for this case, a declension group only nouns whose entry for this case carries that declension.
   const eligible = (declension: string | undefined): [string, string][] =>
@@ -93,6 +103,7 @@ export function GroupsTab({ value, onChange, actions }: { value: CaseFile; onCha
             key={i}
             group={g}
             nouns={customNouns}
+            labels={labels}
             onChange={(next) => setGroups((list) => list.map((x, j) => (j === i ? next : x)))}
             onRemove={() => setGroups((list) => list.filter((_, j) => j !== i))}
           />
@@ -114,6 +125,7 @@ export function GroupsTab({ value, onChange, actions }: { value: CaseFile; onCha
                   key={j}
                   group={g}
                   nouns={eligible(d.declension)}
+                  labels={labels}
                   onChange={(next) => setDeclensionGroups(i, (list) => list.map((x, k) => (k === j ? next : x)))}
                   onRemove={() => setDeclensionGroups(i, (list) => list.filter((_, k) => k !== j))}
                 />
