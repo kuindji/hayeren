@@ -9,8 +9,8 @@ function Question({ q }: { q: CaseQuestion }) {
   const localFilter = useFilter(LocalFilterContext);
   const pp = useFilterKey("pposition", LocalFilterContext);
   const language = useLanguage();
-  // The filter stores a missing pposition as null, so compare against q.pposition ?? null. The old code compared
-  // null with undefined, which never matched: pposition-less questions could not be highlighted or toggled off.
+  // The filter stores a missing pposition as null, so compare against q.pposition ?? null (typed, pposition-less
+  // questions such as possessive "чегó"). The old code compared null with undefined, which never matched.
   const pposition = q.pposition ?? null;
   const active = !!pp && pp.pposition === pposition && pp.type === q.type;
 
@@ -19,11 +19,18 @@ function Question({ q }: { q: CaseQuestion }) {
     [localFilter, active, pposition, q],
   );
 
+  const comment = q.comment?.[language] && <span className="comment"><Text t={q.comment} /></span>;
+  // No type and no pposition (nominative "кто"/"что"): the question cannot filter anything, and every such question
+  // would share one filter key, so it is a plain label: no link, no "clickable" class, never active.
+  if (!q.type && !q.pposition) {
+    return <li><Text t={q.question} />{comment}</li>;
+  }
+
   return (
     <li className={["clickable", active ? "active" : ""].join(" ")}>
       <a href="#" onClick={onClick}>
         <Text t={q.question} />
-        {q.comment?.[language] && <span className="comment"><Text t={q.comment} /></span>}
+        {comment}
       </a>
     </li>
   );

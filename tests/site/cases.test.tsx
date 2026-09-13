@@ -46,3 +46,23 @@ it("clicking a question filters examples by prepostposition", async () => {
   expect(within(possessive).getByText("для чегó").closest("li")).toHaveClass("active");
   expect(within(possessive).getAllByText(/համար/).length).toBeGreaterThan(0);
 });
+
+it("nominative кто/что are plain labels: clicking them highlights nothing and filters nothing", async () => {
+  await renderCases();
+  const nominative = screen.getAllByRole("heading", { level: 2 })[0]!.closest<HTMLElement>(".full-case")!;
+  // "что" is also a word translation further down the column, so look questions up inside the questions block.
+  const questions = nominative.querySelector<HTMLElement>(".full-case__questions")!;
+  const words = () => Array.from(nominative.querySelectorAll(".word"), (w) => w.textContent);
+  const wordsBefore = words();
+  expect(wordsBefore.length).toBeGreaterThan(0);
+  for (const clicked of ["кто", "что"]) {
+    fireEvent.click(within(questions).getByText(clicked));
+    for (const q of ["кто", "что"]) {
+      const li = within(questions).getByText(q).closest("li")!;
+      expect(li).not.toHaveClass("active");
+      expect(li).not.toHaveClass("clickable");
+      expect(within(li).queryByRole("link")).not.toBeInTheDocument();
+    }
+    expect(words()).toEqual(wordsBefore);
+  }
+});
