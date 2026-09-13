@@ -8,7 +8,7 @@ import { WordsPage } from "./pages/WordsPage";
 import { CasesPage } from "./pages/CasesPage";
 import { DeclensionsPage } from "./pages/DeclensionsPage";
 import { GitStatus } from "./components/GitStatus";
-import "@/styles/admin.scss";
+import "@/styles/admin.css";
 
 const WORD_PAGES: { type: WordType; title: string }[] = [
   { type: "noun", title: "Существительные" },

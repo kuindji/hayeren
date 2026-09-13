@@ -1,11 +1,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 import svgr from "vite-plugin-svgr";
 import { fileURLToPath } from "node:url";
 
 export default defineConfig({
   base: "/",
-  plugins: [react(), svgr()],
+  plugins: [react(), tailwindcss(), svgr()],
   // Pre-bundle React and the reactive store's React bindings up front. Otherwise the first cold dev load discovers
   // @kuindji/reactive/react late, re-optimizes mid-load and mixes two React copies ("Invalid hook call").
   optimizeDeps: { include: ["react", "react-dom", "react/jsx-runtime", "@kuindji/reactive/react"] },

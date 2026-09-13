@@ -1,0 +1,15 @@
+@import "./tailwind.css";
+@import "./00_reset.css" layer(base);
+@import "./main.css" layer(base);
+@import "./components/header.css" layer(components);
+@import "./components/chapters-menu.css" layer(components);
+@import "./components/footer.css" layer(components);
+@import "./components/search.css" layer(components);
+@import "./components/word.css" layer(components);
+@import "./components/word-list.css" layer(components);
+@import "./components/article.css" layer(components);
+@import "./components/dialog.css" layer(components);
+@import "./components/loader.css" layer(components);
+@import "./cases/full-case.css" layer(components);
+@import "./pages/cases.css" layer(components);
+@import "./pages/alphabet.css" layer(components);

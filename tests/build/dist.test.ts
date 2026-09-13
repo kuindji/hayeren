@@ -33,6 +33,11 @@ it(
 
     const js = execSync("cat dist/assets/*.js").toString();
     expect(js).toContain("սեղան");
+
+    const css = execSync("cat dist/assets/*.css").toString();
+    expect(css).toContain("tailwindcss v4");
+    expect(css).toContain("--color-light:#fff3e2");
+    expect(css).toContain(".alphabet-letter");
   },
   120_000,
 );

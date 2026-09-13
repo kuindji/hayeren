@@ -1,0 +1,46 @@
+.full-case-list-scrollable {
+  overflow-x: auto;
+  margin-top: var(--spacing-main);
+  padding-bottom: var(--spacing-main);
+  scroll-behavior: smooth;
+  display: flex;
+  scroll-snap-type: x mandatory;
+
+  @media screen and (min-width: 800px) {
+  }
+}
+
+.full-case-list {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--spacing-main);
+
+  .full-case {
+    scroll-snap-align: center;
+  }
+
+  .full-case:first-child {
+    margin-left: var(--spacing-big);
+  }
+  .full-case:last-child {
+    margin-right: var(--spacing-big);
+  }
+}
+
+.full-case-list-scroll-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--spacing-big);
+  a {
+    font-size: 2rem;
+    color: var(--color-primary-50);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}

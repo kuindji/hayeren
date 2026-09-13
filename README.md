@@ -28,6 +28,11 @@ bun install
 | `bun run test` | Vitest |
 | `bun run check` | `lint`, `typecheck`, `validate` and `test` together |
 
+Styles use Tailwind CSS 4 through its Vite plugin. The CSS-first theme is in
+`src/styles/theme.css`; existing semantic component selectors remain in plain
+CSS so the public site and admin keep their established appearance. The app
+retains its own reset instead of Tailwind Preflight for the same reason.
+
 ## Content
 
 Content lives under `data/` — one JSON file per word/case/etc., validated by

@@ -1,0 +1,16 @@
+#header {
+  padding-top: var(--spacing-main);
+
+  h1 {
+    font-family: var(--font-main);
+    color: var(--color-primary);
+    text-align: center;
+    text-wrap: balance;
+
+    padding: 0 4rem;
+
+    @media screen and (min-width: 800px) {
+      padding: 0;
+    }
+  }
+}

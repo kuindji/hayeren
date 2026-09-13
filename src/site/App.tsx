@@ -9,7 +9,7 @@ import { Footer } from "./components/Footer";
 import { ChaptersMenu } from "./components/ChaptersMenu";
 import { Alphabet } from "./pages/Alphabet";
 import { Cases } from "./pages/Cases";
-import "@/styles/index.scss";
+import "@/styles/index.css";
 
 const database = new Database(loadDataFiles());
 

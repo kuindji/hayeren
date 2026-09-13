@@ -1,0 +1,7 @@
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "./theme.css";
+@import "tailwindcss/utilities.css" layer(utilities);
+
+/* Keep the app's own reset instead of Tailwind Preflight so existing controls and typography do not change. */

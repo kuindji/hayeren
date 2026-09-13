@@ -1,0 +1,57 @@
+html,
+body {
+  background-color: var(--color-light);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+  padding-bottom: var(--spacing-big);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+b {
+  font-weight: 900;
+}
+
+input {
+  outline: none;
+}

@@ -1,0 +1,35 @@
+@theme static {
+  --color-light: #fff3e2;
+  --color-light-25: rgb(255 243 226 / 25%);
+  --color-light-80: rgb(255 243 226 / 80%);
+  --color-light-secondary: #fcd868;
+  --color-light-secondary-50: rgb(252 216 104 / 50%);
+  --color-dark: #cd6045;
+  --color-dark-10: rgb(205 96 69 / 10%);
+  --color-dark-50: rgb(205 96 69 / 50%);
+  --color-dark-80: rgb(205 96 69 / 80%);
+  --color-dark-secondary: #e59c16;
+  --color-paper: #fff;
+  --color-paper-70: rgb(255 255 255 / 70%);
+  --color-primary: #2d3a3d;
+  --color-primary-15: rgb(45 58 61 / 15%);
+  --color-primary-20: rgb(45 58 61 / 20%);
+  --color-primary-50: rgb(45 58 61 / 50%);
+  --color-primary-80: rgb(45 58 61 / 80%);
+  --color-secondary: #4c526b;
+  --color-secondary-30: rgb(76 82 107 / 30%);
+  --color-secondary-50: rgb(76 82 107 / 50%);
+
+  --font-main: "Lora", serif;
+  --font-secondary: "Raleway", sans-serif;
+
+  --spacing-main: 1rem;
+  --spacing-small: 0.7rem;
+  --spacing-big: 2rem;
+
+  --radius-main: 1rem;
+  --radius-big: 1.2rem;
+
+  --breakpoint-tablet: 50rem;
+  --breakpoint-desktop: 64rem;
+}
