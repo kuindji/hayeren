@@ -43,7 +43,7 @@ CI is defined in `.github/workflows/deploy.yml`. Pushes to `main` run
 `bun run check` and `bun run build`, then deploy the build to Pages; pull
 requests only run the checks and build.
 
-Repo setup (already done for github.com/kuindji/hayeren, public repo):
+Repo setup (github.com/kuindji/hayeren, public repo):
 
 - Settings → Pages → Source: "GitHub Actions".
 - Settings → Pages → Custom domain: `armenian.kuindji.com`, then enable
