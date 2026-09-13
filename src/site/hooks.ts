@@ -35,7 +35,3 @@ export function useQuery<N extends TableName>(table: N): ReturnType<Database[N][
   const db = useDatabase();
   return useMemo(() => db[table].query() as ReturnType<Database[N]["query"]>, [db, table]);
 }
-export function useWordById(id: string | null | undefined) {
-  const db = useDatabase();
-  return useMemo(() => (id ? db.findWord(id) : null), [db, id]);
-}
