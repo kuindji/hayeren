@@ -3,6 +3,7 @@ import { createStore } from "@kuindji/reactive";
 import type { Database } from "@/model/Database";
 import type { FilterStore } from "@/model/filter";
 import type { Case } from "@/model/Case";
+import type { Tense } from "@/model/Tense";
 import type { Language } from "@/model/strip";
 
 export interface AppData { language: Language }
@@ -15,3 +16,4 @@ export const DatabaseContext = named<Database>("Database");
 export const GlobalFilterContext = named<FilterStore>("GlobalFilter");
 export const LocalFilterContext = named<FilterStore>("LocalFilter");
 export const CaseContext = named<Case>("Case");
+export const TenseContext = named<Tense>("Tense");

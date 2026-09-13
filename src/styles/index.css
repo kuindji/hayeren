@@ -6,6 +6,7 @@
 @import "./components/footer.css" layer(components);
 @import "./components/search.css" layer(components);
 @import "./components/word.css" layer(components);
+@import "./components/verb-table.css" layer(components);
 @import "./components/word-list.css" layer(components);
 @import "./components/article.css" layer(components);
 @import "./components/dialog.css" layer(components);

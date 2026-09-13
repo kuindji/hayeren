@@ -9,6 +9,7 @@ import { Footer } from "./components/Footer";
 import { ChaptersMenu } from "./components/ChaptersMenu";
 import { Alphabet } from "./pages/Alphabet";
 import { Cases } from "./pages/Cases";
+import { Tenses } from "./pages/Tenses";
 import "@/styles/index.css";
 
 const database = new Database(loadDataFiles());
@@ -23,6 +24,7 @@ export const routes: RouteObject[] = [
   { element: <Layout />, children: [
     { path: "/", element: <Navigate to="/cases" replace /> },
     { path: "/cases", element: <Cases /> },
+    { path: "/tenses", element: <Tenses /> },
     { path: "/alphabet", element: <Alphabet /> },
   ] },
 ];

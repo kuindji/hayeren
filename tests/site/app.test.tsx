@@ -9,11 +9,16 @@ it("renders the header, nav and redirects / to /cases", async () => {
   render(<App router={router} />);
   expect(await screen.findByRole("heading", { level: 1 })).toHaveTextContent("Справочник по армянскому языку");
   expect(screen.getByText("Алфавит")).toBeInTheDocument();
-  expect(screen.getByText("Времена глаголов")).toHaveClass("disabled");
+  expect(screen.getByText("Времена глаголов")).not.toHaveClass("disabled");
   expect(router.state.location.pathname).toBe("/cases");
 });
 
 it("renders the alphabet page", async () => {
   render(<App router={at("/alphabet")} />);
   expect(await screen.findByText("Ա")).toBeInTheDocument();
+});
+
+it("renders the tenses page", async () => {
+  render(<App router={at("/tenses")} />);
+  expect(await screen.findByText("Настоящее")).toBeInTheDocument();
 });

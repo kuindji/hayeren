@@ -33,7 +33,7 @@ export function ChaptersMenu() {
           <NavLink to="/cases">Падежи</NavLink>
         </li>
         <li className={activeIf("/tenses")}>
-          <NavLink to="/tenses" className="disabled">Времена глаголов</NavLink>
+          <NavLink to="/tenses">Времена глаголов</NavLink>
         </li>
       </ul>
     </nav>
