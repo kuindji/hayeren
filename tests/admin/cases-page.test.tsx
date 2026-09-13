@@ -98,12 +98,12 @@ describe("articles tab", () => {
   it("previews Markdown live, saves the article with a trimmed title and then the case listing it", async () => {
     const fetchMock = okFetch();
     vi.stubGlobal("fetch", fetchMock);
-    render(page(caseData({ articles: ["forms"] }, { "/data/articles/possessive/forms.md": FORMS_MD })));
+    render(page(caseData({ articles: ["forms"] }, { "/data/articles/cases/possessive/forms.md": FORMS_MD })));
     const form = openNewArticle();
     expect(within(form).getByTestId("article-preview").innerHTML).toContain("<strong>жирный</strong>");
     fireEvent.click(within(form).getByText("Сохранить"));
     await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(2));
-    expect(callOf(fetchMock, 0)).toBe("PUT /api/articles/possessive/usage");
+    expect(callOf(fetchMock, 0)).toBe("PUT /api/articles/cases/possessive/usage");
     expect(body(fetchMock, 0)).toEqual({ title: "Применение", language: "russian", position: 1, text: "**жирный**" });
     expect(callOf(fetchMock, 1)).toBe("PUT /api/cases/possessive");
     expect(body(fetchMock, 1).articles).toEqual(["forms", "usage"]);
@@ -134,7 +134,7 @@ describe("articles tab", () => {
     caseFails = false;
     fireEvent.click(within(form).getByText("Сохранить"));
     await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(4));
-    expect([callOf(fetchMock, 2), callOf(fetchMock, 3)]).toEqual(["PUT /api/articles/possessive/usage", "PUT /api/cases/possessive"]);
+    expect([callOf(fetchMock, 2), callOf(fetchMock, 3)]).toEqual(["PUT /api/articles/cases/possessive/usage", "PUT /api/cases/possessive"]);
     expect(body(fetchMock, 3).articles).toEqual(["usage"]);
   });
 
@@ -142,7 +142,7 @@ describe("articles tab", () => {
     const fetchMock = okFetch();
     vi.stubGlobal("fetch", fetchMock);
     vi.spyOn(window, "confirm").mockReturnValue(true);
-    render(page(caseData({ articles: ["forms"] }, { "/data/articles/possessive/forms.md": FORMS_MD })));
+    render(page(caseData({ articles: ["forms"] }, { "/data/articles/cases/possessive/forms.md": FORMS_MD })));
     fireEvent.click(screen.getByText("Род"));
     fireEvent.click(screen.getByRole("tab", { name: "Статьи" }));
     fireEvent.click(screen.getByText("Изменить"));
@@ -150,7 +150,7 @@ describe("articles tab", () => {
     expect(within(form).getByLabelText("Заголовок")).toHaveValue("Форма слов");
     fireEvent.click(within(form).getByText("Удалить"));
     await waitFor(() => expect(screen.queryByRole("group", { name: "Статья" })).not.toBeInTheDocument());
-    expect([callOf(fetchMock, 0), callOf(fetchMock, 1)]).toEqual(["PUT /api/cases/possessive", "DELETE /api/articles/possessive/forms"]);
+    expect([callOf(fetchMock, 0), callOf(fetchMock, 1)]).toEqual(["PUT /api/cases/possessive", "DELETE /api/articles/cases/possessive/forms"]);
     expect(body(fetchMock, 0).articles).toBeUndefined();
   });
 });
@@ -229,7 +229,7 @@ describe("two-step article save (I1, I2)", () => {
     await resolve(0);
     await act(async () => { await Promise.resolve(); });
     expect(fetchMock).toHaveBeenCalledTimes(1);
-    expect(callOf(fetchMock, 0)).toBe("PUT /api/articles/possessive/usage");
+    expect(callOf(fetchMock, 0)).toBe("PUT /api/articles/cases/possessive/usage");
     expect(within(form).getByLabelText("Текст")).toHaveValue("x");
   });
 });

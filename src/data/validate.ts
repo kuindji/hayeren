@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import {
+  ARTICLE_OWNER_FOLDERS,
   WORD_TYPES, WORD_FOLDERS, wordFileSchemaFor, CaseFileSchema, DeclensionsFileSchema, ConjugationsFileSchema, ArticleFileSchema, TenseFileSchema, VerbFileSchema, emptyDataFiles,
   type DataFiles,
 } from "./schema.ts";
@@ -61,7 +62,7 @@ export function readDataFromDisk(root: string): DataFiles {
       d.words[kind.type].push(w);
     } else if (kind.kind === "article") {
       const { data, body } = parseFrontmatter(readFileSync(file, "utf8"));
-      d.articles.push(parseOrThrowFile(rel, () => ArticleFileSchema.parse({ ...data, position: Number(data.position), case: kind.caseId, slug: kind.slug, text: body })));
+      d.articles.push(parseOrThrowFile(rel, () => ArticleFileSchema.parse({ ...data, position: Number(data.position), owner: kind.owner, ownerId: kind.ownerId, slug: kind.slug, text: body })));
     }
   }
   d.cases.sort((a, b) => a.position - b.position);
@@ -91,7 +92,8 @@ export function findReferenceProblems(d: DataFiles): ReferenceProblem[] {
   const nounIds = new Set(d.words.noun.map((n) => n.id));
   const nounDecl = new Set(d.words.noun.flatMap((n) => n.cases.filter((c) => c.declension).map((c) => `${n.id}|${c.case}|${c.declension ?? ""}`)));
   const nounCase = new Set(d.words.noun.flatMap((n) => n.cases.map((c) => `${n.id}|${c.case}`)));
-  const articleKeys = new Set(d.articles.map((a) => `${a.case}/${a.slug}`));
+  const tenseIds = new Set(d.tenses.map((t) => t.id));
+  const articleKeys = new Set(d.articles.map((a) => `${a.owner}/${a.ownerId}/${a.slug}`));
 
   // Word ids are global: the pinned-word filter and Database.findWord() look words up by id alone.
   const idOwner = new Map<string, string>();
@@ -110,7 +112,7 @@ export function findReferenceProblems(d: DataFiles): ReferenceProblem[] {
   }
   for (const c of d.cases) {
     const where = `cases/${c.id}.json`;
-    for (const a of c.articles ?? []) if (!articleKeys.has(`${c.id}/${a}`)) push(`${where}: unknown article "${a}"`);
+    for (const a of c.articles ?? []) if (!articleKeys.has(`case/${c.id}/${a}`)) push(`${where}: unknown article "${a}"`);
     for (const q of c.questions ?? []) if (q.pposition && !ppIds.has(q.pposition)) push(`${where}: unknown pposition "${q.pposition}"`);
     for (const g of c.groups ?? []) for (const w of g.words) {
       if (!nounIds.has(w)) push(`${where}: unknown noun "${w}" in group`);
@@ -131,14 +133,17 @@ export function findReferenceProblems(d: DataFiles): ReferenceProblem[] {
   }
   // An article file that its case does not list is invisible on the site (Case only renders file.articles),
   // so it is reported here; the admin's two-step article save/delete can leave exactly this state behind.
-  const listed = new Set(d.cases.flatMap((c) => (c.articles ?? []).map((a) => `${c.id}/${a}`)));
+  const listedCase = new Set(d.cases.flatMap((c) => (c.articles ?? []).map((a) => `case/${c.id}/${a}`)));
+  const listedTense = new Set(d.tenses.flatMap((t) => (t.articles ?? []).map((a) => `tense/${t.id}/${a}`)));
   for (const a of d.articles) {
-    const where = `articles/${a.case}/${a.slug}.md`;
-    if (!caseIds.has(a.case)) push(`${where}: unknown case "${a.case}"`);
-    else if (!listed.has(`${a.case}/${a.slug}`)) push(`${where}: not listed in cases/${a.case}.json articles`, "unlisted-article");
+    const folder = ARTICLE_OWNER_FOLDERS[a.owner];
+    const where = `articles/${folder}/${a.ownerId}/${a.slug}.md`;
+    const owners = a.owner === "case" ? caseIds : tenseIds;
+    const listed = a.owner === "case" ? listedCase : listedTense;
+    if (!owners.has(a.ownerId)) push(`${where}: unknown ${a.owner} "${a.ownerId}"`);
+    else if (!listed.has(`${a.owner}/${a.ownerId}/${a.slug}`)) push(`${where}: not listed in ${folder}/${a.ownerId}.json articles`, "unlisted-article");
   }
   // verbs and tenses
-  const tenseIds = new Set(d.tenses.map((t) => t.id));
   const conjIds = new Set(d.conjugations.map((c) => c.id));
   const verbIds = new Set(d.verbs.map((v) => v.id));
   const verbTense = new Set(d.verbs.flatMap((v) => v.tenses.map((t) => `${v.id}|${t.tense}`)));
@@ -153,6 +158,7 @@ export function findReferenceProblems(d: DataFiles): ReferenceProblem[] {
     const other = positionOwner.get(t.position);
     if (other) push(`${where}: position ${t.position} is also used by ${other}`);
     else positionOwner.set(t.position, where);
+    for (const a of t.articles ?? []) if (!articleKeys.has(`tense/${t.id}/${a}`)) push(`${where}: unknown article "${a}"`);
     for (const g of t.groups ?? []) for (const w of g.words) {
       if (!verbIds.has(w)) push(`${where}: unknown verb "${w}" in group`);
       // Tense renders a custom group as db.verb.query(g.words).filter(hasTense); a listed verb without an entry would vanish.

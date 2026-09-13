@@ -28,7 +28,7 @@ export class Case {
     const id = file.id;
     this.id = id; this.position = file.position; this.name = file.name; this.description = file.description;
 
-    this.articles = (file.articles ?? []).map((slug) => db.article.get(articleId(id, slug))).filter(nonNull);
+    this.articles = (file.articles ?? []).map((slug) => db.article.get(articleId("case", id, slug))).filter(nonNull);
 
     // questions
     const groups: QuestionGroupView[] = (file.questionGroups ?? []).map((g) => ({ type: g.type, name: g.name, questions: [] }));

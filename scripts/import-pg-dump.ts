@@ -145,7 +145,8 @@ export function importDump(sql: string): ImportResult {
     const s = ARTICLE_SLUGS[title];
     if (!s) throw new Error(`No slug mapping for article title "${title}"; add it to ARTICLE_SLUGS`);
     return {
-      case: a.case_id ?? "",
+      owner: "case",
+      ownerId: a.case_id ?? "",
       slug: s,
       title,
       // Passed through as-is: an unexpected language must fail ArticleFileSchema in writeData,
@@ -190,7 +191,7 @@ export function importDump(sql: string): ImportResult {
     });
     const groups = groupRows.filter((g) => g.case_id === id && !g.declension_id).map(groupOf);
     const caseArticles = articles
-      .filter((a) => a.case === id)
+      .filter((a) => a.owner === "case" && a.ownerId === id)
       .sort((a, b) => a.position - b.position)
       .map((a) => a.slug);
     cases[id] = compact({
@@ -232,13 +233,13 @@ export function writeData(out: ImportResult, root: string): void {
       );
   }
   for (const a of out.articles) {
-    const file = join("articles", a.case, `${a.slug}.md`);
+    const file = join("articles", "cases", a.ownerId, `${a.slug}.md`);
     // Same guard as the JSON kinds above: never write a file the schema rejects. safeParse rather
     // than parse only so the message names the file the .md would have been written to.
     const parsed = ArticleFileSchema.safeParse(a);
     if (!parsed.success) throw new Error(`${file}: ${parsed.error.message}`);
     const { title, language, position, text } = parsed.data;
-    mkdirSync(join(root, "articles", a.case), { recursive: true });
+    mkdirSync(join(root, "articles", "cases", a.ownerId), { recursive: true });
     writeFileSync(join(root, file), serializeFrontmatter({ title, language, position }, text));
   }
 }

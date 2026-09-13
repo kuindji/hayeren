@@ -1,4 +1,4 @@
-import { WordFileSchema, wordFileSchemaFor, CaseFileSchema, DeclensionsFileSchema, ArticleFrontmatterSchema, Slug } from "@/data/schema";
+import { WordFileSchema, wordFileSchemaFor, CaseFileSchema, DeclensionsFileSchema, ArticleFrontmatterSchema, ArticleFileSchema, Slug } from "@/data/schema";
 
 describe("Slug", () => {
   it("accepts kebab slugs and rejects slashes/uppercase", () => {
@@ -69,6 +69,10 @@ describe("DeclensionsFileSchema / ArticleFrontmatterSchema", () => {
     expect(DeclensionsFileSchema.safeParse([{ id: "ա", name: { russian: "old" } }, { id: "ա", name: { russian: "new" } }]).success).toBe(false);
     expect(ArticleFrontmatterSchema.parse({ title: "t", language: "russian", position: 0 }).position).toBe(0);
     expect(ArticleFrontmatterSchema.safeParse({ title: "t", language: "klingon", position: 0 }).success).toBe(false);
+  });
+  it("article files carry an owner and ownerId instead of case", () => {
+    expect(ArticleFileSchema.safeParse({ title: "t", language: "russian", position: 0, owner: "tense", ownerId: "present", slug: "formation", text: "" }).success).toBe(true);
+    expect(ArticleFileSchema.safeParse({ title: "t", language: "russian", position: 0, case: "possessive", slug: "forms", text: "" }).success).toBe(false);
   });
 });
 

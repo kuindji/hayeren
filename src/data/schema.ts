@@ -198,5 +198,11 @@ export const ArticleFrontmatterSchema = z
   .object({ title: z.string().min(1), language: z.enum(["russian", "english"]), position: z.number().int().min(0) })
   .strict();
 export type ArticleFrontmatter = z.infer<typeof ArticleFrontmatterSchema>;
-export const ArticleFileSchema = ArticleFrontmatterSchema.extend({ case: Slug, slug: Slug, text: z.string() }).strict();
+export const ARTICLE_OWNERS = ["case", "tense"] as const;
+export type ArticleOwner = (typeof ARTICLE_OWNERS)[number];
+export const ARTICLE_OWNER_FOLDERS: Record<ArticleOwner, string> = { case: "cases", tense: "tenses" };
+export const ARTICLE_FOLDER_TO_OWNER: Record<string, ArticleOwner> = Object.fromEntries(
+  ARTICLE_OWNERS.map((o): [string, ArticleOwner] => [ARTICLE_OWNER_FOLDERS[o], o]),
+);
+export const ArticleFileSchema = ArticleFrontmatterSchema.extend({ owner: z.enum(ARTICLE_OWNERS), ownerId: Slug, slug: Slug, text: z.string() }).strict();
 export type ArticleFile = z.infer<typeof ArticleFileSchema>;

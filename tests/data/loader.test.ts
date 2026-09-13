@@ -6,11 +6,11 @@ it("builds DataFiles from a glob map and derives word type from folder", () => {
     "/data/cases/possessive.json": { id: "possessive", position: 1, name: { russian: "Р" } },
     "/data/nouns/table.json": { id: "table", cases: [] },
     "/data/pronouns/i.json": { id: "i", cases: [] },
-    "/data/articles/possessive/forms.md": "---\ntitle: Форма\nlanguage: russian\nposition: 0\n---\nbody\n",
+    "/data/articles/cases/possessive/forms.md": "---\ntitle: Форма\nlanguage: russian\nposition: 0\n---\nbody\n",
   });
   expect(d.words.noun.map((w) => w.id)).toEqual(["table"]);
   expect(d.words.pronoun.map((w) => w.id)).toEqual(["i"]);
-  expect(d.articles[0]).toMatchObject({ case: "possessive", slug: "forms", title: "Форма", text: "body\n" });
+  expect(d.articles[0]).toMatchObject({ owner: "case", ownerId: "possessive", slug: "forms", title: "Форма", text: "body\n" });
 });
 
 it("names the offending file on schema error", () => {
@@ -23,8 +23,16 @@ it("throws when filename and id disagree", () => {
 
 it("rejects articles with a non-slug folder or filename", () => {
   const md = "---\ntitle: t\nlanguage: russian\nposition: 0\n---\nx\n";
-  expect(() => buildDataFiles({ "/data/articles/possessive/Bad.md": md })).toThrow(/articles\/possessive\/Bad\.md/);
-  expect(() => buildDataFiles({ "/data/articles/Poss/forms.md": md })).toThrow(/articles\/Poss\/forms\.md/);
+  expect(() => buildDataFiles({ "/data/articles/cases/possessive/Bad.md": md })).toThrow(/articles\/cases\/possessive\/Bad\.md/);
+  expect(() => buildDataFiles({ "/data/articles/cases/Poss/forms.md": md })).toThrow(/articles\/cases\/Poss\/forms\.md/);
+});
+
+it("loads tense articles and rejects the old two-level article layout and unknown owner folders", () => {
+  const md = "---\ntitle: Образование\nlanguage: russian\nposition: 0\n---\nbody\n";
+  const d = buildDataFiles({ "/data/declensions.json": [], "/data/articles/tenses/present/formation.md": md });
+  expect(d.articles[0]).toMatchObject({ owner: "tense", ownerId: "present", slug: "formation" });
+  expect(() => buildDataFiles({ "/data/articles/possessive/forms.md": md })).toThrow(/articles\/possessive\/forms\.md/);
+  expect(() => buildDataFiles({ "/data/articles/nouns/table/forms.md": md })).toThrow(/articles\/nouns\/table\/forms\.md/);
 });
 
 it("loads conjugations, tenses and verbs", () => {
@@ -55,8 +63,8 @@ it("accepts a case and an article folder named \"data\" (the glob key prefix is 
   const md = "---\ntitle: T\nlanguage: russian\nposition: 0\n---\nbody\n";
   const d = buildDataFiles({
     "/data/cases/data.json": { id: "data", position: 9, name: { russian: "X" }, articles: ["intro"] },
-    "/data/articles/data/intro.md": md,
+    "/data/articles/cases/data/intro.md": md,
   });
   expect(d.cases.map((c) => c.id)).toEqual(["data"]);
-  expect(d.articles[0]).toMatchObject({ case: "data", slug: "intro" });
+  expect(d.articles[0]).toMatchObject({ owner: "case", ownerId: "data", slug: "intro" });
 });

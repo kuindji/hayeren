@@ -66,17 +66,17 @@ describe("importDump", () => {
     const dir = mkdtempSync(join(tmpdir(), "hayeren-import-"));
     try {
       writeData(out, dir);
-      expect(readFileSync(join(dir, "articles", "dative", "forms.md"), "utf8")).toContain(
+      expect(readFileSync(join(dir, "articles", "cases", "dative", "forms.md"), "utf8")).toContain(
         "position: 0",
       );
       const bad = structuredClone(out);
-      const dative = bad.articles.find((a) => a.case === "dative");
+      const dative = bad.articles.find((a) => a.owner === "case" && a.ownerId === "dative");
       if (!dative) throw new Error("fixture changed: no dative article to corrupt");
       dative.position = -1;
       expect(() => {
         writeData(bad, dir);
-      }).toThrow(/articles\/dative\/forms\.md/);
-      expect(existsSync(join(dir, "articles", "dative", "forms.md"))).toBe(false);
+      }).toThrow(/articles\/cases\/dative\/forms\.md/);
+      expect(existsSync(join(dir, "articles", "cases", "dative", "forms.md"))).toBe(false);
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }

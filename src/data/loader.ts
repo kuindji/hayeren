@@ -36,7 +36,7 @@ export function buildDataFiles(files: Record<string, unknown>): DataFiles {
     } else if (kind?.kind === "article" && typeof content === "string") {
       const { data, body } = parseFrontmatter(content);
       const a: ArticleFile = parseOrThrow(rel, () =>
-        ArticleFileSchema.parse({ ...data, position: Number(data.position), case: kind.caseId, slug: kind.slug, text: body }),
+        ArticleFileSchema.parse({ ...data, position: Number(data.position), owner: kind.owner, ownerId: kind.ownerId, slug: kind.slug, text: body }),
       );
       d.articles.push(a);
     } else if (kind?.kind === "word") {

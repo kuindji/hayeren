@@ -15,7 +15,7 @@ export class Database {
     this.noun = wordTable("noun"); this.pronoun = wordTable("pronoun"); this.numeral = wordTable("numeral");
     this.question = wordTable("question"); this.prepostposition = wordTable("prepostposition");
     this.declension = new Table<Declension, Declension>((d) => d, files.declensions);
-    this.article = new Table<ArticleRow, Article>((r) => new Article(r), files.articles.map((a) => ({ id: articleId(a.case, a.slug), file: a })));
+    this.article = new Table<ArticleRow, Article>((r) => new Article(r), files.articles.map((a) => ({ id: articleId(a.owner, a.ownerId, a.slug), file: a })));
     this.case = new Table<CaseFile, Case>((c) => new Case(c, this), [...files.cases].sort((a, b) => a.position - b.position));
   }
   findWord(id: string): Word | null {

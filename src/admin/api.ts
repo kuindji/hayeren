@@ -14,8 +14,8 @@ export const api = {
   deleteWord: (type: WordType, id: string) => call("DELETE", `/words/${WORD_FOLDERS[type]}/${id}`),
   putCase: (c: CaseFile) => call("PUT", `/cases/${c.id}`, c),
   putDeclensions: (d: Declension[]) => call("PUT", "/declensions", d),
-  putArticle: (caseId: string, slug: string, a: ArticleFrontmatter & { text: string }) => call("PUT", `/articles/${caseId}/${slug}`, a),
-  deleteArticle: (caseId: string, slug: string) => call("DELETE", `/articles/${caseId}/${slug}`),
+  putArticle: (caseId: string, slug: string, a: ArticleFrontmatter & { text: string }) => call("PUT", `/articles/cases/${caseId}/${slug}`, a),
+  deleteArticle: (caseId: string, slug: string) => call("DELETE", `/articles/cases/${caseId}/${slug}`),
   gitStatus: () => call("GET", "/git-status") as Promise<{ clean: boolean; files: string[] }>,
   validate: () => call("GET", "/validate") as Promise<{ problems: string[] }>,
 };

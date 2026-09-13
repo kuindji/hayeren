@@ -8,7 +8,7 @@ import { randomUUID } from "node:crypto";
 // does know the alias) would run the tests fine.
 import {
   Slug, WORD_FOLDERS, FOLDER_TO_TYPE, wordFileSchemaFor, CaseFileSchema, DeclensionsFileSchema, ArticleFrontmatterSchema,
-  ArticleFileSchema,
+  ArticleFileSchema, ARTICLE_FOLDER_TO_OWNER,
 } from "../../data/schema.ts";
 import { stableStringify } from "../../data/json.ts";
 import { parseFrontmatter, serializeFrontmatter } from "../../data/frontmatter.ts";
@@ -78,7 +78,7 @@ export async function handleApi(req: ApiRequest, root: string): Promise<ApiRespo
   // traversal like "%2e%2e" or "..%2F" never matches "..": it instead fails the Slug check below, since Slug
   // forbids "%", "." and "/" in every segment.
   if (parts.some((p) => p === "" || p === "." || p === "..")) return bad("invalid path");
-  const [head, a, b] = parts;
+  const [head, a, b, c] = parts;
   const slugOk = (s: string | undefined): s is string => !!s && Slug.safeParse(s).success;
   if (head === "words" && parts.length !== 3) return bad("invalid word path");
 
@@ -129,9 +129,10 @@ export async function handleApi(req: ApiRequest, root: string): Promise<ApiRespo
     if (refused) return refused;
     writeJson(file, d); return ok();
   }
-  if (head === "articles" && parts.length === 3) {
-    if (!slugOk(a) || !slugOk(b)) return bad("invalid case or slug");
-    const file = join(root, "articles", a, `${b}.md`);
+  if (head === "articles") {
+    if (parts.length !== 4 || !a || !Object.hasOwn(ARTICLE_FOLDER_TO_OWNER, a) || !slugOk(b) || !slugOk(c)) return bad("invalid article path");
+    const owner = ARTICLE_FOLDER_TO_OWNER[a]!;
+    const file = join(root, "articles", a, b, `${c}.md`);
     const escape = assertWithinRoot(root, file);
     if (escape) return escape;
     if (req.method === "DELETE") { if (!existsSync(file)) return bad("not found", 404); rmSync(file); return ok(); }
@@ -150,8 +151,9 @@ export async function handleApi(req: ApiRequest, root: string): Promise<ApiRespo
       const roundTrip = ArticleFileSchema.safeParse({
         ...reparsedData,
         position: Number(reparsedData.position),
-        case: a,
-        slug: b,
+        owner,
+        ownerId: b,
+        slug: c,
         text: reparsedBody,
       });
       const roundTripOk = roundTrip.success

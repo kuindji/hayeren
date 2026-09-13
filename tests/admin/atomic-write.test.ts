@@ -29,9 +29,9 @@ it("a successful JSON or Markdown write leaves no temp files behind", async () =
   const nouns = readdirSync(join(root, "nouns"));
   expect((await put("/words/nouns/table", JSON.parse(readFileSync(join(root, "nouns/table.json"), "utf8")))).status).toBe(200);
   expect(readdirSync(join(root, "nouns"))).toEqual(nouns);
-  const articles = readdirSync(join(root, "articles/dative"));
-  expect((await put("/articles/dative/forms", { title: "T", language: "russian", position: 0, text: "x\n" })).status).toBe(200);
-  expect(readdirSync(join(root, "articles/dative"))).toEqual(articles);
+  const articles = readdirSync(join(root, "articles/cases/dative"));
+  expect((await put("/articles/cases/dative/forms", { title: "T", language: "russian", position: 0, text: "x\n" })).status).toBe(200);
+  expect(readdirSync(join(root, "articles/cases/dative"))).toEqual(articles);
 });
 
 it("a JSON write that fails part-way leaves the original bytes and no temp file", async () => {
@@ -46,11 +46,11 @@ it("a JSON write that fails part-way leaves the original bytes and no temp file"
 });
 
 it("a Markdown write that fails part-way leaves the original bytes and no temp file", async () => {
-  const before = readFileSync(join(root, "articles/dative/forms.md"), "utf8");
-  const articles = readdirSync(join(root, "articles/dative"));
+  const before = readFileSync(join(root, "articles/cases/dative/forms.md"), "utf8");
+  const articles = readdirSync(join(root, "articles/cases/dative"));
   fault.armed = true;
-  await expect(put("/articles/dative/forms", { title: "Новое", language: "russian", position: 0, text: "changed\n" })).rejects.toThrow(/ENOSPC/);
+  await expect(put("/articles/cases/dative/forms", { title: "Новое", language: "russian", position: 0, text: "changed\n" })).rejects.toThrow(/ENOSPC/);
   fault.armed = false;
-  expect(readFileSync(join(root, "articles/dative/forms.md"), "utf8")).toBe(before);
-  expect(readdirSync(join(root, "articles/dative"))).toEqual(articles);
+  expect(readFileSync(join(root, "articles/cases/dative/forms.md"), "utf8")).toBe(before);
+  expect(readdirSync(join(root, "articles/cases/dative"))).toEqual(articles);
 });

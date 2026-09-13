@@ -43,11 +43,11 @@ it("lists validator problems, and shows an explicit error when validation itself
   let validateFails = false;
   vi.stubGlobal("fetch", vi.fn().mockImplementation((url: string) => {
     if (url === "/api/git-status") return reply(200, { clean: true, files: [] });
-    return validateFails ? reply(500, { error: "crashed" }) : reply(200, { problems: ["articles/possessive/usage.md: not listed in cases/possessive.json articles"] });
+    return validateFails ? reply(500, { error: "crashed" }) : reply(200, { problems: ["articles/cases/possessive/usage.md: not listed in cases/possessive.json articles"] });
   }));
   const { unmount } = render(<GitStatus />);
   await flush();
-  expect(screen.getByRole("list", { name: "Проблемы в данных" })).toHaveTextContent("articles/possessive/usage.md: not listed");
+  expect(screen.getByRole("list", { name: "Проблемы в данных" })).toHaveTextContent("articles/cases/possessive/usage.md: not listed");
   validateFails = true;
   await flush(5000);
   expect(screen.getByRole("alert")).toHaveTextContent("Проверка данных недоступна: crashed");

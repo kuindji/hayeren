@@ -25,7 +25,7 @@ const files: DataFiles = {
     pronoun: [{ id: "i", cases: [{ case: "nominative", single: { armenian: "ես", russian: "я" } }, { case: "possessive", single: { armenian: "իմ", russian: "мой" } }] }],
     numeral: [], question: [], prepostposition: [{ id: "for", cases: [] }],
   },
-  articles: [{ case: "possessive", slug: "forms", title: "Форма", language: "russian", position: 0, text: "b" }],
+  articles: [{ owner: "case", ownerId: "possessive", slug: "forms", title: "Форма", language: "russian", position: 0, text: "b" }],
 };
 
 const db = new Database(files);

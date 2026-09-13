@@ -30,7 +30,7 @@ function ArticleEditor({ caseState, writeCase, editing, onSaved, onDeleted, onCl
   const [slug, setSlug] = useState(editing.slug);
   const [slugError, setSlugError] = useState<string | null>(null);
   // A new article has no file yet: never pick up an existing file whose slug is being typed.
-  const file = editing.isNew ? undefined : data.articles.find((a) => a.case === caseId && a.slug === slug);
+  const file = editing.isNew ? undefined : data.articles.find((a) => a.owner === "case" && a.ownerId === caseId && a.slug === slug);
   const source = useMemo(() => (file ? { title: file.title, language: file.language, text: file.text } : EMPTY_ARTICLE), [file]);
   const state = useDraft(source, sameArticle);
   const { draft, setDraft } = state;
@@ -46,7 +46,7 @@ function ArticleEditor({ caseState, writeCase, editing, onSaved, onDeleted, onCl
         return;
       }
       // The API overwrites an existing file, so an existing slug must never reach it as a new article.
-      if ((caseState.draft.articles ?? []).includes(slug) || data.articles.some((a) => a.case === caseId && a.slug === slug)) {
+      if ((caseState.draft.articles ?? []).includes(slug) || data.articles.some((a) => a.owner === "case" && a.ownerId === caseId && a.slug === slug)) {
         setSlugError("Статья с таким идентификатором уже существует");
         return;
       }
@@ -149,7 +149,7 @@ export function ArticlesTab({ state, writeCase, actions }: {
     <div className="case-articles">
       <ol className="case-articles-list">
         {slugs.map((slug, i) => {
-          const file = data.articles.find((a) => a.case === caseId && a.slug === slug);
+          const file = data.articles.find((a) => a.owner === "case" && a.ownerId === caseId && a.slug === slug);
           return (
             <li key={slug}>
               <span>{file ? `${file.title} (${slug})` : `${slug} (файл отсутствует)`}</span>

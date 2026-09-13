@@ -70,19 +70,35 @@ it("writes cases, declensions and articles", async () => {
   expect(declensionsAfterGoodWrite).toMatch(/"իա"/);
   expect((await put("/declensions", [{ id: "ա", name: { russian: "ա" } }, { id: "ա", name: { russian: "ա2" } }])).status).toBe(400);
   expect(readFileSync(join(root, "declensions.json"), "utf8")).toBe(declensionsAfterGoodWrite);
-  const a = await put("/articles/dative/forms", { title: "Форма", language: "russian", position: 0, text: "hi\n" });
+  const a = await put("/articles/cases/dative/forms", { title: "Форма", language: "russian", position: 0, text: "hi\n" });
   expect(a.status).toBe(200);
-  expect(readFileSync(join(root, "articles/dative/forms.md"), "utf8")).toBe("---\ntitle: Форма\nlanguage: russian\nposition: 0\n---\nhi\n");
+  expect(readFileSync(join(root, "articles/cases/dative/forms.md"), "utf8")).toBe("---\ntitle: Форма\nlanguage: russian\nposition: 0\n---\nhi\n");
 });
 
 it("deletes an article and 404s on a missing one", async () => {
-  await put("/articles/dative/forms", { title: "Форма", language: "russian", position: 0, text: "hi\n" });
+  await put("/articles/cases/dative/forms", { title: "Форма", language: "russian", position: 0, text: "hi\n" });
   const putCase = await put("/cases/dative", { id: "dative", position: 2, name: { russian: "Д" } });
   expect(putCase.status).toBe(200);
-  expect(existsSync(join(root, "articles/dative/forms.md"))).toBe(true);
-  expect((await handleApi({ method: "DELETE", path: "/articles/dative/forms", body: "" }, root)).status).toBe(200);
-  expect(existsSync(join(root, "articles/dative/forms.md"))).toBe(false);
-  expect((await handleApi({ method: "DELETE", path: "/articles/dative/forms", body: "" }, root)).status).toBe(404);
+  expect(existsSync(join(root, "articles/cases/dative/forms.md"))).toBe(true);
+  expect((await handleApi({ method: "DELETE", path: "/articles/cases/dative/forms", body: "" }, root)).status).toBe(200);
+  expect(existsSync(join(root, "articles/cases/dative/forms.md"))).toBe(false);
+  expect((await handleApi({ method: "DELETE", path: "/articles/cases/dative/forms", body: "" }, root)).status).toBe(404);
+});
+
+it("rejects the old two-segment article path and an unknown owner folder", async () => {
+  const body = { title: "Форма", language: "russian", position: 0, text: "hi\n" };
+  expect((await put("/articles/possessive/forms", body)).status).toBe(400);
+  expect((await put("/articles/nouns/table/forms", body)).status).toBe(400);
+  expect(existsSync(join(root, "articles/possessive/forms.md"))).toBe(false);
+  expect(existsSync(join(root, "articles/nouns/table/forms.md"))).toBe(false);
+});
+
+it("writes a tense article under articles/tenses", async () => {
+  mkdirSync(join(root, "tenses"), { recursive: true });
+  writeFileSync(join(root, "tenses", "present.json"), JSON.stringify({ id: "present", position: 0, name: { russian: "Настоящее" }, articles: ["formation"] }));
+  const r = await put("/articles/tenses/present/formation", { title: "Образование", language: "russian", position: 0, text: "hi\n" });
+  expect(r.status).toBe(200);
+  expect(readFileSync(join(root, "articles/tenses/present/formation.md"), "utf8")).toBe("---\ntitle: Образование\nlanguage: russian\nposition: 0\n---\nhi\n");
 });
 
 it("rejects a case PUT whose body id does not match the URL id", async () => {
@@ -97,27 +113,27 @@ it("rejects a case PUT whose body id does not match the URL id", async () => {
 // serializes, re-parses, and rejects anything that does not round-trip exactly.
 describe("article frontmatter injection is rejected before writing", () => {
   it("rejects a title that injects a stray --- delimiter", async () => {
-    const res = await put("/articles/nominative/injected", { title: "Hi\n---\nsurprise", language: "russian", position: 0, text: "body\n" });
+    const res = await put("/articles/cases/nominative/injected", { title: "Hi\n---\nsurprise", language: "russian", position: 0, text: "body\n" });
     expect(res.status).toBe(400);
-    expect(existsSync(join(root, "articles/nominative/injected.md"))).toBe(false);
+    expect(existsSync(join(root, "articles/cases/nominative/injected.md"))).toBe(false);
   });
 
   it("rejects a title that injects a duplicate frontmatter key", async () => {
-    const res = await put("/articles/nominative/injected2", { title: "Hi\nlanguage: english", language: "russian", position: 0, text: "b\n" });
+    const res = await put("/articles/cases/nominative/injected2", { title: "Hi\nlanguage: english", language: "russian", position: 0, text: "b\n" });
     expect(res.status).toBe(400);
-    expect(existsSync(join(root, "articles/nominative/injected2.md"))).toBe(false);
+    expect(existsSync(join(root, "articles/cases/nominative/injected2.md"))).toBe(false);
   });
 
   it("rejects a title with leading/trailing spaces that parseFrontmatter would silently trim away", async () => {
-    const res = await put("/articles/nominative/injected3", { title: "  Hi  ", language: "russian", position: 0, text: "b\n" });
+    const res = await put("/articles/cases/nominative/injected3", { title: "  Hi  ", language: "russian", position: 0, text: "b\n" });
     expect(res.status).toBe(400);
-    expect(existsSync(join(root, "articles/nominative/injected3.md"))).toBe(false);
+    expect(existsSync(join(root, "articles/cases/nominative/injected3.md"))).toBe(false);
   });
 
   it("still writes and round-trips a normal article", async () => {
-    const res = await put("/articles/nominative/normal", { title: "Normal Title", language: "english", position: 3, text: "hello\nworld\n" });
+    const res = await put("/articles/cases/nominative/normal", { title: "Normal Title", language: "english", position: 3, text: "hello\nworld\n" });
     expect(res.status).toBe(200);
-    expect(readFileSync(join(root, "articles/nominative/normal.md"), "utf8")).toBe("---\ntitle: Normal Title\nlanguage: english\nposition: 3\n---\nhello\nworld\n");
+    expect(readFileSync(join(root, "articles/cases/nominative/normal.md"), "utf8")).toBe("---\ntitle: Normal Title\nlanguage: english\nposition: 3\n---\nhello\nworld\n");
   });
 });
 
@@ -168,10 +184,11 @@ describe("path safety: traversal attempts never reach outside root", () => {
     expect((await handleApi({ method: "DELETE", path: "/words/nouns/%2e%2e", body: "" }, root)).status).toBe(400);
     expect((await put("/cases/%2e%2e", { id: "x", position: 0, name: {} })).status).toBe(400);
     expect((await put("/articles/%2e%2e/slug", { title: "t", language: "russian", position: 0, text: "" })).status).toBe(400);
-    expect((await put("/articles/case/%2e%2e", { title: "t", language: "russian", position: 0, text: "" })).status).toBe(400);
+    expect((await put("/articles/cases/case/%2e%2e", { title: "t", language: "russian", position: 0, text: "" })).status).toBe(400);
+    expect((await put("/articles/%2e%2e/x/y", { title: "t", language: "russian", position: 0, text: "" })).status).toBe(400);
     expect(existsSync(join(root, "cases/%2e%2e.json"))).toBe(false);
     expect(existsSync(join(root, "articles/%2e%2e"))).toBe(false);
-    expect(existsSync(join(root, "articles/case"))).toBe(false);
+    expect(existsSync(join(root, "articles/cases/case"))).toBe(false);
   });
 });
 
@@ -280,13 +297,13 @@ describe("writes that would introduce reference problems are refused", () => {
   it("the admin's two-step article save and delete still go through", async () => {
     const caseFile = JSON.parse(readFileSync(join(root, "cases/dative.json"), "utf8")) as { articles?: string[] };
     // Save: article file first (leaves an unlisted file), then the case listing it.
-    expect((await put("/articles/dative/usage", { title: "Употребление", language: "russian", position: 1, text: "x\n" })).status).toBe(200);
+    expect((await put("/articles/cases/dative/usage", { title: "Употребление", language: "russian", position: 1, text: "x\n" })).status).toBe(200);
     expect((await put("/cases/dative", { ...caseFile, articles: [...(caseFile.articles ?? []), "usage"] })).status).toBe(200);
     expect(await problems()).toEqual([]);
     // Delete: unlist first (leaves an unlisted file), then delete the file.
     expect((await put("/cases/dative", caseFile)).status).toBe(200);
-    expect(await problems()).toEqual(["articles/dative/usage.md: not listed in cases/dative.json articles"]);
-    expect((await del("/articles/dative/usage")).status).toBe(200);
+    expect(await problems()).toEqual(["articles/cases/dative/usage.md: not listed in cases/dative.json articles"]);
+    expect((await del("/articles/cases/dative/usage")).status).toBe(200);
     expect(await problems()).toEqual([]);
   });
 });
