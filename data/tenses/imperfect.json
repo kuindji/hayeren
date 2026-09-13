@@ -1,0 +1,14 @@
+{
+  "articles": [
+    "formation"
+  ],
+  "description": {
+    "russian": "Я делал, я раньше регулярно делал"
+  },
+  "id": "imperfect",
+  "name": {
+    "english": "Imperfect",
+    "russian": "Прошедшее несовершенное (имперфект)"
+  },
+  "position": 1
+}

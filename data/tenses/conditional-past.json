@@ -1,0 +1,14 @@
+{
+  "articles": [
+    "formation"
+  ],
+  "description": {
+    "russian": "Я бы сделал"
+  },
+  "id": "conditional-past",
+  "name": {
+    "english": "Past conditional",
+    "russian": "Условное прошедшее"
+  },
+  "position": 9
+}

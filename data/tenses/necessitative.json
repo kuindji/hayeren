@@ -1,0 +1,15 @@
+{
+  "articles": [
+    "formation",
+    "usage"
+  ],
+  "description": {
+    "russian": "Я должен сделать, мне нужно сделать"
+  },
+  "id": "necessitative",
+  "name": {
+    "english": "Necessitative",
+    "russian": "Побудительное будущее"
+  },
+  "position": 10
+}

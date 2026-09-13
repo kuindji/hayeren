@@ -1,0 +1,14 @@
+{
+  "articles": [
+    "formation"
+  ],
+  "description": {
+    "russian": "Если я выпью; чтобы я выпил; давай выпьем"
+  },
+  "id": "optative",
+  "name": {
+    "english": "Optative",
+    "russian": "Желательное будущее"
+  },
+  "position": 6
+}

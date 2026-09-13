@@ -1,0 +1,14 @@
+{
+  "articles": [
+    "formation"
+  ],
+  "description": {
+    "russian": "Я должен был сделать, мне нужно было сделать"
+  },
+  "id": "necessitative-past",
+  "name": {
+    "english": "Past necessitative",
+    "russian": "Побудительное прошедшее"
+  },
+  "position": 11
+}

@@ -146,6 +146,9 @@ it("the real data/ folder is valid", () => {
   // must not break `bun run check`. Historical counts live in tests/scripts/import.test.ts against the fixture.
   const d = readDataFromDisk("data");
   expect(checkReferences(d)).toEqual([]);
+  expect(d.conjugations).toHaveLength(7);
+  expect(d.tenses).toHaveLength(14);
+  expect(d.verbs.length).toBeGreaterThan(0);
   expect(d.words.noun.length).toBeGreaterThan(0);
   expect(d.cases.length).toBeGreaterThan(0);
 });

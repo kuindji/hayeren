@@ -1,0 +1,257 @@
+{
+  "conjugation": "ալ",
+  "id": "come",
+  "infinitive": {
+    "armenian": "գալ",
+    "russian": "приходить",
+    "transcription": "gal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "причастие на -իս вместо -ում"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "գալ*իս ենք*"
+        },
+        "1sg": {
+          "armenian": "գալ*իս եմ*"
+        },
+        "2pl": {
+          "armenian": "գալ*իս եք*"
+        },
+        "2sg": {
+          "armenian": "գալ*իս ես*"
+        },
+        "3pl": {
+          "armenian": "գալ*իս են*"
+        },
+        "3sg": {
+          "armenian": "գալ*իս է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* գալ*իս*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* գալ*իս*"
+        },
+        "2pl": {
+          "armenian": "*չեք* գալ*իս*"
+        },
+        "2sg": {
+          "armenian": "*չես* գալ*իս*"
+        },
+        "3pl": {
+          "armenian": "*չեն* գալ*իս*"
+        },
+        "3sg": {
+          "armenian": "*չի* գալ*իս*"
+        }
+      },
+      "tense": "present"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "գալ*իս էինք*"
+        },
+        "1sg": {
+          "armenian": "գալ*իս էի*"
+        },
+        "2pl": {
+          "armenian": "գալ*իս էիք*"
+        },
+        "2sg": {
+          "armenian": "գալ*իս էիր*"
+        },
+        "3pl": {
+          "armenian": "գալ*իս էին*"
+        },
+        "3sg": {
+          "armenian": "գալ*իս էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* գալ*իս*"
+        },
+        "1sg": {
+          "armenian": "*չէի* գալ*իս*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* գալ*իս*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* գալ*իս*"
+        },
+        "3pl": {
+          "armenian": "*չէին* գալ*իս*"
+        },
+        "3sg": {
+          "armenian": "*չէր* գալ*իս*"
+        }
+      },
+      "tense": "imperfect"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "եկել *ենք*"
+        },
+        "1sg": {
+          "armenian": "եկել *եմ*"
+        },
+        "2pl": {
+          "armenian": "եկել *եք*"
+        },
+        "2sg": {
+          "armenian": "եկել *ես*"
+        },
+        "3pl": {
+          "armenian": "եկել *են*"
+        },
+        "3sg": {
+          "armenian": "եկել *է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* եկել"
+        },
+        "1sg": {
+          "armenian": "*չեմ* եկել"
+        },
+        "2pl": {
+          "armenian": "*չեք* եկել"
+        },
+        "2sg": {
+          "armenian": "*չես* եկել"
+        },
+        "3pl": {
+          "armenian": "*չեն* եկել"
+        },
+        "3sg": {
+          "armenian": "*չի* եկել"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "եկել *էինք*"
+        },
+        "1sg": {
+          "armenian": "եկել *էի*"
+        },
+        "2pl": {
+          "armenian": "եկել *էիք*"
+        },
+        "2sg": {
+          "armenian": "եկել *էիր*"
+        },
+        "3pl": {
+          "armenian": "եկել *էին*"
+        },
+        "3sg": {
+          "armenian": "եկել *էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* եկել"
+        },
+        "1sg": {
+          "armenian": "*չէի* եկել"
+        },
+        "2pl": {
+          "armenian": "*չէիք* եկել"
+        },
+        "2sg": {
+          "armenian": "*չէիր* եկել"
+        },
+        "3pl": {
+          "armenian": "*չէին* եկել"
+        },
+        "3sg": {
+          "armenian": "*չէր* եկել"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "արե՛ք",
+          "informal": "եկե՛ք"
+        },
+        "2sg": {
+          "armenian": "արի՛",
+          "russian": "иди сюда"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "մի՛ արեք",
+          "informal": "մի՛ եկեք"
+        },
+        "2sg": {
+          "armenian": "մի՛ արի"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "եկ*անք*"
+        },
+        "1sg": {
+          "armenian": "եկ*ա*"
+        },
+        "2pl": {
+          "armenian": "եկ*աք*"
+        },
+        "2sg": {
+          "armenian": "եկ*ար*"
+        },
+        "3pl": {
+          "armenian": "եկ*ան*"
+        },
+        "3sg": {
+          "armenian": "եկ*ավ*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*եկ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*եկ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*եկ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*եկ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*եկ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*եկ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

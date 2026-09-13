@@ -1,0 +1,14 @@
+{
+  "articles": [
+    "formation"
+  ],
+  "description": {
+    "russian": "Я сделал (однократное действие в прошлом)"
+  },
+  "id": "aorist",
+  "name": {
+    "english": "Aorist",
+    "russian": "Прошедшее совершенное (аорист)"
+  },
+  "position": 13
+}

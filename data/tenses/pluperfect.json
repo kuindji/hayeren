@@ -1,0 +1,14 @@
+{
+  "articles": [
+    "formation"
+  ],
+  "description": {
+    "russian": "Я сделал к тому моменту в прошлом"
+  },
+  "id": "pluperfect",
+  "name": {
+    "english": "Past perfect",
+    "russian": "Плюсквамперфект"
+  },
+  "position": 3
+}

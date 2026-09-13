@@ -1,0 +1,15 @@
+{
+  "articles": [
+    "formation",
+    "usage"
+  ],
+  "description": {
+    "russian": "Я делаю, я сейчас делаю"
+  },
+  "id": "present",
+  "name": {
+    "english": "Present",
+    "russian": "Настоящее"
+  },
+  "position": 0
+}

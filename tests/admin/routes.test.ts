@@ -49,7 +49,7 @@ it("rejects path escapes and unknown folders before touching disk", async () => 
   expect((await put("/cases/Bad", { id: "Bad", position: 0, name: {} })).status).toBe(400);
   expect(existsSync(join(root, "nouns/evil.json"))).toBe(false);
   expect(existsSync(join(root, "evil.json"))).toBe(false);
-  expect(existsSync(join(root, "verbs"))).toBe(false);
+  expect(existsSync(join(root, "verbs/run.json"))).toBe(false);
   expect(existsSync(join(root, "run.json"))).toBe(false);
   expect(existsSync(join(root, "cases/Bad.json"))).toBe(false);
 });

@@ -1,0 +1,14 @@
+{
+  "articles": [
+    "formation"
+  ],
+  "description": {
+    "russian": "Сделай! Сделайте! Не делай!"
+  },
+  "id": "imperative",
+  "name": {
+    "english": "Imperative",
+    "russian": "Повелительное"
+  },
+  "position": 12
+}

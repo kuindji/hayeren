@@ -1,0 +1,14 @@
+{
+  "articles": [
+    "formation"
+  ],
+  "description": {
+    "russian": "Я сделаю (кратко, с приставкой կ-)"
+  },
+  "id": "conditional",
+  "name": {
+    "english": "Conditional",
+    "russian": "Условное будущее"
+  },
+  "position": 8
+}

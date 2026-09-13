@@ -1,0 +1,253 @@
+{
+  "conjugation": "ել",
+  "id": "drink",
+  "infinitive": {
+    "armenian": "խմել",
+    "russian": "пить",
+    "transcription": "khmel"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "խմ*ենք*"
+        },
+        "1sg": {
+          "armenian": "խմ*եմ*"
+        },
+        "2pl": {
+          "armenian": "խմ*եք*"
+        },
+        "2sg": {
+          "armenian": "խմ*ես*"
+        },
+        "3pl": {
+          "armenian": "խմ*են*"
+        },
+        "3sg": {
+          "armenian": "խմ*ի*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*խմ*ենք*"
+        },
+        "1sg": {
+          "armenian": "*չ*խմ*եմ*"
+        },
+        "2pl": {
+          "armenian": "*չ*խմ*եք*"
+        },
+        "2sg": {
+          "armenian": "*չ*խմ*ես*"
+        },
+        "3pl": {
+          "armenian": "*չ*խմ*են*"
+        },
+        "3sg": {
+          "armenian": "*չ*խմ*ի*"
+        }
+      },
+      "tense": "optative"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "խմ*եինք*"
+        },
+        "1sg": {
+          "armenian": "խմ*եի*"
+        },
+        "2pl": {
+          "armenian": "խմ*եիք*"
+        },
+        "2sg": {
+          "armenian": "խմ*եիր*"
+        },
+        "3pl": {
+          "armenian": "խմ*եին*"
+        },
+        "3sg": {
+          "armenian": "խմ*եր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*խմ*եինք*"
+        },
+        "1sg": {
+          "armenian": "*չ*խմ*եի*"
+        },
+        "2pl": {
+          "armenian": "*չ*խմ*եիք*"
+        },
+        "2sg": {
+          "armenian": "*չ*խմ*եիր*"
+        },
+        "3pl": {
+          "armenian": "*չ*խմ*եին*"
+        },
+        "3sg": {
+          "armenian": "*չ*խմ*եր*"
+        }
+      },
+      "tense": "optative-past"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "*կ*խմ*ենք*"
+        },
+        "1sg": {
+          "armenian": "*կ*խմ*եմ*"
+        },
+        "2pl": {
+          "armenian": "*կ*խմ*եք*"
+        },
+        "2sg": {
+          "armenian": "*կ*խմ*ես*"
+        },
+        "3pl": {
+          "armenian": "*կ*խմ*են*"
+        },
+        "3sg": {
+          "armenian": "*կ*խմ*ի*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* խմ*ի*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* խմ*ի*"
+        },
+        "2pl": {
+          "armenian": "*չեք* խմ*ի*"
+        },
+        "2sg": {
+          "armenian": "*չես* խմ*ի*"
+        },
+        "3pl": {
+          "armenian": "*չեն* խմ*ի*"
+        },
+        "3sg": {
+          "armenian": "*չի* խմ*ի*"
+        }
+      },
+      "tense": "conditional"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта: по общему правилу, как в условном будущем"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "*կ*խմ*եինք*"
+        },
+        "1sg": {
+          "armenian": "*կ*խմ*եի*"
+        },
+        "2pl": {
+          "armenian": "*կ*խմ*եիք*"
+        },
+        "2sg": {
+          "armenian": "*կ*խմ*եիր*"
+        },
+        "3pl": {
+          "armenian": "*կ*խմ*եին*"
+        },
+        "3sg": {
+          "armenian": "*կ*խմ*եր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* խմ*ի*"
+        },
+        "1sg": {
+          "armenian": "*չէի* խմ*ի*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* խմ*ի*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* խմ*ի*"
+        },
+        "3pl": {
+          "armenian": "*չէին* խմ*ի*"
+        },
+        "3sg": {
+          "armenian": "*չէր* խմ*ի*"
+        }
+      },
+      "tense": "conditional-past"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "խմ*ե՛ք*",
+          "russian": "пейте"
+        },
+        "2sg": {
+          "armenian": "խմ*ի՛ր*",
+          "informal": "խմի",
+          "russian": "пей"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* խմ*եք*",
+          "russian": "не пейте"
+        },
+        "2sg": {
+          "armenian": "*մի՛* խմ*իր*",
+          "russian": "не пей"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "խմ*եցինք*"
+        },
+        "1sg": {
+          "armenian": "խմ*եցի*"
+        },
+        "2pl": {
+          "armenian": "խմ*եցիք*"
+        },
+        "2sg": {
+          "armenian": "խմ*եցիր*"
+        },
+        "3pl": {
+          "armenian": "խմ*եցին*"
+        },
+        "3sg": {
+          "armenian": "խմ*եց*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*խմ*եցինք*"
+        },
+        "1sg": {
+          "armenian": "*չ*խմ*եցի*"
+        },
+        "2pl": {
+          "armenian": "*չ*խմ*եցիք*"
+        },
+        "2sg": {
+          "armenian": "*չ*խմ*եցիր*"
+        },
+        "3pl": {
+          "armenian": "*չ*խմ*եցին*"
+        },
+        "3sg": {
+          "armenian": "*չ*խմ*եց*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

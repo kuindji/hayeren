@@ -1,0 +1,14 @@
+{
+  "articles": [
+    "formation"
+  ],
+  "description": {
+    "russian": "Я собираюсь сделать"
+  },
+  "id": "future",
+  "name": {
+    "english": "Future",
+    "russian": "Будущее"
+  },
+  "position": 4
+}

@@ -1,0 +1,14 @@
+{
+  "articles": [
+    "formation"
+  ],
+  "description": {
+    "russian": "Если бы я выпил; я бы выпил"
+  },
+  "id": "optative-past",
+  "name": {
+    "english": "Past optative",
+    "russian": "Желательное прошедшее"
+  },
+  "position": 7
+}
