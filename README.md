@@ -39,6 +39,12 @@ Content lives under `data/` — one JSON file per word/case/etc., validated by
 `bun run validate` and loaded into the site at build time. `data/` is the
 source of truth; edit it directly or through the admin UI (`bun run admin`).
 
+Verbs live in `data/verbs/`, tenses in `data/tenses/`, conjugation classes in
+`data/conjugations.json`; articles sit under `data/articles/cases/<case>/`
+and `data/articles/tenses/<tense>/`. The admin edits words, cases,
+declensions and case articles; verb and tense files are edited by hand
+(validated by `bun run validate`).
+
 ## Deploy
 
 The site deploys to GitHub Pages at the custom domain

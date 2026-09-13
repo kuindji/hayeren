@@ -319,6 +319,7 @@ for a subdomain). GitHub provisions TLS.
 ## 10. Out of scope for v1
 
 - Verb tenses (needs a new data model and content that does not exist).
+  Now in — see `docs/superpowers/specs/2026-09-13-tenses-design.md`.
 - Standalone pronoun, numeral and question-word pages.
 - English UI or English content.
 - Hosted admin, auth, multi-editor workflows.
