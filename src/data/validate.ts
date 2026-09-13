@@ -4,8 +4,8 @@ import {
   WORD_TYPES, WORD_FOLDERS, wordFileSchemaFor, CaseFileSchema, DeclensionsFileSchema, ArticleFileSchema,
   type ArticleFile,
   type DataFiles,
-} from "./schema";
-import { parseFrontmatter } from "./frontmatter";
+} from "./schema.ts";
+import { parseFrontmatter } from "./frontmatter.ts";
 
 export type { DataFiles };
 

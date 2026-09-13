@@ -1,4 +1,5 @@
-import { mkdtempSync, cpSync, readFileSync, existsSync, rmSync } from "node:fs";
+import { mkdtempSync, cpSync, mkdirSync, readFileSync, writeFileSync, existsSync, rmSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { handleApi } from "@/admin/server/routes";
@@ -26,8 +27,14 @@ it("rejects invalid payloads and mismatched ids with 400 and writes nothing", as
 });
 
 it("rejects type-specific field violations", async () => {
+  // "i" and "for" already exist in the fixture data copied into `root`, so the assertion that matters is
+  // that the rejected PUT left them byte-for-byte unchanged, not that the file is absent.
+  const iBefore = readFileSync(join(root, "pronouns/i.json"), "utf8");
+  const forBefore = readFileSync(join(root, "prepostpositions/for.json"), "utf8");
   expect((await put("/words/pronouns/i", { id: "i", cases: [{ case: "nominative", declension: "ա" }] })).status).toBe(400);
   expect((await put("/words/prepostpositions/for", { id: "for", cases: [{ case: "nominative", plural: { armenian: "x" } }] })).status).toBe(400);
+  expect(readFileSync(join(root, "pronouns/i.json"), "utf8")).toBe(iBefore);
+  expect(readFileSync(join(root, "prepostpositions/for.json"), "utf8")).toBe(forBefore);
 });
 
 it("rejects a word id that another word type already uses", async () => {
@@ -40,6 +47,11 @@ it("rejects path escapes and unknown folders before touching disk", async () => 
   expect((await put("/words/nouns/../evil", { id: "evil", cases: [] })).status).toBe(400);
   expect((await put("/words/verbs/run", { id: "run", cases: [] })).status).toBe(400);
   expect((await put("/cases/Bad", { id: "Bad", position: 0, name: {} })).status).toBe(400);
+  expect(existsSync(join(root, "nouns/evil.json"))).toBe(false);
+  expect(existsSync(join(root, "evil.json"))).toBe(false);
+  expect(existsSync(join(root, "verbs"))).toBe(false);
+  expect(existsSync(join(root, "run.json"))).toBe(false);
+  expect(existsSync(join(root, "cases/Bad.json"))).toBe(false);
 });
 
 it("deletes a word and 404s on a missing one", async () => {
@@ -51,10 +63,58 @@ it("deletes a word and 404s on a missing one", async () => {
 it("writes cases, declensions and articles", async () => {
   expect((await put("/cases/dative", { id: "dative", position: 2, name: { russian: "Д" } })).status).toBe(200);
   expect((await put("/declensions", [{ id: "ա", name: { russian: "ա" } }])).status).toBe(200);
+  const declensionsAfterGoodWrite = readFileSync(join(root, "declensions.json"), "utf8");
   expect((await put("/declensions", [{ id: "ա", name: { russian: "ա" } }, { id: "ա", name: { russian: "ա2" } }])).status).toBe(400);
+  expect(readFileSync(join(root, "declensions.json"), "utf8")).toBe(declensionsAfterGoodWrite);
   const a = await put("/articles/dative/forms", { title: "Форма", language: "russian", position: 0, text: "hi\n" });
   expect(a.status).toBe(200);
   expect(readFileSync(join(root, "articles/dative/forms.md"), "utf8")).toBe("---\ntitle: Форма\nlanguage: russian\nposition: 0\n---\nhi\n");
+});
+
+it("deletes an article and 404s on a missing one", async () => {
+  await put("/articles/dative/forms", { title: "Форма", language: "russian", position: 0, text: "hi\n" });
+  const putCase = await put("/cases/dative", { id: "dative", position: 2, name: { russian: "Д" } });
+  expect(putCase.status).toBe(200);
+  expect(existsSync(join(root, "articles/dative/forms.md"))).toBe(true);
+  expect((await handleApi({ method: "DELETE", path: "/articles/dative/forms", body: "" }, root)).status).toBe(200);
+  expect(existsSync(join(root, "articles/dative/forms.md"))).toBe(false);
+  expect((await handleApi({ method: "DELETE", path: "/articles/dative/forms", body: "" }, root)).status).toBe(404);
+});
+
+it("rejects a case PUT whose body id does not match the URL id", async () => {
+  const before = readFileSync(join(root, "cases/nominative.json"), "utf8");
+  const res = await put("/cases/nominative", { id: "genitive", position: 0, name: { russian: "x" } });
+  expect(res.status).toBe(400);
+  expect(readFileSync(join(root, "cases/nominative.json"), "utf8")).toBe(before);
+});
+
+// Fix (review round 1, finding 2): `serializeFrontmatter` does not escape frontmatter field values, so a
+// title containing a newline could inject extra frontmatter lines or a stray `---` delimiter. The route now
+// serializes, re-parses, and rejects anything that does not round-trip exactly.
+describe("article frontmatter injection is rejected before writing", () => {
+  it("rejects a title that injects a stray --- delimiter", async () => {
+    const res = await put("/articles/nominative/injected", { title: "Hi\n---\nsurprise", language: "russian", position: 0, text: "body\n" });
+    expect(res.status).toBe(400);
+    expect(existsSync(join(root, "articles/nominative/injected.md"))).toBe(false);
+  });
+
+  it("rejects a title that injects a duplicate frontmatter key", async () => {
+    const res = await put("/articles/nominative/injected2", { title: "Hi\nlanguage: english", language: "russian", position: 0, text: "b\n" });
+    expect(res.status).toBe(400);
+    expect(existsSync(join(root, "articles/nominative/injected2.md"))).toBe(false);
+  });
+
+  it("rejects a title with leading/trailing spaces that parseFrontmatter would silently trim away", async () => {
+    const res = await put("/articles/nominative/injected3", { title: "  Hi  ", language: "russian", position: 0, text: "b\n" });
+    expect(res.status).toBe(400);
+    expect(existsSync(join(root, "articles/nominative/injected3.md"))).toBe(false);
+  });
+
+  it("still writes and round-trips a normal article", async () => {
+    const res = await put("/articles/nominative/normal", { title: "Normal Title", language: "english", position: 3, text: "hello\nworld\n" });
+    expect(res.status).toBe(200);
+    expect(readFileSync(join(root, "articles/nominative/normal.md"), "utf8")).toBe("---\ntitle: Normal Title\nlanguage: english\nposition: 3\n---\nhello\nworld\n");
+  });
 });
 
 it("validate reports dangling references after a bad write", async () => {
@@ -80,6 +140,7 @@ describe("path safety: traversal attempts never reach outside root", () => {
 
   it("rejects an id containing an encoded slash (%2F)", async () => {
     expect((await put("/words/nouns/%2F", { id: "x", cases: [] })).status).toBe(400);
+    expect(existsSync(join(root, "nouns/%2F.json"))).toBe(false);
   });
 
   it("rejects ..%2F used as a traversal id", async () => {
@@ -89,10 +150,14 @@ describe("path safety: traversal attempts never reach outside root", () => {
 
   it("rejects a backslash traversal attempt", async () => {
     expect((await put("/words/nouns/..\\evil", { id: "evil", cases: [] })).status).toBe(400);
+    expect(existsSync(join(root, "evil.json"))).toBe(false);
+    expect(existsSync(join(root, "nouns/..\\evil.json"))).toBe(false);
   });
 
   it("rejects a path with an embedded absolute-looking (empty) segment", async () => {
     expect((await put("/words/nouns//etc/passwd", { id: "passwd", cases: [] })).status).toBe(400);
+    expect(existsSync(join(root, "etc"))).toBe(false);
+    expect(existsSync(join(root, "nouns/passwd.json"))).toBe(false);
   });
 
   it("rejects the same traversal shapes on delete and on cases/articles routes", async () => {
@@ -100,18 +165,48 @@ describe("path safety: traversal attempts never reach outside root", () => {
     expect((await put("/cases/%2e%2e", { id: "x", position: 0, name: {} })).status).toBe(400);
     expect((await put("/articles/%2e%2e/slug", { title: "t", language: "russian", position: 0, text: "" })).status).toBe(400);
     expect((await put("/articles/case/%2e%2e", { title: "t", language: "russian", position: 0, text: "" })).status).toBe(400);
+    expect(existsSync(join(root, "cases/%2e%2e.json"))).toBe(false);
+    expect(existsSync(join(root, "articles/%2e%2e"))).toBe(false);
+    expect(existsSync(join(root, "articles/case"))).toBe(false);
   });
 });
 
 // Ruling 1: git-status is scoped to `root`. A mkdtemp directory is outside this repo, so `git status`
-// against it is expected to fail internally; there is no meaningful "clean"/"files" assertion to make
-// against a non-repo path, so the only thing worth proving here is that the route never throws and
-// still returns a well-formed response.
-it("git-status does not throw for a root outside any repository", async () => {
+// against it is expected to fail internally. Fix (review round 1, minor M2): report that failure as an
+// explicit error rather than the previous `{ clean: true, files: [] }`, which would have told the Task 12
+// admin UI a working tree it knows nothing about is "clean".
+it("git-status does not throw for a root outside any repository, and reports it as an error", async () => {
   const res = await handleApi({ method: "GET", path: "/git-status", body: "" }, root);
-  expect(res.status).toBe(200);
-  expect(res.body).toHaveProperty("files");
-  expect(Array.isArray((res.body as { files: unknown }).files)).toBe(true);
+  expect(res.status).toBe(500);
+  expect(res.body).toHaveProperty("error");
+});
+
+// Fix (review round 1, finding 1): a real repo with two unstaged modifications reproduces the
+// `--porcelain` leading-space bug the reviewer found — trimming the whole output ate the first
+// character of the first reported path.
+it("git-status reports every modified file's path in full, unmangled by a leading status space", async () => {
+  const repo = mkdtempSync(join(tmpdir(), "hayeren-repo-"));
+  const dataDir = join(repo, "data");
+  mkdirSync(join(dataDir, "nouns"), { recursive: true });
+  writeFileSync(join(dataDir, "nouns/cat.json"), "{}\n");
+  writeFileSync(join(dataDir, "nouns/dog.json"), "{}\n");
+  const git = (...gitArgs: string[]) =>
+    execFileSync("git", gitArgs, { cwd: repo, stdio: ["ignore", "pipe", "pipe"] }).toString();
+  git("init", "-q");
+  git("add", ".");
+  git("-c", "user.email=test@example.com", "-c", "user.name=test", "commit", "-qm", "init");
+  writeFileSync(join(dataDir, "nouns/cat.json"), '{"x":1}\n');
+  writeFileSync(join(dataDir, "nouns/dog.json"), '{"x":1}\n');
+  const cwd = process.cwd();
+  process.chdir(repo);
+  try {
+    const res = await handleApi({ method: "GET", path: "/git-status", body: "" }, "data");
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ clean: false, files: ["data/nouns/cat.json", "data/nouns/dog.json"] });
+  } finally {
+    process.chdir(cwd);
+    rmSync(repo, { recursive: true, force: true });
+  }
 });
 
 it("returns 404 for an unknown route", async () => {

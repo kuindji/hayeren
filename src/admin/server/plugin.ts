@@ -34,10 +34,14 @@ export function adminApiPlugin(root = "data"): Plugin {
         req.on("end", () => {
           if (responded) return;
           const body = Buffer.concat(chunks).toString("utf8");
+          // Fix (review round 1, minor M3): `req.url` here is whatever followed the "/api" mount point,
+          // query string included (e.g. "/validate?x=1"). routes.ts routes on the path only, so a query
+          // string left attached made every route 404. Strip it before handing the path to handleApi.
+          const path = (req.url ?? "/").split("?")[0] ?? "/";
           // handleApi never throws (Zod failures and JSON parse failures are caught internally and turned
           // into 400 responses), but a Vite dev server must never die from a malformed admin request, so the
           // rejection path is still handled defensively here.
-          void handleApi({ method: req.method ?? "GET", path: req.url ?? "/", body }, root)
+          void handleApi({ method: req.method ?? "GET", path, body }, root)
             .then((r) => respond(r.status, r.body))
             .catch((e: unknown) => respond(500, { error: e instanceof Error ? e.message : String(e) }));
         });

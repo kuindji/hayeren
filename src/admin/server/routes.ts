@@ -7,9 +7,10 @@ import { execFileSync } from "node:child_process";
 // does know the alias) would run the tests fine.
 import {
   Slug, WORD_FOLDERS, FOLDER_TO_TYPE, wordFileSchemaFor, CaseFileSchema, DeclensionsFileSchema, ArticleFrontmatterSchema,
+  ArticleFileSchema,
 } from "../../data/schema.ts";
 import { stableStringify } from "../../data/json.ts";
-import { serializeFrontmatter } from "../../data/frontmatter.ts";
+import { parseFrontmatter, serializeFrontmatter } from "../../data/frontmatter.ts";
 import { readDataFromDisk, checkReferences } from "../../data/validate.ts";
 import { z } from "zod";
 
@@ -100,8 +101,30 @@ export async function handleApi(req: ApiRequest, root: string): Promise<ApiRespo
     if (req.method === "PUT") {
       const art = parseBody(ArticleFrontmatterSchema.extend({ text: z.string() }).strict(), req.body);
       if (isResponse(art)) return art;
+      // Fix (review round 1, finding 2): `serializeFrontmatter` writes `key: value` lines unescaped, so a
+      // title (or any other frontmatter field) containing a newline can inject extra frontmatter lines or
+      // close the `---` block early, corrupting the file even though the Zod schema alone accepted the
+      // input. Rather than loosen `ArticleFrontmatterSchema` (Task 2's schema is off limits here), serialize
+      // and immediately re-parse the result the same way `readDataFromDisk` would, then require an exact
+      // round trip. `parseFrontmatter` also trims values, so this incidentally catches leading/trailing
+      // whitespace being silently dropped.
+      const serialized = serializeFrontmatter({ title: art.title, language: art.language, position: art.position }, art.text);
+      const { data: reparsedData, body: reparsedBody } = parseFrontmatter(serialized);
+      const roundTrip = ArticleFileSchema.safeParse({
+        ...reparsedData,
+        position: Number(reparsedData.position),
+        case: a,
+        slug: b,
+        text: reparsedBody,
+      });
+      const roundTripOk = roundTrip.success
+        && roundTrip.data.title === art.title
+        && roundTrip.data.language === art.language
+        && roundTrip.data.position === art.position
+        && reparsedBody === art.text;
+      if (!roundTripOk) return bad("article frontmatter does not round-trip safely (likely a newline or stray value in a field)");
       mkdirSync(dirname(file), { recursive: true });
-      writeFileSync(file, serializeFrontmatter({ title: art.title, language: art.language, position: art.position }, art.text));
+      writeFileSync(file, serialized);
       return ok();
     }
   }
@@ -109,20 +132,29 @@ export async function handleApi(req: ApiRequest, root: string): Promise<ApiRespo
     // Ruling 1: scoped to `root`, not a hardcoded "data", so a mkdtemp copy is what gets reported in tests.
     // `root` goes in as an argv element (never shell-interpolated) and the repo root is the cwd, matching
     // production where `root` is the relative "data" directory. A `root` outside any repository (a mkdtemp
-    // dir in tests) makes git exit non-zero; that is caught and reported as a deterministic empty result
-    // rather than throwing and killing the dev server.
+    // dir in tests) makes git exit non-zero; that is caught below and reported as an explicit error rather
+    // than throwing and killing the dev server.
     try {
-      const out = execFileSync("git", ["status", "--porcelain", "--", root], {
+      const raw = execFileSync("git", ["status", "--porcelain", "--", root], {
         cwd: process.cwd(),
         // A `root` outside any repository makes git write to stderr before exiting non-zero (see catch
         // below); pipe it so a mkdtemp-rooted test run doesn't spray "fatal: ... is outside repository"
         // into the dev server's or the test runner's own output.
         stdio: ["ignore", "pipe", "pipe"],
-      }).toString().trim();
-      const files = out ? out.split("\n").map((l) => l.slice(3)) : [];
+      }).toString();
+      // Fix (review round 1, finding 1): `--porcelain` status lines are `XY<space>path`, and the first
+      // character of `XY` can itself be a space (e.g. " M path" for an unstaged modification). Trimming the
+      // *whole* output — as the previous version did — strips that leading space off only the first line,
+      // so `slice(3)` then eats the first character of the first path. Strip only the trailing newline(s)
+      // that `git status` always appends, never leading whitespace.
+      const trimmed = raw.replace(/[\r\n]+$/, "");
+      const files = trimmed ? trimmed.split("\n").map((l) => l.slice(3)) : [];
       return ok({ clean: files.length === 0, files });
-    } catch {
-      return ok({ clean: true, files: [] });
+    } catch (e) {
+      // Fix (review round 1, minor M2): a caller (the Task 12 admin UI) cannot tell "clean" apart from "we
+      // don't actually know" if both report `{ clean: true, files: [] }`. A `root` outside any git repository
+      // (or a missing `git` binary) is a real failure, not a clean working tree, so surface it as one.
+      return bad(`git status failed: ${e instanceof Error ? e.message : String(e)}`, 500);
     }
   }
   if (head === "validate" && parts.length === 1 && req.method === "GET") {
