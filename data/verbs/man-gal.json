@@ -435,22 +435,22 @@
       },
       "negative": {
         "1pl": {
-          "armenian": "ման *չէինք* գ*այինք*"
+          "armenian": "ման *չէինք* գ*ա*"
         },
         "1sg": {
-          "armenian": "ման *չէի* գ*այի*"
+          "armenian": "ման *չէի* գ*ա*"
         },
         "2pl": {
-          "armenian": "ման *չէիք* գ*այիք*"
+          "armenian": "ման *չէիք* գ*ա*"
         },
         "2sg": {
-          "armenian": "ման *չէիր* գ*այիր*"
+          "armenian": "ման *չէիր* գ*ա*"
         },
         "3pl": {
-          "armenian": "ման *չէին* գ*ային*"
+          "armenian": "ման *չէին* գ*ա*"
         },
         "3sg": {
-          "armenian": "ման *չէր* գ*ար*"
+          "armenian": "ման *չէր* գ*ա*"
         }
       },
       "tense": "conditional-past"

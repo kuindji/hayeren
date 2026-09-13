@@ -34,6 +34,7 @@ it.each([
   ["man-gal", "conditional", "1sg", false, "ման կգամ"],
   ["man-gal", "aorist", "1sg", true, "ման չեկա"],
   ["make-happy", "aorist", "3sg", false, "ուրախացրեց"],
+  ["read", "conditional-past", "1sg", true, "չէի կարդա"],
 ])("%s %s %s negative=%s is %s", (verb, tense, person, negative, expected) => {
   expect(form(verb, tense, person, negative)).toBe(expected);
 });
@@ -55,6 +56,21 @@ it("conditional and conditional-past negatives mark the changing verb ending", (
         const rest = armenian.replace(/^[^*]*\*[^*]*\*/, "");
         expect(rest, `${v.id}/${t.tense}/${person} negative "${armenian}" has no marked verb ending`).toMatch(/\*[^*]+\*/);
       }
+    }
+  }
+});
+
+it("conditional-past negatives use the same short verb form as the conditional negative", () => {
+  const verbPart = (s: string) => strip(s.replace(/\*չ[^*]*\*\s*/, ""), "russian").trim();
+  for (const v of d.verbs) {
+    const cond = v.tenses.find((t) => t.tense === "conditional");
+    const past = v.tenses.find((t) => t.tense === "conditional-past");
+    if (!cond?.negative || !past?.negative) continue;
+    for (const p of Object.keys(cond.negative) as (keyof typeof cond.negative)[]) {
+      const c = (cond.negative as Record<string, { armenian?: string }>)[p]?.armenian;
+      const q = (past.negative as Record<string, { armenian?: string }>)[p]?.armenian;
+      if (!c || !q) continue;
+      expect(verbPart(q), `${v.id}/conditional-past/${p} verb form should match conditional's "${strip(c, "russian")}"`).toBe(verbPart(c));
     }
   }
 });

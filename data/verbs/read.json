@@ -168,22 +168,22 @@
       },
       "negative": {
         "1pl": {
-          "armenian": "*չէինք* կարդ*այինք*"
+          "armenian": "*չէինք* կարդ*ա*"
         },
         "1sg": {
-          "armenian": "*չէի* կարդ*այի*"
+          "armenian": "*չէի* կարդ*ա*"
         },
         "2pl": {
-          "armenian": "*չէիք* կարդ*այիք*"
+          "armenian": "*չէիք* կարդ*ա*"
         },
         "2sg": {
-          "armenian": "*չէիր* կարդ*այիր*"
+          "armenian": "*չէիր* կարդ*ա*"
         },
         "3pl": {
-          "armenian": "*չէին* կարդ*ային*"
+          "armenian": "*չէին* կարդ*ա*"
         },
         "3sg": {
-          "armenian": "*չէր* կարդ*ար*"
+          "armenian": "*չէր* կարդ*ա*"
         }
       },
       "tense": "conditional-past"
