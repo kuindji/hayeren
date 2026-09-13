@@ -1,0 +1,103 @@
+{
+  "conjugation": "անալ",
+  "id": "bathe",
+  "infinitive": {
+    "armenian": "լողանալ",
+    "russian": "купаться, принимать душ",
+    "transcription": "loghanal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "լող*ացել ենք*"
+        },
+        "1sg": {
+          "armenian": "լող*ացել եմ*"
+        },
+        "2pl": {
+          "armenian": "լող*ացել եք*"
+        },
+        "2sg": {
+          "armenian": "լող*ացել ես*"
+        },
+        "3pl": {
+          "armenian": "լող*ացել են*"
+        },
+        "3sg": {
+          "armenian": "լող*ացել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* լող*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* լող*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* լող*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չես* լող*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* լող*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չի* լող*ացել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "լող*ացել էինք*"
+        },
+        "1sg": {
+          "armenian": "լող*ացել էի*"
+        },
+        "2pl": {
+          "armenian": "լող*ացել էիք*"
+        },
+        "2sg": {
+          "armenian": "լող*ացել էիր*"
+        },
+        "3pl": {
+          "armenian": "լող*ացել էին*"
+        },
+        "3sg": {
+          "armenian": "լող*ացել էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* լող*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չէի* լող*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* լող*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* լող*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չէին* լող*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չէր* լող*ացել*"
+        }
+      },
+      "tense": "pluperfect"
+    }
+  ]
+}

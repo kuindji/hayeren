@@ -1,0 +1,125 @@
+{
+  "conjugation": "ն",
+  "id": "go-down",
+  "infinitive": {
+    "armenian": "իջնել",
+    "russian": "спускаться",
+    "transcription": "ijnel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "իջ*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "իջ*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "իջ*ել եք*"
+        },
+        "2sg": {
+          "armenian": "իջ*ել ես*"
+        },
+        "3pl": {
+          "armenian": "իջ*ել են*"
+        },
+        "3sg": {
+          "armenian": "իջ*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* իջ*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* իջ*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* իջ*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* իջ*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* իջ*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* իջ*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "2pl": {
+          "armenian": "իջ*ե՛ք*"
+        },
+        "2sg": {
+          "armenian": "իջ*ի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* իջ*եք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* իջ*իր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "իջ*անք*"
+        },
+        "1sg": {
+          "armenian": "իջ*ա*"
+        },
+        "2pl": {
+          "armenian": "իջ*աք*"
+        },
+        "2sg": {
+          "armenian": "իջ*ար*"
+        },
+        "3pl": {
+          "armenian": "իջ*ան*"
+        },
+        "3sg": {
+          "armenian": "իջ*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*իջ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*իջ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*իջ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*իջ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*իջ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*իջ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

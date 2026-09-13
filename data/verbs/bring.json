@@ -1,0 +1,31 @@
+{
+  "conjugation": "ել",
+  "id": "bring",
+  "infinitive": {
+    "armenian": "բերել",
+    "russian": "приносить",
+    "transcription": "berel"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "բերե՛ք"
+        },
+        "2sg": {
+          "armenian": "բե՛ր"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* բերեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* բեր"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}

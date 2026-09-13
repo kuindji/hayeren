@@ -5,6 +5,16 @@
   "description": {
     "russian": "Если бы я выпил; я бы выпил"
   },
+  "groups": [
+    {
+      "name": {
+        "russian": "Составные глаголы"
+      },
+      "words": [
+        "man-gal"
+      ]
+    }
+  ],
   "id": "optative-past",
   "name": {
     "english": "Past optative",

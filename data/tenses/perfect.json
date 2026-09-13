@@ -5,6 +5,17 @@
   "description": {
     "russian": "Я сделал, и результат виден сейчас"
   },
+  "groups": [
+    {
+      "name": {
+        "russian": "Составные глаголы"
+      },
+      "words": [
+        "man-gal",
+        "get-up"
+      ]
+    }
+  ],
   "id": "perfect",
   "name": {
     "english": "Present perfect",

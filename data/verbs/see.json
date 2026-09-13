@@ -1,0 +1,77 @@
+{
+  "conjugation": "ն",
+  "id": "see",
+  "infinitive": {
+    "armenian": "տեսնել",
+    "russian": "видеть",
+    "transcription": "tesnel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "տես*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "տես*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "տես*ել եք*"
+        },
+        "2sg": {
+          "armenian": "տես*ել ես*"
+        },
+        "3pl": {
+          "armenian": "տես*ել են*"
+        },
+        "3sg": {
+          "armenian": "տես*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* տես*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* տես*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* տես*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* տես*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* տես*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* տես*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "տեսե՛ք"
+        },
+        "2sg": {
+          "armenian": "տե՛ս"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* տեսեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* տես"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}

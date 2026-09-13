@@ -1,0 +1,172 @@
+{
+  "conjugation": "ենալ",
+  "id": "get-up",
+  "infinitive": {
+    "armenian": "վեր կենալ",
+    "russian": "вставать",
+    "transcription": "ver kenal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "վեր *ենք* կացել"
+        },
+        "1sg": {
+          "armenian": "վեր *եմ* կացել"
+        },
+        "2pl": {
+          "armenian": "վեր *եք* կացել"
+        },
+        "2sg": {
+          "armenian": "վեր *ես* կացել"
+        },
+        "3pl": {
+          "armenian": "վեր *են* կացել"
+        },
+        "3sg": {
+          "armenian": "վեր *է* կացել"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "վեր *չենք* կացել"
+        },
+        "1sg": {
+          "armenian": "վեր *չեմ* կացել"
+        },
+        "2pl": {
+          "armenian": "վեր *չեք* կացել"
+        },
+        "2sg": {
+          "armenian": "վեր *չես* կացել"
+        },
+        "3pl": {
+          "armenian": "վեր *չեն* կացել"
+        },
+        "3sg": {
+          "armenian": "վեր *չի* կացել"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "վեր *էինք* կացել"
+        },
+        "1sg": {
+          "armenian": "վեր *էի* կացել"
+        },
+        "2pl": {
+          "armenian": "վեր *էիք* կացել"
+        },
+        "2sg": {
+          "armenian": "վեր *էիր* կացել"
+        },
+        "3pl": {
+          "armenian": "վեր *էին* կացել"
+        },
+        "3sg": {
+          "armenian": "վեր *էր* կացել"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "վեր *չէինք* կացել"
+        },
+        "1sg": {
+          "armenian": "վեր *չէի* կացել"
+        },
+        "2pl": {
+          "armenian": "վեր *չէիք* կացել"
+        },
+        "2sg": {
+          "armenian": "վեր *չէիր* կացել"
+        },
+        "3pl": {
+          "armenian": "վեր *չէին* կացել"
+        },
+        "3sg": {
+          "armenian": "վեր *չէր* կացել"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "վե՛ր կացե՛ք"
+        },
+        "2sg": {
+          "armenian": "վե՛ր կաց"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* վեր կացեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* վեր կաց"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "վեր կաց*անք*"
+        },
+        "1sg": {
+          "armenian": "վեր կաց*ա*"
+        },
+        "2pl": {
+          "armenian": "վեր կաց*աք*"
+        },
+        "2sg": {
+          "armenian": "վեր կաց*ար*"
+        },
+        "3pl": {
+          "armenian": "վեր կաց*ան*"
+        },
+        "3sg": {
+          "armenian": "վեր կաց*ավ*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*վեր կաց*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*վեր կաց*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*վեր կաց*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*վեր կաց*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*վեր կաց*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*վեր կաց*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

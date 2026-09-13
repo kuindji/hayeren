@@ -5,6 +5,16 @@
   "description": {
     "russian": "Я делал, я раньше регулярно делал"
   },
+  "groups": [
+    {
+      "name": {
+        "russian": "Составные глаголы"
+      },
+      "words": [
+        "man-gal"
+      ]
+    }
+  ],
   "id": "imperfect",
   "name": {
     "english": "Imperfect",

@@ -1,0 +1,97 @@
+{
+  "conjugation": "ել",
+  "id": "bite",
+  "infinitive": {
+    "armenian": "կծել",
+    "russian": "кусать",
+    "transcription": "ktsel"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "կծ*ում ենք*"
+        },
+        "1sg": {
+          "armenian": "կծ*ում եմ*"
+        },
+        "2pl": {
+          "armenian": "կծ*ում եք*"
+        },
+        "2sg": {
+          "armenian": "կծ*ում ես*"
+        },
+        "3pl": {
+          "armenian": "կծ*ում են*"
+        },
+        "3sg": {
+          "armenian": "կծ*ում է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* կծ*ում*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* կծ*ում*"
+        },
+        "2pl": {
+          "armenian": "*չեք* կծ*ում*"
+        },
+        "2sg": {
+          "armenian": "*չես* կծ*ում*"
+        },
+        "3pl": {
+          "armenian": "*չեն* կծ*ում*"
+        },
+        "3sg": {
+          "armenian": "*չի* կծ*ում*"
+        }
+      },
+      "tense": "present"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "կծ*ում էինք*"
+        },
+        "1sg": {
+          "armenian": "կծ*ում էի*"
+        },
+        "2pl": {
+          "armenian": "կծ*ում էիք*"
+        },
+        "2sg": {
+          "armenian": "կծ*ում էիր*"
+        },
+        "3pl": {
+          "armenian": "կծ*ում էին*"
+        },
+        "3sg": {
+          "armenian": "կծ*ում էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* կծ*ում*"
+        },
+        "1sg": {
+          "armenian": "*չէի* կծ*ում*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* կծ*ում*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* կծ*ում*"
+        },
+        "3pl": {
+          "armenian": "*չէին* կծ*ում*"
+        },
+        "3sg": {
+          "armenian": "*չէր* կծ*ում*"
+        }
+      },
+      "tense": "imperfect"
+    }
+  ]
+}

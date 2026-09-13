@@ -1,0 +1,172 @@
+{
+  "conjugation": "ել",
+  "id": "put",
+  "infinitive": {
+    "armenian": "դնել",
+    "russian": "класть",
+    "transcription": "dnel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "դրել *ենք*"
+        },
+        "1sg": {
+          "armenian": "դրել *եմ*"
+        },
+        "2pl": {
+          "armenian": "դրել *եք*"
+        },
+        "2sg": {
+          "armenian": "դրել *ես*"
+        },
+        "3pl": {
+          "armenian": "դրել *են*"
+        },
+        "3sg": {
+          "armenian": "դրել *է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* դրել"
+        },
+        "1sg": {
+          "armenian": "*չեմ* դրել"
+        },
+        "2pl": {
+          "armenian": "*չեք* դրել"
+        },
+        "2sg": {
+          "armenian": "*չես* դրել"
+        },
+        "3pl": {
+          "armenian": "*չեն* դրել"
+        },
+        "3sg": {
+          "armenian": "*չի* դրել"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "դրել *էինք*"
+        },
+        "1sg": {
+          "armenian": "դրել *էի*"
+        },
+        "2pl": {
+          "armenian": "դրել *էիք*"
+        },
+        "2sg": {
+          "armenian": "դրել *էիր*"
+        },
+        "3pl": {
+          "armenian": "դրել *էին*"
+        },
+        "3sg": {
+          "armenian": "դրել *էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* դրել"
+        },
+        "1sg": {
+          "armenian": "*չէի* դրել"
+        },
+        "2pl": {
+          "armenian": "*չէիք* դրել"
+        },
+        "2sg": {
+          "armenian": "*չէիր* դրել"
+        },
+        "3pl": {
+          "armenian": "*չէին* դրել"
+        },
+        "3sg": {
+          "armenian": "*չէր* դրել"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "դրե՛ք"
+        },
+        "2sg": {
+          "armenian": "դի՛ր"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* դրեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* դիր"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "դր*եցինք*"
+        },
+        "1sg": {
+          "armenian": "դր*եցի*"
+        },
+        "2pl": {
+          "armenian": "դր*եցիք*"
+        },
+        "2sg": {
+          "armenian": "դր*եցիր*"
+        },
+        "3pl": {
+          "armenian": "դր*եցին*"
+        },
+        "3sg": {
+          "armenian": "դր*եց*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*դր*եցինք*"
+        },
+        "1sg": {
+          "armenian": "*չ*դր*եցի*"
+        },
+        "2pl": {
+          "armenian": "*չ*դր*եցիք*"
+        },
+        "2sg": {
+          "armenian": "*չ*դր*եցիր*"
+        },
+        "3pl": {
+          "armenian": "*չ*դր*եցին*"
+        },
+        "3sg": {
+          "armenian": "*չ*դր*եց*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

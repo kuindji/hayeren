@@ -6,6 +6,16 @@
   "description": {
     "russian": "Я делаю, я сейчас делаю"
   },
+  "groups": [
+    {
+      "name": {
+        "russian": "Составные глаголы"
+      },
+      "words": [
+        "man-gal"
+      ]
+    }
+  ],
   "id": "present",
   "name": {
     "english": "Present",

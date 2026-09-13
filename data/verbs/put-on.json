@@ -1,0 +1,125 @@
+{
+  "conjugation": "ն",
+  "id": "put-on",
+  "infinitive": {
+    "armenian": "հագնել",
+    "russian": "надевать",
+    "transcription": "hagnel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "հագ*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "հագ*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "հագ*ել եք*"
+        },
+        "2sg": {
+          "armenian": "հագ*ել ես*"
+        },
+        "3pl": {
+          "armenian": "հագ*ել են*"
+        },
+        "3sg": {
+          "armenian": "հագ*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* հագ*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* հագ*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* հագ*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* հագ*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* հագ*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* հագ*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "2pl": {
+          "armenian": "հագ*ե՛ք*"
+        },
+        "2sg": {
+          "armenian": "հագ*ի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* հագ*եք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* հագ*իր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "հագ*անք*"
+        },
+        "1sg": {
+          "armenian": "հագ*ա*"
+        },
+        "2pl": {
+          "armenian": "հագ*աք*"
+        },
+        "2sg": {
+          "armenian": "հագ*ար*"
+        },
+        "3pl": {
+          "armenian": "հագ*ան*"
+        },
+        "3sg": {
+          "armenian": "հագ*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*հագ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*հագ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*հագ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*հագ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*հագ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*հագ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

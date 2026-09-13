@@ -1,0 +1,340 @@
+{
+  "conjugation": "ալ",
+  "id": "read",
+  "infinitive": {
+    "armenian": "կարդալ",
+    "russian": "читать",
+    "transcription": "kardal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "կարդ*անք*"
+        },
+        "1sg": {
+          "armenian": "կարդ*ամ*"
+        },
+        "2pl": {
+          "armenian": "կարդ*աք*"
+        },
+        "2sg": {
+          "armenian": "կարդ*աս*"
+        },
+        "3pl": {
+          "armenian": "կարդ*ան*"
+        },
+        "3sg": {
+          "armenian": "կարդ*ա*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*կարդ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*կարդ*ամ*"
+        },
+        "2pl": {
+          "armenian": "*չ*կարդ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*կարդ*աս*"
+        },
+        "3pl": {
+          "armenian": "*չ*կարդ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*կարդ*ա*"
+        }
+      },
+      "tense": "optative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "կարդ*այինք*"
+        },
+        "1sg": {
+          "armenian": "կարդ*այի*"
+        },
+        "2pl": {
+          "armenian": "կարդ*այիք*"
+        },
+        "2sg": {
+          "armenian": "կարդ*այիր*"
+        },
+        "3pl": {
+          "armenian": "կարդ*ային*"
+        },
+        "3sg": {
+          "armenian": "կարդ*ար*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*կարդ*այինք*"
+        },
+        "1sg": {
+          "armenian": "*չ*կարդ*այի*"
+        },
+        "2pl": {
+          "armenian": "*չ*կարդ*այիք*"
+        },
+        "2sg": {
+          "armenian": "*չ*կարդ*այիր*"
+        },
+        "3pl": {
+          "armenian": "*չ*կարդ*ային*"
+        },
+        "3sg": {
+          "armenian": "*չ*կարդ*ար*"
+        }
+      },
+      "tense": "optative-past"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "*կ*կարդ*անք*"
+        },
+        "1sg": {
+          "armenian": "*կ*կարդ*ամ*"
+        },
+        "2pl": {
+          "armenian": "*կ*կարդ*աք*"
+        },
+        "2sg": {
+          "armenian": "*կ*կարդ*աս*"
+        },
+        "3pl": {
+          "armenian": "*կ*կարդ*ան*"
+        },
+        "3sg": {
+          "armenian": "*կ*կարդ*ա*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* կարդա"
+        },
+        "1sg": {
+          "armenian": "*չեմ* կարդա"
+        },
+        "2pl": {
+          "armenian": "*չեք* կարդա"
+        },
+        "2sg": {
+          "armenian": "*չես* կարդա"
+        },
+        "3pl": {
+          "armenian": "*չեն* կարդա"
+        },
+        "3sg": {
+          "armenian": "*չի* կարդա"
+        }
+      },
+      "tense": "conditional"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "*կ*կարդ*այինք*"
+        },
+        "1sg": {
+          "armenian": "*կ*կարդ*այի*"
+        },
+        "2pl": {
+          "armenian": "*կ*կարդ*այիք*"
+        },
+        "2sg": {
+          "armenian": "*կ*կարդ*այիր*"
+        },
+        "3pl": {
+          "armenian": "*կ*կարդ*ային*"
+        },
+        "3sg": {
+          "armenian": "*կ*կարդ*ար*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* կարդա"
+        },
+        "1sg": {
+          "armenian": "*չէի* կարդա"
+        },
+        "2pl": {
+          "armenian": "*չէիք* կարդա"
+        },
+        "2sg": {
+          "armenian": "*չէիր* կարդա"
+        },
+        "3pl": {
+          "armenian": "*չէին* կարդա"
+        },
+        "3sg": {
+          "armenian": "*չէր* կարդա"
+        }
+      },
+      "tense": "conditional-past"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "*պիտի* կարդ*անք*"
+        },
+        "1sg": {
+          "armenian": "*պիտի* կարդ*ամ*"
+        },
+        "2pl": {
+          "armenian": "*պիտի* կարդ*աք*"
+        },
+        "2sg": {
+          "armenian": "*պիտի* կարդ*աս*"
+        },
+        "3pl": {
+          "armenian": "*պիտի* կարդ*ան*"
+        },
+        "3sg": {
+          "armenian": "*պիտի* կարդ*ա*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չպիտի* կարդ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չպիտի* կարդ*ամ*"
+        },
+        "2pl": {
+          "armenian": "*չպիտի* կարդ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չպիտի* կարդ*աս*"
+        },
+        "3pl": {
+          "armenian": "*չպիտի* կարդ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չպիտի* կարդ*ա*"
+        }
+      },
+      "tense": "necessitative"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "*պիտի* կարդ*այինք*"
+        },
+        "1sg": {
+          "armenian": "*պիտի* կարդ*այի*"
+        },
+        "2pl": {
+          "armenian": "*պիտի* կարդ*այիք*"
+        },
+        "2sg": {
+          "armenian": "*պիտի* կարդ*այիր*"
+        },
+        "3pl": {
+          "armenian": "*պիտի* կարդ*ային*"
+        },
+        "3sg": {
+          "armenian": "*պիտի* կարդ*ար*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չպիտի* կարդ*այինք*"
+        },
+        "1sg": {
+          "armenian": "*չպիտի* կարդ*այի*"
+        },
+        "2pl": {
+          "armenian": "*չպիտի* կարդ*այիք*"
+        },
+        "2sg": {
+          "armenian": "*չպիտի* կարդ*այիր*"
+        },
+        "3pl": {
+          "armenian": "*չպիտի* կարդ*ային*"
+        },
+        "3sg": {
+          "armenian": "*չպիտի* կարդ*ար*"
+        }
+      },
+      "tense": "necessitative-past"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "կարդ*ացե՛ք*"
+        },
+        "2sg": {
+          "armenian": "կարդ*ա՛*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* կարդ*ացեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* կարդ*ա*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "կարդ*ացինք*"
+        },
+        "1sg": {
+          "armenian": "կարդ*ացի*"
+        },
+        "2pl": {
+          "armenian": "կարդ*ացիք*"
+        },
+        "2sg": {
+          "armenian": "կարդ*ացիր*"
+        },
+        "3pl": {
+          "armenian": "կարդ*ացին*"
+        },
+        "3sg": {
+          "armenian": "կարդ*աց*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*կարդ*ացինք*"
+        },
+        "1sg": {
+          "armenian": "*չ*կարդ*ացի*"
+        },
+        "2pl": {
+          "armenian": "*չ*կարդ*ացիք*"
+        },
+        "2sg": {
+          "armenian": "*չ*կարդ*ացիր*"
+        },
+        "3pl": {
+          "armenian": "*չ*կարդ*ացին*"
+        },
+        "3sg": {
+          "armenian": "*չ*կարդ*աց*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

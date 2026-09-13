@@ -1,0 +1,152 @@
+{
+  "conjugation": "ել",
+  "id": "do",
+  "infinitive": {
+    "armenian": "անել",
+    "russian": "делать",
+    "transcription": "anel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "արել *ենք*"
+        },
+        "1sg": {
+          "armenian": "արել *եմ*"
+        },
+        "2pl": {
+          "armenian": "արել *եք*"
+        },
+        "2sg": {
+          "armenian": "արել *ես*"
+        },
+        "3pl": {
+          "armenian": "արել *են*"
+        },
+        "3sg": {
+          "armenian": "արել *է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* արել"
+        },
+        "1sg": {
+          "armenian": "*չեմ* արել"
+        },
+        "2pl": {
+          "armenian": "*չեք* արել"
+        },
+        "2sg": {
+          "armenian": "*չես* արել"
+        },
+        "3pl": {
+          "armenian": "*չեն* արել"
+        },
+        "3sg": {
+          "armenian": "*չի* արել"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "արել *էինք*"
+        },
+        "1sg": {
+          "armenian": "արել *էի*"
+        },
+        "2pl": {
+          "armenian": "արել *էիք*"
+        },
+        "2sg": {
+          "armenian": "արել *էիր*"
+        },
+        "3pl": {
+          "armenian": "արել *էին*"
+        },
+        "3sg": {
+          "armenian": "արել *էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* արել"
+        },
+        "1sg": {
+          "armenian": "*չէի* արել"
+        },
+        "2pl": {
+          "armenian": "*չէիք* արել"
+        },
+        "2sg": {
+          "armenian": "*չէիր* արել"
+        },
+        "3pl": {
+          "armenian": "*չէին* արել"
+        },
+        "3sg": {
+          "armenian": "*չէր* արել"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ար*եցինք*"
+        },
+        "1sg": {
+          "armenian": "ար*եցի*"
+        },
+        "2pl": {
+          "armenian": "ար*եցիք*"
+        },
+        "2sg": {
+          "armenian": "ար*եցիր*"
+        },
+        "3pl": {
+          "armenian": "ար*եցին*"
+        },
+        "3sg": {
+          "armenian": "ար*եց*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*ար*եցինք*"
+        },
+        "1sg": {
+          "armenian": "*չ*ար*եցի*"
+        },
+        "2pl": {
+          "armenian": "*չ*ար*եցիք*"
+        },
+        "2sg": {
+          "armenian": "*չ*ար*եցիր*"
+        },
+        "3pl": {
+          "armenian": "*չ*ար*եցին*"
+        },
+        "3sg": {
+          "armenian": "*չ*ար*եց*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

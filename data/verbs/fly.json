@@ -1,0 +1,125 @@
+{
+  "conjugation": "չ",
+  "id": "fly",
+  "infinitive": {
+    "armenian": "թռչել",
+    "russian": "летать",
+    "transcription": "trchel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "разг. թռնել; отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "թռ*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "թռ*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "թռ*ել եք*"
+        },
+        "2sg": {
+          "armenian": "թռ*ել ես*"
+        },
+        "3pl": {
+          "armenian": "թռ*ել են*"
+        },
+        "3sg": {
+          "armenian": "թռ*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* թռ*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* թռ*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* թռ*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* թռ*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* թռ*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* թռ*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "2pl": {
+          "armenian": "թռ*ե՛ք*"
+        },
+        "2sg": {
+          "armenian": "թռ*ի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* թռ*եք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* թռ*իր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "թռ*անք*"
+        },
+        "1sg": {
+          "armenian": "թռ*ա*"
+        },
+        "2pl": {
+          "armenian": "թռ*աք*"
+        },
+        "2sg": {
+          "armenian": "թռ*ար*"
+        },
+        "3pl": {
+          "armenian": "թռ*ան*"
+        },
+        "3sg": {
+          "armenian": "թռ*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*թռ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*թռ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*թռ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*թռ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*թռ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*թռ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

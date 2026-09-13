@@ -1,0 +1,125 @@
+{
+  "conjugation": "չ",
+  "id": "get-lost",
+  "infinitive": {
+    "armenian": "կորչել",
+    "russian": "теряться",
+    "transcription": "korchel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "разг. կորել; отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "կոր*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "կոր*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "կոր*ել եք*"
+        },
+        "2sg": {
+          "armenian": "կոր*ել ես*"
+        },
+        "3pl": {
+          "armenian": "կոր*ել են*"
+        },
+        "3sg": {
+          "armenian": "կոր*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* կոր*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* կոր*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* կոր*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* կոր*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* կոր*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* կոր*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "2pl": {
+          "armenian": "կոր*ե՛ք*"
+        },
+        "2sg": {
+          "armenian": "կոր*ի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* կոր*եք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* կոր*իր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "կոր*անք*"
+        },
+        "1sg": {
+          "armenian": "կոր*ա*"
+        },
+        "2pl": {
+          "armenian": "կոր*աք*"
+        },
+        "2sg": {
+          "armenian": "կոր*ար*"
+        },
+        "3pl": {
+          "armenian": "կոր*ան*"
+        },
+        "3sg": {
+          "armenian": "կոր*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*կոր*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*կոր*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*կոր*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*կոր*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*կոր*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*կոր*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "conjugation": "անալ",
+  "id": "get-sick",
+  "infinitive": {
+    "armenian": "հիվանդանալ",
+    "russian": "заболевать",
+    "transcription": "hivandanal"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "հիվանդ*ացե՛ք*"
+        },
+        "2sg": {
+          "armenian": "հիվանդ*ացի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* հիվանդ*ացեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* հիվանդ*ացիր*"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "conjugation": "անալ",
+  "id": "steal",
+  "infinitive": {
+    "armenian": "գողանալ",
+    "russian": "красть",
+    "transcription": "goghanal"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "գող*ացե՛ք*"
+        },
+        "2sg": {
+          "armenian": "գող*ացի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* գող*ացեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* գող*ացիր*"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}

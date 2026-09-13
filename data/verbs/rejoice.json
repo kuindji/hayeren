@@ -1,0 +1,122 @@
+{
+  "conjugation": "անալ",
+  "id": "rejoice",
+  "infinitive": {
+    "armenian": "ուրախանալ",
+    "russian": "радоваться",
+    "transcription": "urakhanal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ուրախ*ացել ենք*"
+        },
+        "1sg": {
+          "armenian": "ուրախ*ացել եմ*"
+        },
+        "2pl": {
+          "armenian": "ուրախ*ացել եք*"
+        },
+        "2sg": {
+          "armenian": "ուրախ*ացել ես*"
+        },
+        "3pl": {
+          "armenian": "ուրախ*ացել են*"
+        },
+        "3sg": {
+          "armenian": "ուրախ*ացել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* ուրախ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* ուրախ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* ուրախ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չես* ուրախ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* ուրախ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չի* ուրախ*ացել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ուրախ*ացել էինք*"
+        },
+        "1sg": {
+          "armenian": "ուրախ*ացել էի*"
+        },
+        "2pl": {
+          "armenian": "ուրախ*ացել էիք*"
+        },
+        "2sg": {
+          "armenian": "ուրախ*ացել էիր*"
+        },
+        "3pl": {
+          "armenian": "ուրախ*ացել էին*"
+        },
+        "3sg": {
+          "armenian": "ուրախ*ացել էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* ուրախ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չէի* ուրախ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* ուրախ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* ուրախ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չէին* ուրախ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չէր* ուրախ*ացել*"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "ուրախ*ացե՛ք*"
+        },
+        "2sg": {
+          "armenian": "ուրախ*ացի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* ուրախ*ացեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* ուրախ*ացիր*"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}

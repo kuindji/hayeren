@@ -1,0 +1,122 @@
+{
+  "conjugation": "ենալ",
+  "id": "fear",
+  "infinitive": {
+    "armenian": "վախենալ",
+    "russian": "бояться",
+    "transcription": "vakhenal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "վախ*եցել ենք*"
+        },
+        "1sg": {
+          "armenian": "վախ*եցել եմ*"
+        },
+        "2pl": {
+          "armenian": "վախ*եցել եք*"
+        },
+        "2sg": {
+          "armenian": "վախ*եցել ես*"
+        },
+        "3pl": {
+          "armenian": "վախ*եցել են*"
+        },
+        "3sg": {
+          "armenian": "վախ*եցել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* վախ*եցել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* վախ*եցել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* վախ*եցել*"
+        },
+        "2sg": {
+          "armenian": "*չես* վախ*եցել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* վախ*եցել*"
+        },
+        "3sg": {
+          "armenian": "*չի* վախ*եցել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "վախ*եցե՛ք*"
+        },
+        "2sg": {
+          "armenian": "վախ*եցի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* վախ*եցեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* վախ*եցիր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "վախ*եցանք*"
+        },
+        "1sg": {
+          "armenian": "վախ*եցա*"
+        },
+        "2pl": {
+          "armenian": "վախ*եցաք*"
+        },
+        "2sg": {
+          "armenian": "վախ*եցար*"
+        },
+        "3pl": {
+          "armenian": "վախ*եցան*"
+        },
+        "3sg": {
+          "armenian": "վախ*եցավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*վախ*եցանք*"
+        },
+        "1sg": {
+          "armenian": "*չ*վախ*եցա*"
+        },
+        "2pl": {
+          "armenian": "*չ*վախ*եցաք*"
+        },
+        "2sg": {
+          "armenian": "*չ*վախ*եցար*"
+        },
+        "3pl": {
+          "armenian": "*չ*վախ*եցան*"
+        },
+        "3sg": {
+          "armenian": "*չ*վախ*եցավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

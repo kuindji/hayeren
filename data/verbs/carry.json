@@ -1,0 +1,172 @@
+{
+  "conjugation": "ել",
+  "id": "carry",
+  "infinitive": {
+    "armenian": "տանել",
+    "russian": "нести, отводить",
+    "transcription": "tanel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "տարել *ենք*"
+        },
+        "1sg": {
+          "armenian": "տարել *եմ*"
+        },
+        "2pl": {
+          "armenian": "տարել *եք*"
+        },
+        "2sg": {
+          "armenian": "տարել *ես*"
+        },
+        "3pl": {
+          "armenian": "տարել *են*"
+        },
+        "3sg": {
+          "armenian": "տարել *է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* տարել"
+        },
+        "1sg": {
+          "armenian": "*չեմ* տարել"
+        },
+        "2pl": {
+          "armenian": "*չեք* տարել"
+        },
+        "2sg": {
+          "armenian": "*չես* տարել"
+        },
+        "3pl": {
+          "armenian": "*չեն* տարել"
+        },
+        "3sg": {
+          "armenian": "*չի* տարել"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "տարել *էինք*"
+        },
+        "1sg": {
+          "armenian": "տարել *էի*"
+        },
+        "2pl": {
+          "armenian": "տարել *էիք*"
+        },
+        "2sg": {
+          "armenian": "տարել *էիր*"
+        },
+        "3pl": {
+          "armenian": "տարել *էին*"
+        },
+        "3sg": {
+          "armenian": "տարել *էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* տարել"
+        },
+        "1sg": {
+          "armenian": "*չէի* տարել"
+        },
+        "2pl": {
+          "armenian": "*չէիք* տարել"
+        },
+        "2sg": {
+          "armenian": "*չէիր* տարել"
+        },
+        "3pl": {
+          "armenian": "*չէին* տարել"
+        },
+        "3sg": {
+          "armenian": "*չէր* տարել"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "տարե՛ք"
+        },
+        "2sg": {
+          "armenian": "տա՛ր"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* տարեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* տար"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "տար*անք*"
+        },
+        "1sg": {
+          "armenian": "տար*ա*"
+        },
+        "2pl": {
+          "armenian": "տար*աք*"
+        },
+        "2sg": {
+          "armenian": "տար*ար*"
+        },
+        "3pl": {
+          "armenian": "տար*ան*"
+        },
+        "3sg": {
+          "armenian": "տար*ավ*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*տար*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*տար*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*տար*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*տար*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*տար*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*տար*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

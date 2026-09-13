@@ -1,0 +1,97 @@
+{
+  "conjugation": "ալ",
+  "id": "swim",
+  "infinitive": {
+    "armenian": "լողալ",
+    "russian": "плавать",
+    "transcription": "loghal"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "լող*ում ենք*"
+        },
+        "1sg": {
+          "armenian": "լող*ում եմ*"
+        },
+        "2pl": {
+          "armenian": "լող*ում եք*"
+        },
+        "2sg": {
+          "armenian": "լող*ում ես*"
+        },
+        "3pl": {
+          "armenian": "լող*ում են*"
+        },
+        "3sg": {
+          "armenian": "լող*ում է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* լող*ում*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* լող*ում*"
+        },
+        "2pl": {
+          "armenian": "*չեք* լող*ում*"
+        },
+        "2sg": {
+          "armenian": "*չես* լող*ում*"
+        },
+        "3pl": {
+          "armenian": "*չեն* լող*ում*"
+        },
+        "3sg": {
+          "armenian": "*չի* լող*ում*"
+        }
+      },
+      "tense": "present"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "լող*ում էինք*"
+        },
+        "1sg": {
+          "armenian": "լող*ում էի*"
+        },
+        "2pl": {
+          "armenian": "լող*ում էիք*"
+        },
+        "2sg": {
+          "armenian": "լող*ում էիր*"
+        },
+        "3pl": {
+          "armenian": "լող*ում էին*"
+        },
+        "3sg": {
+          "armenian": "լող*ում էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* լող*ում*"
+        },
+        "1sg": {
+          "armenian": "*չէի* լող*ում*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* լող*ում*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* լող*ում*"
+        },
+        "3pl": {
+          "armenian": "*չէին* լող*ում*"
+        },
+        "3sg": {
+          "armenian": "*չէր* լող*ում*"
+        }
+      },
+      "tense": "imperfect"
+    }
+  ]
+}

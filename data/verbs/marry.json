@@ -1,0 +1,30 @@
+{
+  "conjugation": "անալ",
+  "id": "marry",
+  "infinitive": {
+    "armenian": "ամուսնանալ",
+    "russian": "жениться, выходить замуж",
+    "transcription": "amusnanal"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "ամուսն*ացե՛ք*"
+        },
+        "2sg": {
+          "armenian": "ամուսն*ացի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* ամուսն*ացեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* ամուսն*ացիր*"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}

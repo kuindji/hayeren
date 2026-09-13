@@ -1,0 +1,612 @@
+{
+  "conjugation": "ալ",
+  "id": "man-gal",
+  "infinitive": {
+    "armenian": "ման գալ",
+    "russian": "гулять",
+    "transcription": "man gal"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "ման *ենք* գալիս"
+        },
+        "1sg": {
+          "armenian": "ման *եմ* գալիս"
+        },
+        "2pl": {
+          "armenian": "ման *եք* գալիս"
+        },
+        "2sg": {
+          "armenian": "ման *ես* գալիս"
+        },
+        "3pl": {
+          "armenian": "ման *են* գալիս"
+        },
+        "3sg": {
+          "armenian": "ման *է* գալիս"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "ման *չենք* գալիս"
+        },
+        "1sg": {
+          "armenian": "ման *չեմ* գալիս"
+        },
+        "2pl": {
+          "armenian": "ման *չեք* գալիս"
+        },
+        "2sg": {
+          "armenian": "ման *չես* գալիս"
+        },
+        "3pl": {
+          "armenian": "ման *չեն* գալիս"
+        },
+        "3sg": {
+          "armenian": "ման *չի* գալիս"
+        }
+      },
+      "tense": "present"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "ման *էինք* գալիս"
+        },
+        "1sg": {
+          "armenian": "ման *էի* գալիս"
+        },
+        "2pl": {
+          "armenian": "ման *էիք* գալիս"
+        },
+        "2sg": {
+          "armenian": "ման *էիր* գալիս"
+        },
+        "3pl": {
+          "armenian": "ման *էին* գալիս"
+        },
+        "3sg": {
+          "armenian": "ման *էր* գալիս"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "ման *չէինք* գալիս"
+        },
+        "1sg": {
+          "armenian": "ման *չէի* գալիս"
+        },
+        "2pl": {
+          "armenian": "ման *չէիք* գալիս"
+        },
+        "2sg": {
+          "armenian": "ման *չէիր* գալիս"
+        },
+        "3pl": {
+          "armenian": "ման *չէին* գալիս"
+        },
+        "3sg": {
+          "armenian": "ման *չէր* գալիս"
+        }
+      },
+      "tense": "imperfect"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "ման *ենք* եկել"
+        },
+        "1sg": {
+          "armenian": "ման *եմ* եկել"
+        },
+        "2pl": {
+          "armenian": "ման *եք* եկել"
+        },
+        "2sg": {
+          "armenian": "ման *ես* եկել"
+        },
+        "3pl": {
+          "armenian": "ման *են* եկել"
+        },
+        "3sg": {
+          "armenian": "ման *է* եկել"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "ման *չենք* եկել"
+        },
+        "1sg": {
+          "armenian": "ման *չեմ* եկել"
+        },
+        "2pl": {
+          "armenian": "ման *չեք* եկել"
+        },
+        "2sg": {
+          "armenian": "ման *չես* եկել"
+        },
+        "3pl": {
+          "armenian": "ման *չեն* եկել"
+        },
+        "3sg": {
+          "armenian": "ման *չի* եկել"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ման *էինք* եկել"
+        },
+        "1sg": {
+          "armenian": "ման *էի* եկել"
+        },
+        "2pl": {
+          "armenian": "ման *էիք* եկել"
+        },
+        "2sg": {
+          "armenian": "ման *էիր* եկել"
+        },
+        "3pl": {
+          "armenian": "ման *էին* եկել"
+        },
+        "3sg": {
+          "armenian": "ման *էր* եկել"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "ման *չէինք* եկել"
+        },
+        "1sg": {
+          "armenian": "ման *չէի* եկել"
+        },
+        "2pl": {
+          "armenian": "ման *չէիք* եկել"
+        },
+        "2sg": {
+          "armenian": "ման *չէիր* եկել"
+        },
+        "3pl": {
+          "armenian": "ման *չէին* եկել"
+        },
+        "3sg": {
+          "armenian": "ման *չէր* եկել"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ման *ենք* գալու"
+        },
+        "1sg": {
+          "armenian": "ման *եմ* գալու"
+        },
+        "2pl": {
+          "armenian": "ման *եք* գալու"
+        },
+        "2sg": {
+          "armenian": "ման *ես* գալու"
+        },
+        "3pl": {
+          "armenian": "ման *են* գալու"
+        },
+        "3sg": {
+          "armenian": "ման *է* գալու"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "ման *չենք* գալու"
+        },
+        "1sg": {
+          "armenian": "ման *չեմ* գալու"
+        },
+        "2pl": {
+          "armenian": "ման *չեք* գալու"
+        },
+        "2sg": {
+          "armenian": "ման *չես* գալու"
+        },
+        "3pl": {
+          "armenian": "ման *չեն* գալու"
+        },
+        "3sg": {
+          "armenian": "ման *չի* գալու"
+        }
+      },
+      "tense": "future"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ման *էինք* գալու"
+        },
+        "1sg": {
+          "armenian": "ման *էի* գալու"
+        },
+        "2pl": {
+          "armenian": "ման *էիք* գալու"
+        },
+        "2sg": {
+          "armenian": "ման *էիր* գալու"
+        },
+        "3pl": {
+          "armenian": "ման *էին* գալու"
+        },
+        "3sg": {
+          "armenian": "ման *էր* գալու"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "ման *չէինք* գալու"
+        },
+        "1sg": {
+          "armenian": "ման *չէի* գալու"
+        },
+        "2pl": {
+          "armenian": "ման *չէիք* գալու"
+        },
+        "2sg": {
+          "armenian": "ման *չէիր* գալու"
+        },
+        "3pl": {
+          "armenian": "ման *չէին* գալու"
+        },
+        "3sg": {
+          "armenian": "ման *չէր* գալու"
+        }
+      },
+      "tense": "future-past"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "ման գ*անք*"
+        },
+        "1sg": {
+          "armenian": "ման գ*ամ*"
+        },
+        "2pl": {
+          "armenian": "ման գ*աք*"
+        },
+        "2sg": {
+          "armenian": "ման գ*աս*"
+        },
+        "3pl": {
+          "armenian": "ման գ*ան*"
+        },
+        "3sg": {
+          "armenian": "ման գ*ա*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "ման *չ*գ*անք*"
+        },
+        "1sg": {
+          "armenian": "ման *չ*գ*ամ*"
+        },
+        "2pl": {
+          "armenian": "ման *չ*գ*աք*"
+        },
+        "2sg": {
+          "armenian": "ման *չ*գ*աս*"
+        },
+        "3pl": {
+          "armenian": "ման *չ*գ*ան*"
+        },
+        "3sg": {
+          "armenian": "ման *չ*գ*ա*"
+        }
+      },
+      "tense": "optative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ման գ*այինք*"
+        },
+        "1sg": {
+          "armenian": "ման գ*այի*"
+        },
+        "2pl": {
+          "armenian": "ման գ*այիք*"
+        },
+        "2sg": {
+          "armenian": "ման գ*այիր*"
+        },
+        "3pl": {
+          "armenian": "ման գ*ային*"
+        },
+        "3sg": {
+          "armenian": "ման գ*ար*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "ման *չ*գ*այինք*"
+        },
+        "1sg": {
+          "armenian": "ման *չ*գ*այի*"
+        },
+        "2pl": {
+          "armenian": "ման *չ*գ*այիք*"
+        },
+        "2sg": {
+          "armenian": "ման *չ*գ*այիր*"
+        },
+        "3pl": {
+          "armenian": "ման *չ*գ*ային*"
+        },
+        "3sg": {
+          "armenian": "ման *չ*գ*ար*"
+        }
+      },
+      "tense": "optative-past"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "ման *կ*գ*անք*"
+        },
+        "1sg": {
+          "armenian": "ման *կ*գ*ամ*"
+        },
+        "2pl": {
+          "armenian": "ման *կ*գ*աք*"
+        },
+        "2sg": {
+          "armenian": "ման *կ*գ*աս*"
+        },
+        "3pl": {
+          "armenian": "ման *կ*գ*ան*"
+        },
+        "3sg": {
+          "armenian": "ման *կ*գ*ա*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "ման *չենք* գա"
+        },
+        "1sg": {
+          "armenian": "ման *չեմ* գա"
+        },
+        "2pl": {
+          "armenian": "ման *չեք* գա"
+        },
+        "2sg": {
+          "armenian": "ման *չես* գա"
+        },
+        "3pl": {
+          "armenian": "ման *չեն* գա"
+        },
+        "3sg": {
+          "armenian": "ման *չի* գա"
+        }
+      },
+      "tense": "conditional"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ման *կ*գ*այինք*"
+        },
+        "1sg": {
+          "armenian": "ման *կ*գ*այի*"
+        },
+        "2pl": {
+          "armenian": "ման *կ*գ*այիք*"
+        },
+        "2sg": {
+          "armenian": "ման *կ*գ*այիր*"
+        },
+        "3pl": {
+          "armenian": "ման *կ*գ*ային*"
+        },
+        "3sg": {
+          "armenian": "ման *կ*գ*ար*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "ման *չէինք* գա"
+        },
+        "1sg": {
+          "armenian": "ման *չէի* գա"
+        },
+        "2pl": {
+          "armenian": "ման *չէիք* գա"
+        },
+        "2sg": {
+          "armenian": "ման *չէիր* գա"
+        },
+        "3pl": {
+          "armenian": "ման *չէին* գա"
+        },
+        "3sg": {
+          "armenian": "ման *չէր* գա"
+        }
+      },
+      "tense": "conditional-past"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "*պիտի* ման գ*անք*"
+        },
+        "1sg": {
+          "armenian": "*պիտի* ման գ*ամ*"
+        },
+        "2pl": {
+          "armenian": "*պիտի* ման գ*աք*"
+        },
+        "2sg": {
+          "armenian": "*պիտի* ման գ*աս*"
+        },
+        "3pl": {
+          "armenian": "*պիտի* ման գ*ան*"
+        },
+        "3sg": {
+          "armenian": "*պիտի* ման գ*ա*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չպիտի* ման գ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չպիտի* ման գ*ամ*"
+        },
+        "2pl": {
+          "armenian": "*չպիտի* ման գ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չպիտի* ման գ*աս*"
+        },
+        "3pl": {
+          "armenian": "*չպիտի* ման գ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չպիտի* ման գ*ա*"
+        }
+      },
+      "tense": "necessitative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "*պիտի* ման գ*այինք*"
+        },
+        "1sg": {
+          "armenian": "*պիտի* ման գ*այի*"
+        },
+        "2pl": {
+          "armenian": "*պիտի* ման գ*այիք*"
+        },
+        "2sg": {
+          "armenian": "*պիտի* ման գ*այիր*"
+        },
+        "3pl": {
+          "armenian": "*պիտի* ման գ*ային*"
+        },
+        "3sg": {
+          "armenian": "*պիտի* ման գ*ար*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չպիտի* ման գ*այինք*"
+        },
+        "1sg": {
+          "armenian": "*չպիտի* ման գ*այի*"
+        },
+        "2pl": {
+          "armenian": "*չպիտի* ման գ*այիք*"
+        },
+        "2sg": {
+          "armenian": "*չպիտի* ման գ*այիր*"
+        },
+        "3pl": {
+          "armenian": "*չպիտի* ման գ*ային*"
+        },
+        "3sg": {
+          "armenian": "*չպիտի* ման գ*ար*"
+        }
+      },
+      "tense": "necessitative-past"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "մա՛ն արեք",
+          "informal": "մա՛ն եկեք"
+        },
+        "2sg": {
+          "armenian": "մա՛ն արի"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* ման արեք",
+          "informal": "մի՛ ման եկեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* ման արի"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ման եկ*անք*"
+        },
+        "1sg": {
+          "armenian": "ման եկ*ա*"
+        },
+        "2pl": {
+          "armenian": "ման եկ*աք*"
+        },
+        "2sg": {
+          "armenian": "ման եկ*ար*"
+        },
+        "3pl": {
+          "armenian": "ման եկ*ան*"
+        },
+        "3sg": {
+          "armenian": "ման եկ*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*ման եկ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*ման եկ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*ման եկ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*ման եկ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*ման եկ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*ման եկ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

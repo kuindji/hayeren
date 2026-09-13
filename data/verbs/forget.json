@@ -1,0 +1,168 @@
+{
+  "conjugation": "անալ",
+  "id": "forget",
+  "infinitive": {
+    "armenian": "մոռանալ",
+    "russian": "забывать",
+    "transcription": "moranal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "մոռ*ացել ենք*"
+        },
+        "1sg": {
+          "armenian": "մոռ*ացել եմ*"
+        },
+        "2pl": {
+          "armenian": "մոռ*ացել եք*"
+        },
+        "2sg": {
+          "armenian": "մոռ*ացել ես*"
+        },
+        "3pl": {
+          "armenian": "մոռ*ացել են*"
+        },
+        "3sg": {
+          "armenian": "մոռ*ացել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* մոռ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* մոռ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* մոռ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չես* մոռ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* մոռ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չի* մոռ*ացել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "մոռ*ացել էինք*"
+        },
+        "1sg": {
+          "armenian": "մոռ*ացել էի*"
+        },
+        "2pl": {
+          "armenian": "մոռ*ացել էիք*"
+        },
+        "2sg": {
+          "armenian": "մոռ*ացել էիր*"
+        },
+        "3pl": {
+          "armenian": "մոռ*ացել էին*"
+        },
+        "3sg": {
+          "armenian": "մոռ*ացել էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* մոռ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չէի* մոռ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* մոռ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* մոռ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չէին* մոռ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չէր* մոռ*ացել*"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "մոռ*ացե՛ք*"
+        },
+        "2sg": {
+          "armenian": "մոռ*ացի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* մոռ*ացեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* մոռ*ացիր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "մոռ*ացանք*"
+        },
+        "1sg": {
+          "armenian": "մոռ*ացա*"
+        },
+        "2pl": {
+          "armenian": "մոռ*ացաք*"
+        },
+        "2sg": {
+          "armenian": "մոռ*ացար*"
+        },
+        "3pl": {
+          "armenian": "մոռ*ացան*"
+        },
+        "3sg": {
+          "armenian": "մոռ*ացավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*մոռ*ացանք*"
+        },
+        "1sg": {
+          "armenian": "*չ*մոռ*ացա*"
+        },
+        "2pl": {
+          "armenian": "*չ*մոռ*ացաք*"
+        },
+        "2sg": {
+          "armenian": "*չ*մոռ*ացար*"
+        },
+        "3pl": {
+          "armenian": "*չ*մոռ*ացան*"
+        },
+        "3sg": {
+          "armenian": "*չ*մոռ*ացավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

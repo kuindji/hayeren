@@ -5,6 +5,17 @@
   "description": {
     "russian": "Я сделал (однократное действие в прошлом)"
   },
+  "groups": [
+    {
+      "name": {
+        "russian": "Составные глаголы"
+      },
+      "words": [
+        "man-gal",
+        "get-up"
+      ]
+    }
+  ],
   "id": "aorist",
   "name": {
     "english": "Aorist",

@@ -1,0 +1,172 @@
+{
+  "conjugation": "ել",
+  "id": "be",
+  "infinitive": {
+    "armenian": "լինել",
+    "russian": "быть",
+    "transcription": "linel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "եղել *ենք*"
+        },
+        "1sg": {
+          "armenian": "եղել *եմ*"
+        },
+        "2pl": {
+          "armenian": "եղել *եք*"
+        },
+        "2sg": {
+          "armenian": "եղել *ես*"
+        },
+        "3pl": {
+          "armenian": "եղել *են*"
+        },
+        "3sg": {
+          "armenian": "եղել *է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* եղել"
+        },
+        "1sg": {
+          "armenian": "*չեմ* եղել"
+        },
+        "2pl": {
+          "armenian": "*չեք* եղել"
+        },
+        "2sg": {
+          "armenian": "*չես* եղել"
+        },
+        "3pl": {
+          "armenian": "*չեն* եղել"
+        },
+        "3sg": {
+          "armenian": "*չի* եղել"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "եղել *էինք*"
+        },
+        "1sg": {
+          "armenian": "եղել *էի*"
+        },
+        "2pl": {
+          "armenian": "եղել *էիք*"
+        },
+        "2sg": {
+          "armenian": "եղել *էիր*"
+        },
+        "3pl": {
+          "armenian": "եղել *էին*"
+        },
+        "3sg": {
+          "armenian": "եղել *էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* եղել"
+        },
+        "1sg": {
+          "armenian": "*չէի* եղել"
+        },
+        "2pl": {
+          "armenian": "*չէիք* եղել"
+        },
+        "2sg": {
+          "armenian": "*չէիր* եղել"
+        },
+        "3pl": {
+          "armenian": "*չէին* եղել"
+        },
+        "3sg": {
+          "armenian": "*չէր* եղել"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "եղե՛ք"
+        },
+        "2sg": {
+          "armenian": "եղի՛ր"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* եղեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* եղիր"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "եղ*անք*"
+        },
+        "1sg": {
+          "armenian": "եղ*ա*"
+        },
+        "2pl": {
+          "armenian": "եղ*աք*"
+        },
+        "2sg": {
+          "armenian": "եղ*ար*"
+        },
+        "3pl": {
+          "armenian": "եղ*ան*"
+        },
+        "3sg": {
+          "armenian": "եղ*ավ*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*եղ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*եղ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*եղ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*եղ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*եղ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*եղ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

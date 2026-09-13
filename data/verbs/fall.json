@@ -1,0 +1,125 @@
+{
+  "conjugation": "ն",
+  "id": "fall",
+  "infinitive": {
+    "armenian": "ընկնել",
+    "russian": "падать",
+    "transcription": "ynknel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ընկ*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "ընկ*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "ընկ*ել եք*"
+        },
+        "2sg": {
+          "armenian": "ընկ*ել ես*"
+        },
+        "3pl": {
+          "armenian": "ընկ*ել են*"
+        },
+        "3sg": {
+          "armenian": "ընկ*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* ընկ*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* ընկ*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* ընկ*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* ընկ*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* ընկ*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* ընկ*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "2pl": {
+          "armenian": "ընկ*ե՛ք*"
+        },
+        "2sg": {
+          "armenian": "ընկ*ի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* ընկ*եք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* ընկ*իր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ընկ*անք*"
+        },
+        "1sg": {
+          "armenian": "ընկ*ա*"
+        },
+        "2pl": {
+          "armenian": "ընկ*աք*"
+        },
+        "2sg": {
+          "armenian": "ընկ*ար*"
+        },
+        "3pl": {
+          "armenian": "ընկ*ան*"
+        },
+        "3sg": {
+          "armenian": "ընկ*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*ընկ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*ընկ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*ընկ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*ընկ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*ընկ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*ընկ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

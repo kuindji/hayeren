@@ -1,0 +1,103 @@
+{
+  "conjugation": "ալ",
+  "id": "stay",
+  "infinitive": {
+    "armenian": "մնալ",
+    "russian": "оставаться",
+    "transcription": "mnal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "մն*ացել ենք*"
+        },
+        "1sg": {
+          "armenian": "մն*ացել եմ*"
+        },
+        "2pl": {
+          "armenian": "մն*ացել եք*"
+        },
+        "2sg": {
+          "armenian": "մն*ացել ես*"
+        },
+        "3pl": {
+          "armenian": "մն*ացել են*"
+        },
+        "3sg": {
+          "armenian": "մն*ացել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* մն*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* մն*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* մն*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չես* մն*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* մն*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չի* մն*ացել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "մն*ացել էինք*"
+        },
+        "1sg": {
+          "armenian": "մն*ացել էի*"
+        },
+        "2pl": {
+          "armenian": "մն*ացել էիք*"
+        },
+        "2sg": {
+          "armenian": "մն*ացել էիր*"
+        },
+        "3pl": {
+          "armenian": "մն*ացել էին*"
+        },
+        "3sg": {
+          "armenian": "մն*ացել էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* մն*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չէի* մն*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* մն*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* մն*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չէին* մն*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չէր* մն*ացել*"
+        }
+      },
+      "tense": "pluperfect"
+    }
+  ]
+}

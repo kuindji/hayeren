@@ -1,0 +1,168 @@
+{
+  "conjugation": "ենալ",
+  "id": "approach",
+  "infinitive": {
+    "armenian": "մոտենալ",
+    "russian": "приближаться",
+    "transcription": "motenal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "մոտ*եցել ենք*"
+        },
+        "1sg": {
+          "armenian": "մոտ*եցել եմ*"
+        },
+        "2pl": {
+          "armenian": "մոտ*եցել եք*"
+        },
+        "2sg": {
+          "armenian": "մոտ*եցել ես*"
+        },
+        "3pl": {
+          "armenian": "մոտ*եցել են*"
+        },
+        "3sg": {
+          "armenian": "մոտ*եցել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* մոտ*եցել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* մոտ*եցել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* մոտ*եցել*"
+        },
+        "2sg": {
+          "armenian": "*չես* մոտ*եցել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* մոտ*եցել*"
+        },
+        "3sg": {
+          "armenian": "*չի* մոտ*եցել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "մոտ*եցել էինք*"
+        },
+        "1sg": {
+          "armenian": "մոտ*եցել էի*"
+        },
+        "2pl": {
+          "armenian": "մոտ*եցել էիք*"
+        },
+        "2sg": {
+          "armenian": "մոտ*եցել էիր*"
+        },
+        "3pl": {
+          "armenian": "մոտ*եցել էին*"
+        },
+        "3sg": {
+          "armenian": "մոտ*եցել էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* մոտ*եցել*"
+        },
+        "1sg": {
+          "armenian": "*չէի* մոտ*եցել*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* մոտ*եցել*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* մոտ*եցել*"
+        },
+        "3pl": {
+          "armenian": "*չէին* մոտ*եցել*"
+        },
+        "3sg": {
+          "armenian": "*չէր* մոտ*եցել*"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "մոտ*եցե՛ք*"
+        },
+        "2sg": {
+          "armenian": "մոտ*եցի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* մոտ*եցեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* մոտ*եցիր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "մոտ*եցանք*"
+        },
+        "1sg": {
+          "armenian": "մոտ*եցա*"
+        },
+        "2pl": {
+          "armenian": "մոտ*եցաք*"
+        },
+        "2sg": {
+          "armenian": "մոտ*եցար*"
+        },
+        "3pl": {
+          "armenian": "մոտ*եցան*"
+        },
+        "3sg": {
+          "armenian": "մոտ*եցավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*մոտ*եցանք*"
+        },
+        "1sg": {
+          "armenian": "*չ*մոտ*եցա*"
+        },
+        "2pl": {
+          "armenian": "*չ*մոտ*եցաք*"
+        },
+        "2sg": {
+          "armenian": "*չ*մոտ*եցար*"
+        },
+        "3pl": {
+          "armenian": "*չ*մոտ*եցան*"
+        },
+        "3sg": {
+          "armenian": "*չ*մոտ*եցավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

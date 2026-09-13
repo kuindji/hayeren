@@ -1,0 +1,122 @@
+{
+  "conjugation": "անալ",
+  "id": "get-angry",
+  "infinitive": {
+    "armenian": "ջղայնանալ",
+    "russian": "злиться",
+    "transcription": "jghayyanal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ջղայն*ացել ենք*"
+        },
+        "1sg": {
+          "armenian": "ջղայն*ացել եմ*"
+        },
+        "2pl": {
+          "armenian": "ջղայն*ացել եք*"
+        },
+        "2sg": {
+          "armenian": "ջղայն*ացել ես*"
+        },
+        "3pl": {
+          "armenian": "ջղայն*ացել են*"
+        },
+        "3sg": {
+          "armenian": "ջղայն*ացել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* ջղայն*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* ջղայն*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* ջղայն*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չես* ջղայն*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* ջղայն*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չի* ջղայն*ացել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ջղայն*ացել էինք*"
+        },
+        "1sg": {
+          "armenian": "ջղայն*ացել էի*"
+        },
+        "2pl": {
+          "armenian": "ջղայն*ացել էիք*"
+        },
+        "2sg": {
+          "armenian": "ջղայն*ացել էիր*"
+        },
+        "3pl": {
+          "armenian": "ջղայն*ացել էին*"
+        },
+        "3sg": {
+          "armenian": "ջղայն*ացել էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* ջղայն*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չէի* ջղայն*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* ջղայն*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* ջղայն*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չէին* ջղայն*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չէր* ջղայն*ացել*"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "ջղայն*ացե՛ք*"
+        },
+        "2sg": {
+          "armenian": "ջղայն*ացի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* ջղայն*ացեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* ջղայն*ացիր*"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}

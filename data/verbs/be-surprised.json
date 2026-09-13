@@ -1,0 +1,103 @@
+{
+  "conjugation": "անալ",
+  "id": "be-surprised",
+  "infinitive": {
+    "armenian": "զարմանալ",
+    "russian": "удивляться",
+    "transcription": "zarmanal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "զարմ*ացել ենք*"
+        },
+        "1sg": {
+          "armenian": "զարմ*ացել եմ*"
+        },
+        "2pl": {
+          "armenian": "զարմ*ացել եք*"
+        },
+        "2sg": {
+          "armenian": "զարմ*ացել ես*"
+        },
+        "3pl": {
+          "armenian": "զարմ*ացել են*"
+        },
+        "3sg": {
+          "armenian": "զարմ*ացել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* զարմ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* զարմ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* զարմ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չես* զարմ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* զարմ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չի* զարմ*ացել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "զարմ*ացել էինք*"
+        },
+        "1sg": {
+          "armenian": "զարմ*ացել էի*"
+        },
+        "2pl": {
+          "armenian": "զարմ*ացել էիք*"
+        },
+        "2sg": {
+          "armenian": "զարմ*ացել էիր*"
+        },
+        "3pl": {
+          "armenian": "զարմ*ացել էին*"
+        },
+        "3sg": {
+          "armenian": "զարմ*ացել էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* զարմ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չէի* զարմ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* զարմ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* զարմ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չէին* զարմ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չէր* զարմ*ացել*"
+        }
+      },
+      "tense": "pluperfect"
+    }
+  ]
+}

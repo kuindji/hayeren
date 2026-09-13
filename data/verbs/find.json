@@ -1,0 +1,125 @@
+{
+  "conjugation": "ն",
+  "id": "find",
+  "infinitive": {
+    "armenian": "գտնել",
+    "russian": "находить",
+    "transcription": "gtnel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "գտ*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "գտ*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "գտ*ել եք*"
+        },
+        "2sg": {
+          "armenian": "գտ*ել ես*"
+        },
+        "3pl": {
+          "armenian": "գտ*ել են*"
+        },
+        "3sg": {
+          "armenian": "գտ*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* գտ*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* գտ*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* գտ*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* գտ*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* գտ*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* գտ*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "2pl": {
+          "armenian": "գտ*ե՛ք*"
+        },
+        "2sg": {
+          "armenian": "գտ*ի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* գտ*եք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* գտ*իր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "գտ*անք*"
+        },
+        "1sg": {
+          "armenian": "գտ*ա*"
+        },
+        "2pl": {
+          "armenian": "գտ*աք*"
+        },
+        "2sg": {
+          "armenian": "գտ*ար*"
+        },
+        "3pl": {
+          "armenian": "գտ*ան*"
+        },
+        "3sg": {
+          "armenian": "գտ*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*գտ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*գտ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*գտ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*գտ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*գտ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*գտ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

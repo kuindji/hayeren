@@ -5,6 +5,16 @@
   "description": {
     "russian": "Я собираюсь сделать"
   },
+  "groups": [
+    {
+      "name": {
+        "russian": "Составные глаголы"
+      },
+      "words": [
+        "man-gal"
+      ]
+    }
+  ],
   "id": "future",
   "name": {
     "english": "Future",

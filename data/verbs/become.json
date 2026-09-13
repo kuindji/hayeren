@@ -1,0 +1,172 @@
+{
+  "conjugation": "անալ",
+  "id": "become",
+  "infinitive": {
+    "armenian": "դառնալ",
+    "russian": "становиться",
+    "transcription": "darnal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "դարձել *ենք*"
+        },
+        "1sg": {
+          "armenian": "դարձել *եմ*"
+        },
+        "2pl": {
+          "armenian": "դարձել *եք*"
+        },
+        "2sg": {
+          "armenian": "դարձել *ես*"
+        },
+        "3pl": {
+          "armenian": "դարձել *են*"
+        },
+        "3sg": {
+          "armenian": "դարձել *է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* դարձել"
+        },
+        "1sg": {
+          "armenian": "*չեմ* դարձել"
+        },
+        "2pl": {
+          "armenian": "*չեք* դարձել"
+        },
+        "2sg": {
+          "armenian": "*չես* դարձել"
+        },
+        "3pl": {
+          "armenian": "*չեն* դարձել"
+        },
+        "3sg": {
+          "armenian": "*չի* դարձել"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "դարձել *էինք*"
+        },
+        "1sg": {
+          "armenian": "դարձել *էի*"
+        },
+        "2pl": {
+          "armenian": "դարձել *էիք*"
+        },
+        "2sg": {
+          "armenian": "դարձել *էիր*"
+        },
+        "3pl": {
+          "armenian": "դարձել *էին*"
+        },
+        "3sg": {
+          "armenian": "դարձել *էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* դարձել"
+        },
+        "1sg": {
+          "armenian": "*չէի* դարձել"
+        },
+        "2pl": {
+          "armenian": "*չէիք* դարձել"
+        },
+        "2sg": {
+          "armenian": "*չէիր* դարձել"
+        },
+        "3pl": {
+          "armenian": "*չէին* դարձել"
+        },
+        "3sg": {
+          "armenian": "*չէր* դարձել"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "դարձե՛ք"
+        },
+        "2sg": {
+          "armenian": "դարձի՛ր"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* դարձեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* դարձիր"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "դարձ*անք*"
+        },
+        "1sg": {
+          "armenian": "դարձ*ա*"
+        },
+        "2pl": {
+          "armenian": "դարձ*աք*"
+        },
+        "2sg": {
+          "armenian": "դարձ*ար*"
+        },
+        "3pl": {
+          "armenian": "դարձ*ան*"
+        },
+        "3sg": {
+          "armenian": "դարձ*ավ*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*դարձ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*դարձ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*դարձ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*դարձ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*դարձ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*դարձ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

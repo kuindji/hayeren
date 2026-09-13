@@ -1,0 +1,125 @@
+{
+  "conjugation": "ն",
+  "id": "enter",
+  "infinitive": {
+    "armenian": "մտնել",
+    "russian": "входить",
+    "transcription": "mtnel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "մտ*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "մտ*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "մտ*ել եք*"
+        },
+        "2sg": {
+          "armenian": "մտ*ել ես*"
+        },
+        "3pl": {
+          "armenian": "մտ*ել են*"
+        },
+        "3sg": {
+          "armenian": "մտ*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* մտ*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* մտ*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* մտ*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* մտ*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* մտ*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* մտ*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "2pl": {
+          "armenian": "մտ*ե՛ք*"
+        },
+        "2sg": {
+          "armenian": "մտ*ի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* մտ*եք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* մտ*իր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "մտ*անք*"
+        },
+        "1sg": {
+          "armenian": "մտ*ա*"
+        },
+        "2pl": {
+          "armenian": "մտ*աք*"
+        },
+        "2sg": {
+          "armenian": "մտ*ար*"
+        },
+        "3pl": {
+          "armenian": "մտ*ան*"
+        },
+        "3sg": {
+          "armenian": "մտ*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*մտ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*մտ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*մտ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*մտ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*մտ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*մտ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

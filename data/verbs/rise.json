@@ -1,0 +1,30 @@
+{
+  "conjugation": "անալ",
+  "id": "rise",
+  "infinitive": {
+    "armenian": "բարձրանալ",
+    "russian": "подниматься",
+    "transcription": "bardzranal"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "բարձր*ացե՛ք*"
+        },
+        "2sg": {
+          "armenian": "բարձր*ացի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* բարձր*ացեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* բարձր*ացիր*"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}

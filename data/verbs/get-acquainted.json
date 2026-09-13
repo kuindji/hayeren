@@ -1,0 +1,103 @@
+{
+  "conjugation": "անալ",
+  "id": "get-acquainted",
+  "infinitive": {
+    "armenian": "ծանոթանալ",
+    "russian": "знакомиться",
+    "transcription": "tsanotanal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ծանոթ*ացել ենք*"
+        },
+        "1sg": {
+          "armenian": "ծանոթ*ացել եմ*"
+        },
+        "2pl": {
+          "armenian": "ծանոթ*ացել եք*"
+        },
+        "2sg": {
+          "armenian": "ծանոթ*ացել ես*"
+        },
+        "3pl": {
+          "armenian": "ծանոթ*ացել են*"
+        },
+        "3sg": {
+          "armenian": "ծանոթ*ացել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* ծանոթ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* ծանոթ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* ծանոթ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չես* ծանոթ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* ծանոթ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չի* ծանոթ*ացել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ծանոթ*ացել էինք*"
+        },
+        "1sg": {
+          "armenian": "ծանոթ*ացել էի*"
+        },
+        "2pl": {
+          "armenian": "ծանոթ*ացել էիք*"
+        },
+        "2sg": {
+          "armenian": "ծանոթ*ացել էիր*"
+        },
+        "3pl": {
+          "armenian": "ծանոթ*ացել էին*"
+        },
+        "3sg": {
+          "armenian": "ծանոթ*ացել էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* ծանոթ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չէի* ծանոթ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* ծանոթ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* ծանոթ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չէին* ծանոթ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չէր* ծանոթ*ացել*"
+        }
+      },
+      "tense": "pluperfect"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "conjugation": "չ",
+  "id": "run-away",
+  "infinitive": {
+    "armenian": "փախչել",
+    "russian": "убегать",
+    "transcription": "pakhchel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "փախ*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "փախ*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "փախ*ել եք*"
+        },
+        "2sg": {
+          "armenian": "փախ*ել ես*"
+        },
+        "3pl": {
+          "armenian": "փախ*ել են*"
+        },
+        "3sg": {
+          "armenian": "փախ*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* փախ*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* փախ*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* փախ*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* փախ*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* փախ*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* փախ*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "փախ*անք*"
+        },
+        "1sg": {
+          "armenian": "փախ*ա*"
+        },
+        "2pl": {
+          "armenian": "փախ*աք*"
+        },
+        "2sg": {
+          "armenian": "փախ*ար*"
+        },
+        "3pl": {
+          "armenian": "փախ*ան*"
+        },
+        "3sg": {
+          "armenian": "փախ*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*փախ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*փախ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*փախ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*փախ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*փախ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*փախ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

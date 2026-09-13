@@ -1,0 +1,30 @@
+{
+  "conjugation": "անալ",
+  "id": "get-bored",
+  "infinitive": {
+    "armenian": "ձանձրանալ",
+    "russian": "скучать",
+    "transcription": "dzandzranal"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "ձանձր*ացե՛ք*"
+        },
+        "2sg": {
+          "armenian": "ձանձր*ացի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* ձանձր*ացեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* ձանձր*ացիր*"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}

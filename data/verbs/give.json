@@ -1,0 +1,266 @@
+{
+  "conjugation": "ալ",
+  "id": "give",
+  "infinitive": {
+    "armenian": "տալ",
+    "russian": "давать",
+    "transcription": "tal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "причастие на -իս вместо -ում; отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "տալ*իս ենք*"
+        },
+        "1sg": {
+          "armenian": "տալ*իս եմ*"
+        },
+        "2pl": {
+          "armenian": "տալ*իս եք*"
+        },
+        "2sg": {
+          "armenian": "տալ*իս ես*"
+        },
+        "3pl": {
+          "armenian": "տալ*իս են*"
+        },
+        "3sg": {
+          "armenian": "տալ*իս է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* տալ*իս*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* տալ*իս*"
+        },
+        "2pl": {
+          "armenian": "*չեք* տալ*իս*"
+        },
+        "2sg": {
+          "armenian": "*չես* տալ*իս*"
+        },
+        "3pl": {
+          "armenian": "*չեն* տալ*իս*"
+        },
+        "3sg": {
+          "armenian": "*չի* տալ*իս*"
+        }
+      },
+      "tense": "present"
+    },
+    {
+      "comment": {
+        "russian": "причастие на -իս вместо -ում; отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "տալ*իս էինք*"
+        },
+        "1sg": {
+          "armenian": "տալ*իս էի*"
+        },
+        "2pl": {
+          "armenian": "տալ*իս էիք*"
+        },
+        "2sg": {
+          "armenian": "տալ*իս էիր*"
+        },
+        "3pl": {
+          "armenian": "տալ*իս էին*"
+        },
+        "3sg": {
+          "armenian": "տալ*իս էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* տալ*իս*"
+        },
+        "1sg": {
+          "armenian": "*չէի* տալ*իս*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* տալ*իս*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* տալ*իս*"
+        },
+        "3pl": {
+          "armenian": "*չէին* տալ*իս*"
+        },
+        "3sg": {
+          "armenian": "*չէր* տալ*իս*"
+        }
+      },
+      "tense": "imperfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "տվել *ենք*"
+        },
+        "1sg": {
+          "armenian": "տվել *եմ*"
+        },
+        "2pl": {
+          "armenian": "տվել *եք*"
+        },
+        "2sg": {
+          "armenian": "տվել *ես*"
+        },
+        "3pl": {
+          "armenian": "տվել *են*"
+        },
+        "3sg": {
+          "armenian": "տվել *է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* տվել"
+        },
+        "1sg": {
+          "armenian": "*չեմ* տվել"
+        },
+        "2pl": {
+          "armenian": "*չեք* տվել"
+        },
+        "2sg": {
+          "armenian": "*չես* տվել"
+        },
+        "3pl": {
+          "armenian": "*չեն* տվել"
+        },
+        "3sg": {
+          "armenian": "*չի* տվել"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "տվել *էինք*"
+        },
+        "1sg": {
+          "armenian": "տվել *էի*"
+        },
+        "2pl": {
+          "armenian": "տվել *էիք*"
+        },
+        "2sg": {
+          "armenian": "տվել *էիր*"
+        },
+        "3pl": {
+          "armenian": "տվել *էին*"
+        },
+        "3sg": {
+          "armenian": "տվել *էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* տվել"
+        },
+        "1sg": {
+          "armenian": "*չէի* տվել"
+        },
+        "2pl": {
+          "armenian": "*չէիք* տվել"
+        },
+        "2sg": {
+          "armenian": "*չէիր* տվել"
+        },
+        "3pl": {
+          "armenian": "*չէին* տվել"
+        },
+        "3sg": {
+          "armenian": "*չէր* տվել"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "տվե՛ք"
+        },
+        "2sg": {
+          "armenian": "տո՛ւր"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* տվեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* տուր"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "տվ*եցինք*"
+        },
+        "1sg": {
+          "armenian": "տվ*եցի*"
+        },
+        "2pl": {
+          "armenian": "տվ*եցիք*"
+        },
+        "2sg": {
+          "armenian": "տվ*եցիր*"
+        },
+        "3pl": {
+          "armenian": "տվ*եցին*"
+        },
+        "3sg": {
+          "armenian": "տվ*եց*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*տվ*եցինք*"
+        },
+        "1sg": {
+          "armenian": "*չ*տվ*եցի*"
+        },
+        "2pl": {
+          "armenian": "*չ*տվ*եցիք*"
+        },
+        "2sg": {
+          "armenian": "*չ*տվ*եցիր*"
+        },
+        "3pl": {
+          "armenian": "*չ*տվ*եցին*"
+        },
+        "3sg": {
+          "armenian": "*չ*տվ*եց*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

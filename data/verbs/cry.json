@@ -1,0 +1,105 @@
+{
+  "conjugation": "ալ",
+  "id": "cry",
+  "infinitive": {
+    "armenian": "լալ",
+    "russian": "плакать",
+    "transcription": "lal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "причастие на -իս вместо -ում; отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "լալ*իս ենք*"
+        },
+        "1sg": {
+          "armenian": "լալ*իս եմ*"
+        },
+        "2pl": {
+          "armenian": "լալ*իս եք*"
+        },
+        "2sg": {
+          "armenian": "լալ*իս ես*"
+        },
+        "3pl": {
+          "armenian": "լալ*իս են*"
+        },
+        "3sg": {
+          "armenian": "լալ*իս է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* լալ*իս*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* լալ*իս*"
+        },
+        "2pl": {
+          "armenian": "*չեք* լալ*իս*"
+        },
+        "2sg": {
+          "armenian": "*չես* լալ*իս*"
+        },
+        "3pl": {
+          "armenian": "*չեն* լալ*իս*"
+        },
+        "3sg": {
+          "armenian": "*չի* լալ*իս*"
+        }
+      },
+      "tense": "present"
+    },
+    {
+      "comment": {
+        "russian": "причастие на -իս вместо -ում; отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "լալ*իս էինք*"
+        },
+        "1sg": {
+          "armenian": "լալ*իս էի*"
+        },
+        "2pl": {
+          "armenian": "լալ*իս էիք*"
+        },
+        "2sg": {
+          "armenian": "լալ*իս էիր*"
+        },
+        "3pl": {
+          "armenian": "լալ*իս էին*"
+        },
+        "3sg": {
+          "armenian": "լալ*իս էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* լալ*իս*"
+        },
+        "1sg": {
+          "armenian": "*չէի* լալ*իս*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* լալ*իս*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* լալ*իս*"
+        },
+        "3pl": {
+          "armenian": "*չէին* լալ*իս*"
+        },
+        "3sg": {
+          "armenian": "*չէր* լալ*իս*"
+        }
+      },
+      "tense": "imperfect"
+    }
+  ]
+}

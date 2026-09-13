@@ -1,0 +1,258 @@
+{
+  "conjugation": "ել",
+  "id": "eat",
+  "infinitive": {
+    "armenian": "ուտել",
+    "russian": "есть",
+    "transcription": "utel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "կերել *ենք*"
+        },
+        "1sg": {
+          "armenian": "կերել *եմ*"
+        },
+        "2pl": {
+          "armenian": "կերել *եք*"
+        },
+        "2sg": {
+          "armenian": "կերել *ես*"
+        },
+        "3pl": {
+          "armenian": "կերել *են*"
+        },
+        "3sg": {
+          "armenian": "կերել *է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* կերել"
+        },
+        "1sg": {
+          "armenian": "*չեմ* կերել"
+        },
+        "2pl": {
+          "armenian": "*չեք* կերել"
+        },
+        "2sg": {
+          "armenian": "*չես* կերել"
+        },
+        "3pl": {
+          "armenian": "*չեն* կերել"
+        },
+        "3sg": {
+          "armenian": "*չի* կերել"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "կերել *էինք*"
+        },
+        "1sg": {
+          "armenian": "կերել *էի*"
+        },
+        "2pl": {
+          "armenian": "կերել *էիք*"
+        },
+        "2sg": {
+          "armenian": "կերել *էիր*"
+        },
+        "3pl": {
+          "armenian": "կերել *էին*"
+        },
+        "3sg": {
+          "armenian": "կերել *էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* կերել"
+        },
+        "1sg": {
+          "armenian": "*չէի* կերել"
+        },
+        "2pl": {
+          "armenian": "*չէիք* կերել"
+        },
+        "2sg": {
+          "armenian": "*չէիր* կերել"
+        },
+        "3pl": {
+          "armenian": "*չէին* կերել"
+        },
+        "3sg": {
+          "armenian": "*չէր* կերել"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "*պիտի* ուտ*ենք*"
+        },
+        "1sg": {
+          "armenian": "*պիտի* ուտ*եմ*"
+        },
+        "2pl": {
+          "armenian": "*պիտի* ուտ*եք*"
+        },
+        "2sg": {
+          "armenian": "*պիտի* ուտ*ես*"
+        },
+        "3pl": {
+          "armenian": "*պիտի* ուտ*են*"
+        },
+        "3sg": {
+          "armenian": "*պիտի* ուտ*ի*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չպիտի* ուտ*ենք*"
+        },
+        "1sg": {
+          "armenian": "*չպիտի* ուտ*եմ*"
+        },
+        "2pl": {
+          "armenian": "*չպիտի* ուտ*եք*"
+        },
+        "2sg": {
+          "armenian": "*չպիտի* ուտ*ես*"
+        },
+        "3pl": {
+          "armenian": "*չպիտի* ուտ*են*"
+        },
+        "3sg": {
+          "armenian": "*չպիտի* ուտ*ի*"
+        }
+      },
+      "tense": "necessitative"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "*պիտի* ուտ*եինք*"
+        },
+        "1sg": {
+          "armenian": "*պիտի* ուտ*եի*"
+        },
+        "2pl": {
+          "armenian": "*պիտի* ուտ*եիք*"
+        },
+        "2sg": {
+          "armenian": "*պիտի* ուտ*եիր*"
+        },
+        "3pl": {
+          "armenian": "*պիտի* ուտ*եին*"
+        },
+        "3sg": {
+          "armenian": "*պիտի* ուտ*եր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չպիտի* ուտ*եինք*"
+        },
+        "1sg": {
+          "armenian": "*չպիտի* ուտ*եի*"
+        },
+        "2pl": {
+          "armenian": "*չպիտի* ուտ*եիք*"
+        },
+        "2sg": {
+          "armenian": "*չպիտի* ուտ*եիր*"
+        },
+        "3pl": {
+          "armenian": "*չպիտի* ուտ*եին*"
+        },
+        "3sg": {
+          "armenian": "*չպիտի* ուտ*եր*"
+        }
+      },
+      "tense": "necessitative-past"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "կերե՛ք"
+        },
+        "2sg": {
+          "armenian": "կե՛ր"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* կերեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* կեր"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "կեր*անք*"
+        },
+        "1sg": {
+          "armenian": "կեր*ա*"
+        },
+        "2pl": {
+          "armenian": "կեր*աք*"
+        },
+        "2sg": {
+          "armenian": "կեր*ար*"
+        },
+        "3pl": {
+          "armenian": "կեր*ան*"
+        },
+        "3sg": {
+          "armenian": "կեր*ավ*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*կեր*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*կեր*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*կեր*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*կեր*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*կեր*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*կեր*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "conjugation": "ն",
+  "id": "buy",
+  "infinitive": {
+    "armenian": "առնել",
+    "russian": "покупать",
+    "transcription": "arnel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "առ*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "առ*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "առ*ել եք*"
+        },
+        "2sg": {
+          "armenian": "առ*ել ես*"
+        },
+        "3pl": {
+          "armenian": "առ*ել են*"
+        },
+        "3sg": {
+          "armenian": "առ*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* առ*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* առ*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* առ*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* առ*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* առ*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* առ*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "առե՛ք"
+        },
+        "2sg": {
+          "armenian": "ա՛ռ"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* առեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* առ"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "առ*անք*"
+        },
+        "1sg": {
+          "armenian": "առ*ա*"
+        },
+        "2pl": {
+          "armenian": "առ*աք*"
+        },
+        "2sg": {
+          "armenian": "առ*ար*"
+        },
+        "3pl": {
+          "armenian": "առ*ան*"
+        },
+        "3sg": {
+          "armenian": "առ*ավ*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*առ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*առ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*առ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*առ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*առ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*առ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

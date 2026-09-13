@@ -5,6 +5,16 @@
   "description": {
     "russian": "Я должен был сделать, мне нужно было сделать"
   },
+  "groups": [
+    {
+      "name": {
+        "russian": "Составные глаголы"
+      },
+      "words": [
+        "man-gal"
+      ]
+    }
+  ],
   "id": "necessitative-past",
   "name": {
     "english": "Past necessitative",

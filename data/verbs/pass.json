@@ -1,0 +1,125 @@
+{
+  "conjugation": "ն",
+  "id": "pass",
+  "infinitive": {
+    "armenian": "անցնել",
+    "russian": "проходить",
+    "transcription": "antsnel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "անց*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "անց*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "անց*ել եք*"
+        },
+        "2sg": {
+          "armenian": "անց*ել ես*"
+        },
+        "3pl": {
+          "armenian": "անց*ել են*"
+        },
+        "3sg": {
+          "armenian": "անց*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* անց*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* անց*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* անց*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* անց*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* անց*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* անց*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "2pl": {
+          "armenian": "անց*ե՛ք*"
+        },
+        "2sg": {
+          "armenian": "անց*ի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* անց*եք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* անց*իր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "անց*անք*"
+        },
+        "1sg": {
+          "armenian": "անց*ա*"
+        },
+        "2pl": {
+          "armenian": "անց*աք*"
+        },
+        "2sg": {
+          "armenian": "անց*ար*"
+        },
+        "3pl": {
+          "armenian": "անց*ան*"
+        },
+        "3sg": {
+          "armenian": "անց*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*անց*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*անց*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*անց*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*անց*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*անց*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*անց*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

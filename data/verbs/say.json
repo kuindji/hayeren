@@ -1,0 +1,31 @@
+{
+  "conjugation": "ել",
+  "id": "say",
+  "infinitive": {
+    "armenian": "ասել",
+    "russian": "говорить",
+    "transcription": "asel"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "ասե՛ք"
+        },
+        "2sg": {
+          "armenian": "ասա՛"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* ասեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* ասա"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "conjugation": "ենալ",
+  "id": "know",
+  "infinitive": {
+    "armenian": "գիտենալ",
+    "russian": "знать",
+    "transcription": "gitenal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "գիտ*ենք*"
+        },
+        "1sg": {
+          "armenian": "գիտ*եմ*"
+        },
+        "2pl": {
+          "armenian": "գիտ*եք*"
+        },
+        "2sg": {
+          "armenian": "գիտ*ես*"
+        },
+        "3pl": {
+          "armenian": "գիտ*են*"
+        },
+        "3sg": {
+          "armenian": "գիտ*ի*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*գիտ*ենք*"
+        },
+        "1sg": {
+          "armenian": "*չ*գիտ*եմ*"
+        },
+        "2pl": {
+          "armenian": "*չ*գիտ*եք*"
+        },
+        "2sg": {
+          "armenian": "*չ*գիտ*ես*"
+        },
+        "3pl": {
+          "armenian": "*չ*գիտ*են*"
+        },
+        "3sg": {
+          "armenian": "*չ*գիտ*ի*"
+        }
+      },
+      "tense": "present"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "գիտ*եինք*"
+        },
+        "1sg": {
+          "armenian": "գիտ*եի*"
+        },
+        "2pl": {
+          "armenian": "գիտ*եիք*"
+        },
+        "2sg": {
+          "armenian": "գիտ*եիր*"
+        },
+        "3pl": {
+          "armenian": "գիտ*եին*"
+        },
+        "3sg": {
+          "armenian": "գիտ*եր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*գիտ*եինք*"
+        },
+        "1sg": {
+          "armenian": "*չ*գիտ*եի*"
+        },
+        "2pl": {
+          "armenian": "*չ*գիտ*եիք*"
+        },
+        "2sg": {
+          "armenian": "*չ*գիտ*եիր*"
+        },
+        "3pl": {
+          "armenian": "*չ*գիտ*եին*"
+        },
+        "3sg": {
+          "armenian": "*չ*գիտ*եր*"
+        }
+      },
+      "tense": "imperfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "գիտ*եցել ենք*"
+        },
+        "1sg": {
+          "armenian": "գիտ*եցել եմ*"
+        },
+        "2pl": {
+          "armenian": "գիտ*եցել եք*"
+        },
+        "2sg": {
+          "armenian": "գիտ*եցել ես*"
+        },
+        "3pl": {
+          "armenian": "գիտ*եցել են*"
+        },
+        "3sg": {
+          "armenian": "գիտ*եցել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* գիտ*եցել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* գիտ*եցել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* գիտ*եցել*"
+        },
+        "2sg": {
+          "armenian": "*չես* գիտ*եցել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* գիտ*եցել*"
+        },
+        "3sg": {
+          "armenian": "*չի* գիտ*եցել*"
+        }
+      },
+      "tense": "perfect"
+    }
+  ]
+}

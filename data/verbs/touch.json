@@ -1,0 +1,79 @@
+{
+  "conjugation": "չ",
+  "id": "touch",
+  "infinitive": {
+    "armenian": "կպչել",
+    "russian": "прикасаться, прилипать",
+    "transcription": "kpchel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "2pl": {
+          "armenian": "կպ*ե՛ք*"
+        },
+        "2sg": {
+          "armenian": "կպ*ի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* կպ*եք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* կպ*իր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "կպ*անք*"
+        },
+        "1sg": {
+          "armenian": "կպ*ա*"
+        },
+        "2pl": {
+          "armenian": "կպ*աք*"
+        },
+        "2sg": {
+          "armenian": "կպ*ար*"
+        },
+        "3pl": {
+          "armenian": "կպ*ան*"
+        },
+        "3sg": {
+          "armenian": "կպ*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*կպ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*կպ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*կպ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*կպ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*կպ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*կպ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

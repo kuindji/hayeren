@@ -1,0 +1,78 @@
+{
+  "conjugation": "անալ",
+  "id": "wash",
+  "infinitive": {
+    "armenian": "լվանալ",
+    "russian": "мыть",
+    "transcription": "lvanal"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "լվացե՛ք"
+        },
+        "2sg": {
+          "armenian": "լվա՛"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* լվացեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* լվա"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "լվ*ացինք*"
+        },
+        "1sg": {
+          "armenian": "լվ*ացի*"
+        },
+        "2pl": {
+          "armenian": "լվ*ացիք*"
+        },
+        "2sg": {
+          "armenian": "լվ*ացիր*"
+        },
+        "3pl": {
+          "armenian": "լվ*ացին*"
+        },
+        "3sg": {
+          "armenian": "լվ*աց*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*լվ*ացինք*"
+        },
+        "1sg": {
+          "armenian": "*չ*լվ*ացի*"
+        },
+        "2pl": {
+          "armenian": "*չ*լվ*ացիք*"
+        },
+        "2sg": {
+          "armenian": "*չ*լվ*ացիր*"
+        },
+        "3pl": {
+          "armenian": "*չ*լվ*ացին*"
+        },
+        "3sg": {
+          "armenian": "*չ*լվ*աց*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

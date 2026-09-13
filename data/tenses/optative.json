@@ -5,6 +5,16 @@
   "description": {
     "russian": "Если я выпью; чтобы я выпил; давай выпьем"
   },
+  "groups": [
+    {
+      "name": {
+        "russian": "Составные глаголы"
+      },
+      "words": [
+        "man-gal"
+      ]
+    }
+  ],
   "id": "optative",
   "name": {
     "english": "Optative",

@@ -1,0 +1,30 @@
+{
+  "conjugation": "անալ",
+  "id": "promise",
+  "infinitive": {
+    "armenian": "խոստանալ",
+    "russian": "обещать",
+    "transcription": "khostanal"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "խոստ*ացե՛ք*"
+        },
+        "2sg": {
+          "armenian": "խոստ*ացի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* խոստ*ացեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* խոստ*ացիր*"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}

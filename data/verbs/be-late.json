@@ -1,0 +1,103 @@
+{
+  "conjugation": "անալ",
+  "id": "be-late",
+  "infinitive": {
+    "armenian": "ուշանալ",
+    "russian": "опаздывать",
+    "transcription": "ushanal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ուշ*ացել ենք*"
+        },
+        "1sg": {
+          "armenian": "ուշ*ացել եմ*"
+        },
+        "2pl": {
+          "armenian": "ուշ*ացել եք*"
+        },
+        "2sg": {
+          "armenian": "ուշ*ացել ես*"
+        },
+        "3pl": {
+          "armenian": "ուշ*ացել են*"
+        },
+        "3sg": {
+          "armenian": "ուշ*ացել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* ուշ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* ուշ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* ուշ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չես* ուշ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* ուշ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չի* ուշ*ացել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ուշ*ացել էինք*"
+        },
+        "1sg": {
+          "armenian": "ուշ*ացել էի*"
+        },
+        "2pl": {
+          "armenian": "ուշ*ացել էիք*"
+        },
+        "2sg": {
+          "armenian": "ուշ*ացել էիր*"
+        },
+        "3pl": {
+          "armenian": "ուշ*ացել էին*"
+        },
+        "3sg": {
+          "armenian": "ուշ*ացել էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* ուշ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չէի* ուշ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* ուշ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* ուշ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չէին* ուշ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չէր* ուշ*ացել*"
+        }
+      },
+      "tense": "pluperfect"
+    }
+  ]
+}

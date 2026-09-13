@@ -1,0 +1,124 @@
+{
+  "conjugation": "ն",
+  "id": "leave",
+  "infinitive": {
+    "armenian": "թողնել",
+    "russian": "оставлять, позволять",
+    "transcription": "toghnel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "թող*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "թող*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "թող*ել եք*"
+        },
+        "2sg": {
+          "armenian": "թող*ել ես*"
+        },
+        "3pl": {
+          "armenian": "թող*ել են*"
+        },
+        "3sg": {
+          "armenian": "թող*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* թող*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* թող*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* թող*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* թող*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* թող*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* թող*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "թողե՛ք"
+        },
+        "2sg": {
+          "armenian": "թո՛ղ"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* թողեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* թող"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "թող*եցինք*"
+        },
+        "1sg": {
+          "armenian": "թող*եցի*"
+        },
+        "2pl": {
+          "armenian": "թող*եցիք*"
+        },
+        "2sg": {
+          "armenian": "թող*եցիր*"
+        },
+        "3pl": {
+          "armenian": "թող*եցին*"
+        },
+        "3sg": {
+          "armenian": "թող*եց*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*թող*եցինք*"
+        },
+        "1sg": {
+          "armenian": "*չ*թող*եցի*"
+        },
+        "2pl": {
+          "armenian": "*չ*թող*եցիք*"
+        },
+        "2sg": {
+          "armenian": "*չ*թող*եցիր*"
+        },
+        "3pl": {
+          "armenian": "*չ*թող*եցին*"
+        },
+        "3sg": {
+          "armenian": "*չ*թող*եց*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

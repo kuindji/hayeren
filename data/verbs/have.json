@@ -1,0 +1,262 @@
+{
+  "conjugation": "ենալ",
+  "id": "have",
+  "infinitive": {
+    "armenian": "ունենալ",
+    "russian": "иметь",
+    "transcription": "unenal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "ունենում եմ = у меня периодически бывает; отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ուն*ենք*"
+        },
+        "1sg": {
+          "armenian": "ուն*եմ*"
+        },
+        "2pl": {
+          "armenian": "ուն*եք*"
+        },
+        "2sg": {
+          "armenian": "ուն*ես*"
+        },
+        "3pl": {
+          "armenian": "ուն*են*"
+        },
+        "3sg": {
+          "armenian": "ուն*ի*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*ուն*ենք*"
+        },
+        "1sg": {
+          "armenian": "*չ*ուն*եմ*"
+        },
+        "2pl": {
+          "armenian": "*չ*ուն*եք*"
+        },
+        "2sg": {
+          "armenian": "*չ*ուն*ես*"
+        },
+        "3pl": {
+          "armenian": "*չ*ուն*են*"
+        },
+        "3sg": {
+          "armenian": "*չ*ուն*ի*"
+        }
+      },
+      "tense": "present"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ուն*եինք*"
+        },
+        "1sg": {
+          "armenian": "ուն*եի*"
+        },
+        "2pl": {
+          "armenian": "ուն*եիք*"
+        },
+        "2sg": {
+          "armenian": "ուն*եիր*"
+        },
+        "3pl": {
+          "armenian": "ուն*եին*"
+        },
+        "3sg": {
+          "armenian": "ուն*եր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*ուն*եինք*"
+        },
+        "1sg": {
+          "armenian": "*չ*ուն*եի*"
+        },
+        "2pl": {
+          "armenian": "*չ*ուն*եիք*"
+        },
+        "2sg": {
+          "armenian": "*չ*ուն*եիր*"
+        },
+        "3pl": {
+          "armenian": "*չ*ուն*եին*"
+        },
+        "3sg": {
+          "armenian": "*չ*ուն*եր*"
+        }
+      },
+      "tense": "imperfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ուն*ենալու ենք*"
+        },
+        "1sg": {
+          "armenian": "ուն*ենալու եմ*"
+        },
+        "2pl": {
+          "armenian": "ուն*ենալու եք*"
+        },
+        "2sg": {
+          "armenian": "ուն*ենալու ես*"
+        },
+        "3pl": {
+          "armenian": "ուն*ենալու են*"
+        },
+        "3sg": {
+          "armenian": "ուն*ենալու է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* ուն*ենալու*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* ուն*ենալու*"
+        },
+        "2pl": {
+          "armenian": "*չեք* ուն*ենալու*"
+        },
+        "2sg": {
+          "armenian": "*չես* ուն*ենալու*"
+        },
+        "3pl": {
+          "armenian": "*չեն* ուն*ենալու*"
+        },
+        "3sg": {
+          "armenian": "*չի* ուն*ենալու*"
+        }
+      },
+      "tense": "future"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ուն*եցել ենք*"
+        },
+        "1sg": {
+          "armenian": "ուն*եցել եմ*"
+        },
+        "2pl": {
+          "armenian": "ուն*եցել եք*"
+        },
+        "2sg": {
+          "armenian": "ուն*եցել ես*"
+        },
+        "3pl": {
+          "armenian": "ուն*եցել են*"
+        },
+        "3sg": {
+          "armenian": "ուն*եցել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* ուն*եցել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* ուն*եցել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* ուն*եցել*"
+        },
+        "2sg": {
+          "armenian": "*չես* ուն*եցել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* ուն*եցել*"
+        },
+        "3sg": {
+          "armenian": "*չի* ուն*եցել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "ուն*եցե՛ք*"
+        },
+        "2sg": {
+          "armenian": "ուն*եցի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* ուն*եցեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* ուն*եցիր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ուն*եցանք*"
+        },
+        "1sg": {
+          "armenian": "ուն*եցա*"
+        },
+        "2pl": {
+          "armenian": "ուն*եցաք*"
+        },
+        "2sg": {
+          "armenian": "ուն*եցար*"
+        },
+        "3pl": {
+          "armenian": "ուն*եցան*"
+        },
+        "3sg": {
+          "armenian": "ուն*եցավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*ուն*եցանք*"
+        },
+        "1sg": {
+          "armenian": "*չ*ուն*եցա*"
+        },
+        "2pl": {
+          "armenian": "*չ*ուն*եցաք*"
+        },
+        "2sg": {
+          "armenian": "*չ*ուն*եցար*"
+        },
+        "3pl": {
+          "armenian": "*չ*ուն*եցան*"
+        },
+        "3sg": {
+          "armenian": "*չ*ուն*եցավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

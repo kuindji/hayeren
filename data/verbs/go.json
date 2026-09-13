@@ -1,0 +1,97 @@
+{
+  "conjugation": "ալ",
+  "id": "go",
+  "infinitive": {
+    "armenian": "գնալ",
+    "russian": "идти",
+    "transcription": "gnal"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "*պիտի* գն*անք*"
+        },
+        "1sg": {
+          "armenian": "*պիտի* գն*ամ*"
+        },
+        "2pl": {
+          "armenian": "*պիտի* գն*աք*"
+        },
+        "2sg": {
+          "armenian": "*պիտի* գն*աս*"
+        },
+        "3pl": {
+          "armenian": "*պիտի* գն*ան*"
+        },
+        "3sg": {
+          "armenian": "*պիտի* գն*ա*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չպիտի* գն*անք*"
+        },
+        "1sg": {
+          "armenian": "*չպիտի* գն*ամ*"
+        },
+        "2pl": {
+          "armenian": "*չպիտի* գն*աք*"
+        },
+        "2sg": {
+          "armenian": "*չպիտի* գն*աս*"
+        },
+        "3pl": {
+          "armenian": "*չպիտի* գն*ան*"
+        },
+        "3sg": {
+          "armenian": "*չպիտի* գն*ա*"
+        }
+      },
+      "tense": "necessitative"
+    },
+    {
+      "forms": {
+        "1pl": {
+          "armenian": "*պիտի* գն*այինք*"
+        },
+        "1sg": {
+          "armenian": "*պիտի* գն*այի*"
+        },
+        "2pl": {
+          "armenian": "*պիտի* գն*այիք*"
+        },
+        "2sg": {
+          "armenian": "*պիտի* գն*այիր*"
+        },
+        "3pl": {
+          "armenian": "*պիտի* գն*ային*"
+        },
+        "3sg": {
+          "armenian": "*պիտի* գն*ար*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չպիտի* գն*այինք*"
+        },
+        "1sg": {
+          "armenian": "*չպիտի* գն*այի*"
+        },
+        "2pl": {
+          "armenian": "*չպիտի* գն*այիք*"
+        },
+        "2sg": {
+          "armenian": "*չպիտի* գն*այիր*"
+        },
+        "3pl": {
+          "armenian": "*չպիտի* գն*ային*"
+        },
+        "3sg": {
+          "armenian": "*չպիտի* գն*ար*"
+        }
+      },
+      "tense": "necessitative-past"
+    }
+  ]
+}

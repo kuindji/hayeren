@@ -1,0 +1,125 @@
+{
+  "conjugation": "ն",
+  "id": "reach",
+  "infinitive": {
+    "armenian": "հասնել",
+    "russian": "доходить, успевать",
+    "transcription": "hasnel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "հաս*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "հաս*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "հաս*ել եք*"
+        },
+        "2sg": {
+          "armenian": "հաս*ել ես*"
+        },
+        "3pl": {
+          "armenian": "հաս*ել են*"
+        },
+        "3sg": {
+          "armenian": "հաս*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* հաս*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* հաս*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* հաս*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* հաս*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* հաս*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* հաս*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "2pl": {
+          "armenian": "հաս*ե՛ք*"
+        },
+        "2sg": {
+          "armenian": "հաս*ի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* հաս*եք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* հաս*իր*"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "հաս*անք*"
+        },
+        "1sg": {
+          "armenian": "հաս*ա*"
+        },
+        "2pl": {
+          "armenian": "հաս*աք*"
+        },
+        "2sg": {
+          "armenian": "հաս*ար*"
+        },
+        "3pl": {
+          "armenian": "հաս*ան*"
+        },
+        "3sg": {
+          "armenian": "հաս*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*հաս*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*հաս*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*հաս*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*հաս*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*հաս*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*հաս*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "conjugation": "անալ",
+  "id": "return",
+  "infinitive": {
+    "armenian": "վերադառնալ",
+    "russian": "возвращаться",
+    "transcription": "veradarnal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "վերադարձել *ենք*"
+        },
+        "1sg": {
+          "armenian": "վերադարձել *եմ*"
+        },
+        "2pl": {
+          "armenian": "վերադարձել *եք*"
+        },
+        "2sg": {
+          "armenian": "վերադարձել *ես*"
+        },
+        "3pl": {
+          "armenian": "վերադարձել *են*"
+        },
+        "3sg": {
+          "armenian": "վերադարձել *է*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* վերադարձել"
+        },
+        "1sg": {
+          "armenian": "*չեմ* վերադարձել"
+        },
+        "2pl": {
+          "armenian": "*չեք* վերադարձել"
+        },
+        "2sg": {
+          "armenian": "*չես* վերադարձել"
+        },
+        "3pl": {
+          "armenian": "*չեն* վերադարձել"
+        },
+        "3sg": {
+          "armenian": "*չի* վերադարձել"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "վերադարձել *էինք*"
+        },
+        "1sg": {
+          "armenian": "վերադարձել *էի*"
+        },
+        "2pl": {
+          "armenian": "վերադարձել *էիք*"
+        },
+        "2sg": {
+          "armenian": "վերադարձել *էիր*"
+        },
+        "3pl": {
+          "armenian": "վերադարձել *էին*"
+        },
+        "3sg": {
+          "armenian": "վերադարձել *էր*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* վերադարձել"
+        },
+        "1sg": {
+          "armenian": "*չէի* վերադարձել"
+        },
+        "2pl": {
+          "armenian": "*չէիք* վերադարձել"
+        },
+        "2sg": {
+          "armenian": "*չէիր* վերադարձել"
+        },
+        "3pl": {
+          "armenian": "*չէին* վերադարձել"
+        },
+        "3sg": {
+          "armenian": "*չէր* վերադարձել"
+        }
+      },
+      "tense": "pluperfect"
+    },
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "վերադարձե՛ք"
+        },
+        "2sg": {
+          "armenian": "վերադարձի՛"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* վերադարձեք"
+        },
+        "2sg": {
+          "armenian": "*մի՛* վերադարձի"
+        }
+      },
+      "tense": "imperative"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "վերադարձ*անք*"
+        },
+        "1sg": {
+          "armenian": "վերադարձ*ա*"
+        },
+        "2pl": {
+          "armenian": "վերադարձ*աք*"
+        },
+        "2sg": {
+          "armenian": "վերադարձ*ար*"
+        },
+        "3pl": {
+          "armenian": "վերադարձ*ան*"
+        },
+        "3sg": {
+          "armenian": "վերադարձ*ավ*"
+        }
+      },
+      "irregular": true,
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*վերադարձ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*վերադարձ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*վերադարձ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*վերադարձ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*վերադարձ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*վերադարձ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

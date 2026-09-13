@@ -1,0 +1,57 @@
+{
+  "conjugation": "անալ",
+  "id": "receive",
+  "infinitive": {
+    "armenian": "ստանալ",
+    "russian": "получать",
+    "transcription": "stanal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "ստ*ացանք*"
+        },
+        "1sg": {
+          "armenian": "ստ*ացա*"
+        },
+        "2pl": {
+          "armenian": "ստ*ացաք*"
+        },
+        "2sg": {
+          "armenian": "ստ*ացար*"
+        },
+        "3pl": {
+          "armenian": "ստ*ացան*"
+        },
+        "3sg": {
+          "armenian": "ստ*ացավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*ստ*ացանք*"
+        },
+        "1sg": {
+          "armenian": "*չ*ստ*ացա*"
+        },
+        "2pl": {
+          "armenian": "*չ*ստ*ացաք*"
+        },
+        "2sg": {
+          "armenian": "*չ*ստ*ացար*"
+        },
+        "3pl": {
+          "armenian": "*չ*ստ*ացան*"
+        },
+        "3sg": {
+          "armenian": "*չ*ստ*ացավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "conjugation": "չ",
+  "id": "freeze",
+  "infinitive": {
+    "armenian": "սառչել",
+    "russian": "замерзать",
+    "transcription": "sarrchel"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "սառ*ել ենք*"
+        },
+        "1sg": {
+          "armenian": "սառ*ել եմ*"
+        },
+        "2pl": {
+          "armenian": "սառ*ել եք*"
+        },
+        "2sg": {
+          "armenian": "սառ*ել ես*"
+        },
+        "3pl": {
+          "armenian": "սառ*ել են*"
+        },
+        "3sg": {
+          "armenian": "սառ*ել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* սառ*ել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* սառ*ել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* սառ*ել*"
+        },
+        "2sg": {
+          "armenian": "*չես* սառ*ել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* սառ*ել*"
+        },
+        "3sg": {
+          "armenian": "*չի* սառ*ել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "սառ*անք*"
+        },
+        "1sg": {
+          "armenian": "սառ*ա*"
+        },
+        "2pl": {
+          "armenian": "սառ*աք*"
+        },
+        "2sg": {
+          "armenian": "սառ*ար*"
+        },
+        "3pl": {
+          "armenian": "սառ*ան*"
+        },
+        "3sg": {
+          "armenian": "սառ*ավ*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չ*սառ*անք*"
+        },
+        "1sg": {
+          "armenian": "*չ*սառ*ա*"
+        },
+        "2pl": {
+          "armenian": "*չ*սառ*աք*"
+        },
+        "2sg": {
+          "armenian": "*չ*սառ*ար*"
+        },
+        "3pl": {
+          "armenian": "*չ*սառ*ան*"
+        },
+        "3sg": {
+          "armenian": "*չ*սառ*ավ*"
+        }
+      },
+      "tense": "aorist"
+    }
+  ]
+}

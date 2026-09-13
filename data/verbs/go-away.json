@@ -1,0 +1,103 @@
+{
+  "conjugation": "անալ",
+  "id": "go-away",
+  "infinitive": {
+    "armenian": "հեռանալ",
+    "russian": "уходить, удаляться",
+    "transcription": "herranal"
+  },
+  "tenses": [
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "հեռ*ացել ենք*"
+        },
+        "1sg": {
+          "armenian": "հեռ*ացել եմ*"
+        },
+        "2pl": {
+          "armenian": "հեռ*ացել եք*"
+        },
+        "2sg": {
+          "armenian": "հեռ*ացել ես*"
+        },
+        "3pl": {
+          "armenian": "հեռ*ացել են*"
+        },
+        "3sg": {
+          "armenian": "հեռ*ացել է*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չենք* հեռ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չեմ* հեռ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չեք* հեռ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չես* հեռ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չեն* հեռ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չի* հեռ*ացել*"
+        }
+      },
+      "tense": "perfect"
+    },
+    {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
+      "forms": {
+        "1pl": {
+          "armenian": "հեռ*ացել էինք*"
+        },
+        "1sg": {
+          "armenian": "հեռ*ացել էի*"
+        },
+        "2pl": {
+          "armenian": "հեռ*ացել էիք*"
+        },
+        "2sg": {
+          "armenian": "հեռ*ացել էիր*"
+        },
+        "3pl": {
+          "armenian": "հեռ*ացել էին*"
+        },
+        "3sg": {
+          "armenian": "հեռ*ացել էր*"
+        }
+      },
+      "negative": {
+        "1pl": {
+          "armenian": "*չէինք* հեռ*ացել*"
+        },
+        "1sg": {
+          "armenian": "*չէի* հեռ*ացել*"
+        },
+        "2pl": {
+          "armenian": "*չէիք* հեռ*ացել*"
+        },
+        "2sg": {
+          "armenian": "*չէիր* հեռ*ացել*"
+        },
+        "3pl": {
+          "armenian": "*չէին* հեռ*ացել*"
+        },
+        "3sg": {
+          "armenian": "*չէր* հեռ*ացել*"
+        }
+      },
+      "tense": "pluperfect"
+    }
+  ]
+}

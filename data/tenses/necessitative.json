@@ -6,6 +6,16 @@
   "description": {
     "russian": "Я должен сделать, мне нужно сделать"
   },
+  "groups": [
+    {
+      "name": {
+        "russian": "Составные глаголы"
+      },
+      "words": [
+        "man-gal"
+      ]
+    }
+  ],
   "id": "necessitative",
   "name": {
     "english": "Necessitative",

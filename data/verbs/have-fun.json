@@ -1,0 +1,30 @@
+{
+  "conjugation": "անալ",
+  "id": "have-fun",
+  "infinitive": {
+    "armenian": "զվարճանալ",
+    "russian": "веселиться",
+    "transcription": "zvartchanal"
+  },
+  "tenses": [
+    {
+      "forms": {
+        "2pl": {
+          "armenian": "զվարճ*ացե՛ք*"
+        },
+        "2sg": {
+          "armenian": "զվարճ*ացի՛ր*"
+        }
+      },
+      "negative": {
+        "2pl": {
+          "armenian": "*մի՛* զվարճ*ացեք*"
+        },
+        "2sg": {
+          "armenian": "*մի՛* զվարճ*ացիր*"
+        }
+      },
+      "tense": "imperative"
+    }
+  ]
+}
