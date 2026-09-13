@@ -26,7 +26,7 @@ export function useCombinedFilterData(global: FilterStore, local: FilterStore): 
   return useMemo(() => combineFilters(global, local), [global, local, vg, vl]);
 }
 export const useLanguage = () => useStoreState(useRequired(AppContext), "language")[0];
-type TableName = "noun" | "pronoun" | "numeral" | "question" | "prepostposition" | "case" | "declension" | "article";
+type TableName = "noun" | "pronoun" | "numeral" | "question" | "prepostposition" | "case" | "declension" | "article" | "verb" | "conjugation" | "tense";
 export function useGet<N extends TableName>(table: N, id: string): ReturnType<Database[N]["get"]> {
   const db = useDatabase();
   return useMemo(() => db[table].get(id) as ReturnType<Database[N]["get"]>, [db, table, id]);

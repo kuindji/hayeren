@@ -12,6 +12,7 @@ const table = new Word("noun", {
 it("strip lowercases, removes asterisks and accents", () => {
   expect(strip("Стола́*", "russian")).toBe("стола");
   expect(strip("սեղան*ի*", "russian")).toBe("սեղանի");
+  expect(strip("խմ*ի՛ր*", "russian")).toBe("խմիր");
 });
 
 it("keeps a prepostposition's name on the model object", () => {

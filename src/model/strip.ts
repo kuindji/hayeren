@@ -4,7 +4,9 @@ const accents: Record<Language, Record<string, string>> = {
   english: { "é": "e", "ú": "u", "í": "i", "ó": "o", "á": "a" },
 };
 export function strip(text: string | undefined, language: Language): string {
-  let t = (text ?? "").toLowerCase().replaceAll("*", "");
+  let t = (text ?? "").toLowerCase().replaceAll("*", "")
+    // Search input never contains the Armenian emphasis mark, but stored imperatives do.
+    .replaceAll("՛", "");
   for (const [from, to] of Object.entries(accents[language])) t = t.replaceAll(from, to);
   return t;
 }
