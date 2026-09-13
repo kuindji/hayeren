@@ -37,5 +37,19 @@ source of truth; edit it directly or through the admin UI (`bun run admin`).
 ## Deploy
 
 The site deploys to GitHub Pages at the custom domain
-`armenian.kuindji.com` (see `public/CNAME`). Full CI and DNS setup details
-land with the deploy workflow.
+`armenian.kuindji.com` (see `public/CNAME`).
+
+CI is defined in `.github/workflows/deploy.yml`. Pushes to `main` run
+`bun run check` and `bun run build`, then deploy the build to Pages; pull
+requests only run the checks and build.
+
+Repo setup (already done for github.com/kuindji/hayeren, public repo):
+
+- Settings → Pages → Source: "GitHub Actions".
+- Settings → Pages → Custom domain: `armenian.kuindji.com`, then enable
+  "Enforce HTTPS" once GitHub has issued the certificate.
+- DNS: a CNAME record `armenian.kuindji.com` → `kuindji.github.io` in the
+  Route53 hosted zone `kuindji.com` (AWS profile `kuindji`).
+
+`public/CNAME` already holds the domain, so no local change is needed for
+deploys to keep working.
