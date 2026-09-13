@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Example, Form, Localized, WordCase, WordFile, WordType } from "@/data/schema";
-import { compact } from "@/data/json";
+import { compact, stableStringify } from "@/data/json";
 import { api } from "@/admin/api";
 import { useAdminData } from "@/admin/contexts";
 import { ItemsList } from "@/admin/components/ItemsList";
@@ -72,42 +72,96 @@ function setOptional<T extends object, K extends keyof T>(o: T, key: K, value: T
   return out;
 }
 
-function patchCase(word: WordFile, caseId: string, patch: (c: WordCase) => WordCase): WordFile {
+function patchCase(word: WordFile, caseId: string, caseOrder: string[], patch: (c: WordCase) => WordCase): WordFile {
   const index = word.cases.findIndex((c) => c.case === caseId);
-  if (index === -1) return { ...word, cases: [...word.cases, patch({ case: caseId })] };
-  return { ...word, cases: word.cases.map((c, i) => (i === index ? patch(c) : c)) };
+  if (index !== -1) return { ...word, cases: word.cases.map((c, i) => (i === index ? patch(c) : c)) };
+  // A new entry goes before the first existing entry whose case comes later, so saved files follow case order
+  // instead of growing at the end. Existing entries never move.
+  const position = caseOrder.indexOf(caseId);
+  const before = word.cases.findIndex((c) => caseOrder.indexOf(c.case) > position);
+  const at = before === -1 ? word.cases.length : before;
+  return { ...word, cases: [...word.cases.slice(0, at), patch({ case: caseId }), ...word.cases.slice(at)] };
 }
+
+/** Same content once saved: the editor's own save echoed back by HMR is not a change. */
+const sameWord = (a: WordFile, b: WordFile) => stableStringify(compactWord(a)) === stableStringify(compactWord(b));
 
 function WordEditor({ type, word, onDeleted }: { type: WordType; word: WordFile; onDeleted: () => void }) {
   const data = useAdminData();
   const cases = useMemo(() => [...data.cases].sort((a, b) => a.position - b.position), [data.cases]);
+  const caseOrder = useMemo(() => cases.map((c) => c.id), [cases]);
+  // `base` is the on-disk word the draft was started from (or last saved as). Comparing the two tells whether there
+  // are unsaved edits when newer data for this word arrives.
+  const [base, setBase] = useState<WordFile>(word);
   const [draft, setDraft] = useState<WordFile>(word);
+  const [conflict, setConflict] = useState(false);
+  // The word being written right now. Vite can push the saved file back before the PUT response resolves, and that
+  // echo must not count as someone else's change.
+  const [pending, setPending] = useState<WordFile | null>(null);
+  const [seenWord, setSeenWord] = useState<WordFile>(word);
+  if (word !== seenWord) {
+    // Adjusting state while rendering (React's "storing information from previous renders" pattern): no effect, no
+    // extra paint with stale values.
+    setSeenWord(word);
+    if (sameWord(word, base)) {
+      setConflict(false);
+    } else if (pending !== null && sameWord(word, pending)) {
+      setBase(word);
+      setConflict(false);
+    } else if (sameWord(draft, base)) {
+      setBase(word);
+      setDraft(word);
+      setConflict(false);
+    } else {
+      setConflict(true);
+    }
+  }
   const [tab, setTab] = useState(() => cases[0]?.id ?? "info");
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const savedTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  // Only the latest request may update the status: an earlier one resolving late must not show a stale result.
+  const requestSeq = useRef(0);
   useEffect(() => () => clearTimeout(savedTimer.current), []);
 
   const save = async (next: WordFile) => {
+    if (saving || conflict) return;
+    const seq = ++requestSeq.current;
     clearTimeout(savedTimer.current);
     setSaving(true);
+    setPending(next);
     setSaved(false);
     setError(null);
     try {
       await api.putWord(type, compactWord(next));
+      if (seq !== requestSeq.current) return;
+      setBase(next);
       setSaved(true);
       savedTimer.current = setTimeout(() => setSaved(false), SAVED_MS);
     } catch (e) {
+      if (seq !== requestSeq.current) return;
       // The draft is left untouched so the user can fix it and retry.
       setError(`Не удалось сохранить: ${errorText(e)}`);
     } finally {
-      setSaving(false);
+      if (seq === requestSeq.current) {
+        setSaving(false);
+        setPending(null);
+      }
     }
   };
 
+  const reload = () => {
+    setBase(word);
+    setDraft(word);
+    setConflict(false);
+    setSaved(false);
+    setError(null);
+  };
+
   const remove = async () => {
-    if (!window.confirm("Вы уверены?")) return;
+    if (saving || !window.confirm("Вы уверены?")) return;
+    const seq = ++requestSeq.current;
     setSaving(true);
     setSaved(false);
     setError(null);
@@ -115,6 +169,7 @@ function WordEditor({ type, word, onDeleted }: { type: WordType; word: WordFile;
       await api.deleteWord(type, word.id);
       onDeleted();
     } catch (e) {
+      if (seq !== requestSeq.current) return;
       setError(`Не удалось удалить слово: ${errorText(e)}`);
       setSaving(false);
     }
@@ -122,13 +177,19 @@ function WordEditor({ type, word, onDeleted }: { type: WordType; word: WordFile;
 
   const status = (
     <>
+      {conflict && (
+        <span className="save-error" role="alert">
+          Слово изменилось на диске. Перезагрузите его, чтобы не потерять изменения.
+          <button type="button" onClick={reload}>Перезагрузить слово</button>
+        </span>
+      )}
       {saved && <span className="save-status" role="status">Сохранено</span>}
       {error && <span className="save-error" role="alert">{error}</span>}
     </>
   );
   const saveButton = (
     <div className="word-actions">
-      <button type="button" onClick={() => void save(draft)} disabled={saving}>Сохранить</button>
+      <button type="button" onClick={() => void save(draft)} disabled={saving || conflict}>Сохранить</button>
       {status}
     </div>
   );
@@ -160,7 +221,7 @@ function WordEditor({ type, word, onDeleted }: { type: WordType; word: WordFile;
                 <h5>Склонение</h5>
                 <DeclensionSelector
                   value={wordCase?.declension}
-                  onChange={(v) => setDraft((d) => patchCase(d, tab, (c) => setOptional(c, "declension", v)))}
+                  onChange={(v) => setDraft((d) => patchCase(d, tab, caseOrder, (c) => setOptional(c, "declension", v)))}
                 />
               </>
             )}
@@ -168,13 +229,13 @@ function WordEditor({ type, word, onDeleted }: { type: WordType; word: WordFile;
               <FormEditor
                 title={type === "prepostposition" ? undefined : "Единственное число"}
                 form={wordCase?.single}
-                onChange={(v) => setDraft((d) => patchCase(d, tab, (c) => setOptional(c, "single", v)))}
+                onChange={(v) => setDraft((d) => patchCase(d, tab, caseOrder, (c) => setOptional(c, "single", v)))}
               />
               {type !== "prepostposition" && (
                 <FormEditor
                   title="Множественное число"
                   form={wordCase?.plural}
-                  onChange={(v) => setDraft((d) => patchCase(d, tab, (c) => setOptional(c, "plural", v)))}
+                  onChange={(v) => setDraft((d) => patchCase(d, tab, caseOrder, (c) => setOptional(c, "plural", v)))}
                 />
               )}
             </div>
@@ -184,9 +245,10 @@ function WordEditor({ type, word, onDeleted }: { type: WordType; word: WordFile;
             key={tab}
             examples={wordCase?.examples}
             showPposition={type !== "prepostposition"}
+            disabled={saving || conflict}
             onChange={(v) => {
               // Like the old admin, saving an example persists it right away (together with the rest of the draft).
-              const next = patchCase(draft, tab, (c) => setOptional(c, "examples", v));
+              const next = patchCase(draft, tab, caseOrder, (c) => setOptional(c, "examples", v));
               setDraft(next);
               void save(next);
             }}
