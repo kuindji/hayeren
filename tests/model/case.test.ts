@@ -1,7 +1,8 @@
 import { Database } from "@/model/Database";
-import type { DataFiles } from "@/data/schema";
+import { emptyDataFiles, type DataFiles } from "@/data/schema";
 
 const files: DataFiles = {
+  ...emptyDataFiles(),
   declensions: [{ id: "ա", name: { russian: "ա" } }, { id: "ու", name: { russian: "ու" } }],
   cases: [
     { id: "nominative", position: 0, name: { russian: "И" } },

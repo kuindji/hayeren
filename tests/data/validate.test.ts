@@ -1,10 +1,12 @@
 import { checkReferences, readDataFromDisk, type DataFiles } from "@/data/validate";
+import { emptyDataFiles } from "@/data/schema";
 import { cpSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { buildDataFiles } from "@/data/loader";
 
 const base = (): DataFiles => ({
+  ...emptyDataFiles(),
   declensions: [{ id: "ա", name: { russian: "ա" } }],
   cases: [{ id: "nominative", position: 0, name: {} }, { id: "possessive", position: 1, name: {}, articles: ["forms"], groups: [{ words: ["table"] }], declensions: ["ա"], questions: [{ pposition: "for", question: {} }] }],
   words: {
@@ -70,6 +72,27 @@ it("reports an unknown noun inside a declension group (a different code path fro
   expect(checkReferences(d)).toEqual(['cases/possessive.json: unknown noun "ghost" in group']);
 });
 
+it("reports dangling verb and tense references", () => {
+  const d = base();
+  d.conjugations = [{ id: "ել", name: {} }];
+  d.tenses = [
+    { id: "present", position: 0, name: {}, groups: [{ words: ["drink", "ghost", "eat"] }] },
+    { id: "aorist", position: 0, name: {} },
+  ];
+  d.verbs = [
+    { id: "drink", infinitive: {}, conjugation: "ել", tenses: [{ tense: "present", forms: { "1sg": { armenian: "x" } } }, { tense: "vocative", forms: { "1sg": { armenian: "x" } } }] },
+    { id: "eat", infinitive: {}, conjugation: "ալ", tenses: [{ tense: "aorist", forms: { "1sg": { armenian: "x" } } }] },
+  ];
+  const problems = checkReferences(d);
+  const text = problems.join("\n");
+  expect(text).toMatch(/verbs\/drink\.json: unknown tense "vocative"/);
+  expect(text).toMatch(/verbs\/eat\.json: unknown conjugation "ալ"/);
+  expect(text).toMatch(/tenses\/present\.json: unknown verb "ghost" in group/);
+  expect(text).toMatch(/tenses\/present\.json: verb "eat" in group has no entry for this tense/);
+  expect(text).toMatch(/tenses\/aorist\.json: position 0 is also used by tenses\/present\.json/);
+  expect(problems).toHaveLength(5);
+});
+
 it("reports an article referencing an unknown case", () => {
   const d = base();
   d.cases[1]!.articles = undefined; // isolate the unknown-case check from the "not listed" one
@@ -81,6 +104,7 @@ it("readDataFromDisk throws with the offending file's path on a schema violation
   const dir = mkdtempSync(join(tmpdir(), "hayeren-validate-"));
   try {
     writeFileSync(join(dir, "declensions.json"), JSON.stringify([{ id: 123, name: {} }]));
+    writeFileSync(join(dir, "conjugations.json"), "[]");
     expect(() => readDataFromDisk(dir)).toThrow(/declensions\.json/);
   } finally {
     rmSync(dir, { recursive: true, force: true });
@@ -91,6 +115,7 @@ it("readDataFromDisk throws with the offending file's path when a case id does n
   const dir = mkdtempSync(join(tmpdir(), "hayeren-validate-"));
   try {
     writeFileSync(join(dir, "declensions.json"), "[]");
+    writeFileSync(join(dir, "conjugations.json"), "[]");
     mkdirSync(join(dir, "cases"));
     writeFileSync(join(dir, "cases", "foo.json"), JSON.stringify({ id: "bar", position: 0, name: {} }));
     expect(() => readDataFromDisk(dir)).toThrow(/cases\/foo\.json/);
@@ -124,7 +149,7 @@ describe("readDataFromDisk rejects files the site loader rejects", () => {
   };
 
   it.each([
-    ["verbs/go.json", JSON.stringify({ id: "go", cases: [] })],
+    ["adverbs/go.json", JSON.stringify({ id: "go", cases: [] })],
     ["nouns/readme.md", "not an article"],
     ["articles/possessive/extra.json", "{}"],
     ["articles/possessive/nested/deep.md", "---\ntitle: T\nlanguage: russian\nposition: 0\n---\nx\n"],

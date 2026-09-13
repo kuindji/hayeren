@@ -5,7 +5,10 @@ import { FOLDER_TO_TYPE, type WordType } from "./schema.ts";
 
 export type DataPath =
   | { kind: "declensions" }
+  | { kind: "conjugations" }
   | { kind: "case" }
+  | { kind: "tense" }
+  | { kind: "verb" }
   | { kind: "article"; caseId: string; slug: string }
   | { kind: "word"; type: WordType };
 
@@ -15,10 +18,13 @@ export const isDataFile = (rel: string): boolean => rel.endsWith(".json") || rel
 /** Classifies a .json/.md path; null means the site loader refuses the file. */
 export function classifyDataPath(rel: string): DataPath | null {
   if (rel === "declensions.json") return { kind: "declensions" };
+  if (rel === "conjugations.json") return { kind: "conjugations" };
   const parts = rel.split("/");
   const [head, second, third] = parts;
   if (parts.length === 2 && head && second?.endsWith(".json")) {
     if (head === "cases") return { kind: "case" };
+    if (head === "tenses") return { kind: "tense" };
+    if (head === "verbs") return { kind: "verb" };
     if (Object.hasOwn(FOLDER_TO_TYPE, head)) return { kind: "word", type: FOLDER_TO_TYPE[head]! };
   }
   if (parts.length === 3 && head === "articles" && second && third?.endsWith(".md")) {

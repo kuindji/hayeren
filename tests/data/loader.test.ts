@@ -27,8 +27,24 @@ it("rejects articles with a non-slug folder or filename", () => {
   expect(() => buildDataFiles({ "/data/articles/Poss/forms.md": md })).toThrow(/articles\/Poss\/forms\.md/);
 });
 
+it("loads conjugations, tenses and verbs", () => {
+  const d = buildDataFiles({
+    "/data/declensions.json": [],
+    "/data/conjugations.json": [{ id: "ել", name: { russian: "Глаголы на -ել" } }],
+    "/data/tenses/aorist.json": { id: "aorist", position: 13, name: { russian: "Аорист" } },
+    "/data/tenses/present.json": { id: "present", position: 0, name: { russian: "Настоящее" } },
+    "/data/verbs/drink.json": { id: "drink", infinitive: { armenian: "խմել" }, conjugation: "ել", tenses: [{ tense: "present", forms: { "1sg": { armenian: "խմում եմ" } } }] },
+  });
+  expect(d.conjugations.map((c) => c.id)).toEqual(["ել"]);
+  expect(d.tenses.map((t) => t.id)).toEqual(["present", "aorist"]); // sorted by position
+  expect(d.verbs.map((v) => v.id)).toEqual(["drink"]);
+});
 it("throws on a file under an unrecognized top-level folder, rather than silently skipping it", () => {
-  expect(() => buildDataFiles({ "/data/verbs/x.json": { id: "x" } })).toThrow(/verbs\/x\.json/);
+  expect(() => buildDataFiles({ "/data/adverbs/x.json": { id: "x" } })).toThrow(/adverbs\/x\.json/);
+});
+it("rejects a verb or tense whose id does not match its filename", () => {
+  expect(() => buildDataFiles({ "/data/verbs/drink.json": { id: "eat", infinitive: {}, conjugation: "ել", tenses: [] } })).toThrow(/verbs\/drink\.json: id "eat"/);
+  expect(() => buildDataFiles({ "/data/tenses/present.json": { id: "past", position: 0, name: {} } })).toThrow(/tenses\/present\.json: id "past"/);
 });
 
 it("throws on a .md file outside articles/, rather than silently dropping it", () => {

@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import {
-  WORD_TYPES, WORD_FOLDERS, wordFileSchemaFor, CaseFileSchema, DeclensionsFileSchema, ArticleFileSchema,
+  WORD_TYPES, WORD_FOLDERS, wordFileSchemaFor, CaseFileSchema, DeclensionsFileSchema, ConjugationsFileSchema, ArticleFileSchema, TenseFileSchema, VerbFileSchema, emptyDataFiles,
   type DataFiles,
 } from "./schema.ts";
 import { parseFrontmatter } from "./frontmatter.ts";
@@ -35,7 +35,8 @@ function listDataFiles(root: string, dir = ""): string[] {
 export function readDataFromDisk(root: string): DataFiles {
   // declensions.json is required on disk: reading it first throws with its path when it is missing.
   const declensions = parseJsonFile(join(root, "declensions.json"), (v) => DeclensionsFileSchema.parse(v));
-  const d: DataFiles = { declensions, cases: [], words: { noun: [], pronoun: [], numeral: [], question: [], prepostposition: [] }, articles: [] };
+  const conjugations = parseJsonFile(join(root, "conjugations.json"), (v) => ConjugationsFileSchema.parse(v));
+  const d: DataFiles = { ...emptyDataFiles(), declensions, conjugations };
   for (const rel of listDataFiles(root).sort()) {
     const kind = classifyDataPath(rel);
     // Same acceptance rules as buildDataFiles: a file the site loader would refuse fails validation too.
@@ -46,6 +47,14 @@ export function readDataFromDisk(root: string): DataFiles {
       const c = parseJsonFile(file, (v) => CaseFileSchema.parse(v));
       if (`${c.id}.json` !== fileName) throw new Error(`${rel}: id "${c.id}" does not match filename`);
       d.cases.push(c);
+    } else if (kind.kind === "tense") {
+      const t = parseJsonFile(file, (v) => TenseFileSchema.parse(v));
+      if (`${t.id}.json` !== fileName) throw new Error(`${rel}: id "${t.id}" does not match filename`);
+      d.tenses.push(t);
+    } else if (kind.kind === "verb") {
+      const v = parseJsonFile(file, (v) => VerbFileSchema.parse(v));
+      if (`${v.id}.json` !== fileName) throw new Error(`${rel}: id "${v.id}" does not match filename`);
+      d.verbs.push(v);
     } else if (kind.kind === "word") {
       const w = parseJsonFile(file, (v) => wordFileSchemaFor(kind.type).parse(v));
       if (`${w.id}.json` !== fileName) throw new Error(`${rel}: id "${w.id}" does not match filename`);
@@ -55,6 +64,10 @@ export function readDataFromDisk(root: string): DataFiles {
       d.articles.push(parseOrThrowFile(rel, () => ArticleFileSchema.parse({ ...data, position: Number(data.position), case: kind.caseId, slug: kind.slug, text: body })));
     }
   }
+  d.cases.sort((a, b) => a.position - b.position);
+  d.tenses.sort((a, b) => a.position - b.position);
+  d.verbs.sort((a, b) => a.id.localeCompare(b.id));
+  for (const t of WORD_TYPES) d.words[t].sort((a, b) => a.id.localeCompare(b.id));
   return d;
 }
 
@@ -123,6 +136,28 @@ export function findReferenceProblems(d: DataFiles): ReferenceProblem[] {
     const where = `articles/${a.case}/${a.slug}.md`;
     if (!caseIds.has(a.case)) push(`${where}: unknown case "${a.case}"`);
     else if (!listed.has(`${a.case}/${a.slug}`)) push(`${where}: not listed in cases/${a.case}.json articles`, "unlisted-article");
+  }
+  // verbs and tenses
+  const tenseIds = new Set(d.tenses.map((t) => t.id));
+  const conjIds = new Set(d.conjugations.map((c) => c.id));
+  const verbIds = new Set(d.verbs.map((v) => v.id));
+  const verbTense = new Set(d.verbs.flatMap((v) => v.tenses.map((t) => `${v.id}|${t.tense}`)));
+  for (const v of d.verbs) {
+    const where = `verbs/${v.id}.json`;
+    if (!conjIds.has(v.conjugation)) push(`${where}: unknown conjugation "${v.conjugation}"`);
+    for (const t of v.tenses) if (!tenseIds.has(t.tense)) push(`${where}: unknown tense "${t.tense}"`);
+  }
+  const positionOwner = new Map<number, string>();
+  for (const t of d.tenses) {
+    const where = `tenses/${t.id}.json`;
+    const other = positionOwner.get(t.position);
+    if (other) push(`${where}: position ${t.position} is also used by ${other}`);
+    else positionOwner.set(t.position, where);
+    for (const g of t.groups ?? []) for (const w of g.words) {
+      if (!verbIds.has(w)) push(`${where}: unknown verb "${w}" in group`);
+      // Tense renders a custom group as db.verb.query(g.words).filter(hasTense); a listed verb without an entry would vanish.
+      else if (!verbTense.has(`${w}|${t.id}`)) push(`${where}: verb "${w}" in group has no entry for this tense`);
+    }
   }
   return problems;
 }

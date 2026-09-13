@@ -9,6 +9,7 @@ import {
   wordFileSchemaFor,
   CaseFileSchema,
   DeclensionsFileSchema,
+  ConjugationsFileSchema,
   ArticleFileSchema,
   type WordType,
   type WordFile,
@@ -17,6 +18,7 @@ import {
   type CaseGroup,
   type CaseDeclension,
   type Declension,
+  type Conjugation,
   type Localized,
   type Example,
   type ArticleFile,
@@ -27,6 +29,7 @@ const ARTICLE_SLUGS: Record<string, string> = { "Форма слов": "forms", 
 
 export interface ImportResult {
   declensions: Declension[];
+  conjugations: Conjugation[];
   cases: Record<string, CaseFile>;
   words: Record<WordType, Record<string, WordFile>>;
   articles: ArticleFile[];
@@ -203,7 +206,7 @@ export function importDump(sql: string): ImportResult {
     });
   }
 
-  return { declensions, cases, words, articles };
+  return { declensions, conjugations: [], cases, words, articles };
 }
 
 export function writeData(out: ImportResult, root: string): void {
@@ -212,6 +215,10 @@ export function writeData(out: ImportResult, root: string): void {
   writeFileSync(
     join(root, "declensions.json"),
     stableStringify(DeclensionsFileSchema.parse(out.declensions)),
+  );
+  writeFileSync(
+    join(root, "conjugations.json"),
+    stableStringify(ConjugationsFileSchema.parse(out.conjugations)),
   );
   mkdirSync(join(root, "cases"));
   for (const c of Object.values(out.cases))

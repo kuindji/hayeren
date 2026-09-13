@@ -71,3 +71,39 @@ describe("DeclensionsFileSchema / ArticleFrontmatterSchema", () => {
     expect(ArticleFrontmatterSchema.safeParse({ title: "t", language: "klingon", position: 0 }).success).toBe(false);
   });
 });
+
+import { VerbFileSchema, TenseFileSchema, ConjugationsFileSchema, PERSONS } from "@/data/schema";
+
+describe("verb, tense and conjugation schemas", () => {
+  const verb = {
+    id: "drink", infinitive: { armenian: "խմել", russian: "пить" }, conjugation: "ել",
+    tenses: [{ tense: "present", forms: { "1sg": { armenian: "խմ*ում եմ*" } }, negative: { "1sg": { armenian: "*չեմ* խմ*ում*" } } }],
+  };
+  it("accepts a verb with per-person forms and an irregular flag", () => {
+    expect(VerbFileSchema.safeParse(verb).success).toBe(true);
+    expect(VerbFileSchema.safeParse({ ...verb, tenses: [{ tense: "aorist", irregular: true, forms: { "2sg": { armenian: "եկ*ար*" } } }] }).success).toBe(true);
+    expect(PERSONS).toEqual(["1sg", "2sg", "3sg", "1pl", "2pl", "3pl"]);
+  });
+  it("rejects an unknown person key, a tense entry with no forms, irregular:false, and a verb without conjugation", () => {
+    expect(VerbFileSchema.safeParse({ ...verb, tenses: [{ tense: "present", forms: { "4sg": { armenian: "x" } } }] }).success).toBe(false);
+    expect(VerbFileSchema.safeParse({ ...verb, tenses: [{ tense: "present" }] }).success).toBe(false);
+    expect(VerbFileSchema.safeParse({ ...verb, tenses: [{ tense: "present", forms: {}, negative: {} }] }).success).toBe(false);
+    const { conjugation: _c, ...noConj } = verb;
+    void _c;
+    expect(VerbFileSchema.safeParse(noConj).success).toBe(false);
+    expect(VerbFileSchema.safeParse({ ...verb, tenses: [{ tense: "present", irregular: false, forms: verb.tenses[0]!.forms }] }).success).toBe(false);
+  });
+  it("rejects a duplicate tense entry within one verb file", () => {
+    const entry = verb.tenses[0]!;
+    expect(VerbFileSchema.safeParse({ ...verb, tenses: [entry, { ...entry }] }).success).toBe(false);
+    expect(VerbFileSchema.safeParse({ ...verb, tenses: [entry, { ...entry, tense: "aorist" }] }).success).toBe(true);
+  });
+  it("accepts a tense file with articles and groups, rejects a negative position", () => {
+    expect(TenseFileSchema.safeParse({ id: "present", position: 0, name: { russian: "Настоящее", english: "Present" }, articles: ["formation"], groups: [{ name: { russian: "Составные" }, words: ["man-gal"] }] }).success).toBe(true);
+    expect(TenseFileSchema.safeParse({ id: "present", position: -1, name: {} }).success).toBe(false);
+  });
+  it("rejects duplicate conjugation ids", () => {
+    expect(ConjugationsFileSchema.safeParse([{ id: "ել", name: {} }, { id: "ել", name: {} }]).success).toBe(false);
+    expect(ConjugationsFileSchema.safeParse([{ id: "ել", name: { russian: "Глаголы на -ել" } }]).success).toBe(true);
+  });
+});

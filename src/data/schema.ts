@@ -91,6 +91,19 @@ export const CaseGroupSchema = z
   .strict();
 export type CaseGroup = z.infer<typeof CaseGroupSchema>;
 
+// --- tenses (below CaseGroupSchema) ---
+export const TenseFileSchema = z
+  .object({
+    id: Slug,
+    position: z.number().int().min(0),
+    name: LocalizedSchema,
+    description: LocalizedSchema.optional(),
+    articles: z.array(Slug).optional(),
+    groups: z.array(CaseGroupSchema).optional(),
+  })
+  .strict();
+export type TenseFile = z.infer<typeof TenseFileSchema>;
+
 export const CaseDeclensionSchema = z.union([
   DeclensionId,
   z.object({ declension: DeclensionId, groups: z.array(CaseGroupSchema) }).strict(),
@@ -112,22 +125,73 @@ export const CaseFileSchema = z
   .strict();
 export type CaseFile = z.infer<typeof CaseFileSchema>;
 
-export const DeclensionSchema = z
+// --- shared named entry (declensions and conjugations share one shape) ---
+export const NamedEntrySchema = z
+  .object({ id: DeclensionId, name: LocalizedSchema, description: LocalizedSchema.optional(), comment: LocalizedSchema.optional() })
+  .strict();
+// Table.addRow keeps the first row per id and silently drops the rest, so duplicates must be rejected at parse time.
+export const namedListSchema = (label: string) =>
+  z.array(NamedEntrySchema).superRefine((list, ctx) => {
+    const seen = new Set<string>();
+    list.forEach((d, i) => {
+      if (seen.has(d.id)) ctx.addIssue({ code: "custom", path: [i, "id"], message: `duplicate ${label} id "${d.id}"` });
+      seen.add(d.id);
+    });
+  });
+export const DeclensionSchema = NamedEntrySchema;
+export type Declension = z.infer<typeof DeclensionSchema>;
+export const DeclensionsFileSchema = namedListSchema("declension");
+export const ConjugationsFileSchema = namedListSchema("conjugation");
+export type Conjugation = Declension;
+
+// --- verbs ---
+export const PERSONS = ["1sg", "2sg", "3sg", "1pl", "2pl", "3pl"] as const;
+export type Person = (typeof PERSONS)[number];
+export const PersonFormsSchema = z
   .object({
-    id: DeclensionId,
-    name: LocalizedSchema,
-    description: LocalizedSchema.optional(),
-    comment: LocalizedSchema.optional(),
+    "1sg": FormSchema.optional(), "2sg": FormSchema.optional(), "3sg": FormSchema.optional(),
+    "1pl": FormSchema.optional(), "2pl": FormSchema.optional(), "3pl": FormSchema.optional(),
   })
   .strict();
-export type Declension = z.infer<typeof DeclensionSchema>;
-// Table.addRow keeps the first row per id and silently drops the rest, so duplicates must be rejected at parse time.
-export const DeclensionsFileSchema = z.array(DeclensionSchema).superRefine((list, ctx) => {
-  const seen = new Set<string>();
-  list.forEach((d, i) => {
-    if (seen.has(d.id)) ctx.addIssue({ code: "custom", path: [i, "id"], message: `duplicate declension id "${d.id}"` });
-    seen.add(d.id);
+export type PersonForms = z.infer<typeof PersonFormsSchema>;
+const hasAnyPerson = (f: PersonForms | undefined) => !!f && PERSONS.some((p) => f[p] !== undefined);
+export const VerbTenseSchema = z
+  .object({
+    tense: Slug,
+    irregular: z.literal(true).optional(),
+    forms: PersonFormsSchema.optional(),
+    negative: PersonFormsSchema.optional(),
+    comment: LocalizedSchema.optional(),
+    examples: z.array(FormSchema).optional(),
+  })
+  .strict()
+  .refine((t) => hasAnyPerson(t.forms) || hasAnyPerson(t.negative), { message: "a tense entry needs at least one form or negative form" });
+export type VerbTense = z.infer<typeof VerbTenseSchema>;
+export const VerbFileSchema = z
+  .object({ id: Slug, infinitive: FormSchema, conjugation: DeclensionId, comment: LocalizedSchema.optional(), tenses: z.array(VerbTenseSchema) })
+  .strict()
+  // Verb.tenseForm uses tenses.find(), so a second entry for the same tense would be silently invisible.
+  .superRefine((v, ctx) => {
+    const seen = new Set<string>();
+    v.tenses.forEach((t, i) => {
+      if (seen.has(t.tense)) ctx.addIssue({ code: "custom", path: ["tenses", i, "tense"], message: `duplicate tense "${t.tense}"` });
+      seen.add(t.tense);
+    });
   });
+export type VerbFile = z.infer<typeof VerbFileSchema>;
+
+export interface DataFiles {
+  declensions: Declension[];
+  conjugations: Conjugation[];
+  cases: CaseFile[];
+  tenses: TenseFile[];
+  words: Record<WordType, WordFile[]>;
+  verbs: VerbFile[];
+  articles: ArticleFile[];
+}
+export const emptyDataFiles = (): DataFiles => ({
+  declensions: [], conjugations: [], cases: [], tenses: [],
+  words: { noun: [], pronoun: [], numeral: [], question: [], prepostposition: [] }, verbs: [], articles: [],
 });
 
 export const ArticleFrontmatterSchema = z
@@ -136,10 +200,3 @@ export const ArticleFrontmatterSchema = z
 export type ArticleFrontmatter = z.infer<typeof ArticleFrontmatterSchema>;
 export const ArticleFileSchema = ArticleFrontmatterSchema.extend({ case: Slug, slug: Slug, text: z.string() }).strict();
 export type ArticleFile = z.infer<typeof ArticleFileSchema>;
-
-export interface DataFiles {
-  declensions: Declension[];
-  cases: CaseFile[];
-  words: Record<WordType, WordFile[]>;
-  articles: ArticleFile[];
-}
