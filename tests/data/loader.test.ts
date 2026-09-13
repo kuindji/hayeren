@@ -34,3 +34,13 @@ it("throws on a file under an unrecognized top-level folder, rather than silentl
 it("throws on a .md file outside articles/, rather than silently dropping it", () => {
   expect(() => buildDataFiles({ "/data/nouns/readme.md": "not an article" })).toThrow(/nouns\/readme\.md/);
 });
+
+it("accepts a case and an article folder named \"data\" (the glob key prefix is stripped once, not greedily)", () => {
+  const md = "---\ntitle: T\nlanguage: russian\nposition: 0\n---\nbody\n";
+  const d = buildDataFiles({
+    "/data/cases/data.json": { id: "data", position: 9, name: { russian: "X" }, articles: ["intro"] },
+    "/data/articles/data/intro.md": md,
+  });
+  expect(d.cases.map((c) => c.id)).toEqual(["data"]);
+  expect(d.articles[0]).toMatchObject({ case: "data", slug: "intro" });
+});

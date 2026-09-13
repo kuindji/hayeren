@@ -1,11 +1,11 @@
-import { readdirSync, readFileSync, existsSync } from "node:fs";
-import { join, basename } from "node:path";
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import {
   WORD_TYPES, WORD_FOLDERS, wordFileSchemaFor, CaseFileSchema, DeclensionsFileSchema, ArticleFileSchema,
-  type ArticleFile,
   type DataFiles,
 } from "./schema.ts";
 import { parseFrontmatter } from "./frontmatter.ts";
+import { classifyDataPath, isDataFile, unexpectedDataFile } from "./paths.ts";
 
 export type { DataFiles };
 
@@ -21,38 +21,57 @@ function parseOrThrowFile<T>(path: string, fn: () => T): T {
   try { return fn(); } catch (e) { throw new Error(`${path}: ${e instanceof Error ? e.message : String(e)}`, { cause: e }); }
 }
 
-const listFiles = (dir: string, ext: string) => (existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith(ext)).sort() : []);
-
-export function readDataFromDisk(root: string): DataFiles {
-  const declensions = parseJsonFile(join(root, "declensions.json"), (v) => DeclensionsFileSchema.parse(v));
-  const cases = listFiles(join(root, "cases"), ".json").map((f) => {
-    const c = parseJsonFile(join(root, "cases", f), (v) => CaseFileSchema.parse(v));
-    if (c.id !== basename(f, ".json")) throw new Error(`cases/${f}: id "${c.id}" does not match filename`);
-    return c;
-  });
-  const words = {} as DataFiles["words"];
-  for (const type of WORD_TYPES) {
-    const dir = join(root, WORD_FOLDERS[type]);
-    words[type] = listFiles(dir, ".json").map((f) => {
-      const w = parseJsonFile(join(dir, f), (v) => wordFileSchemaFor(type).parse(v));
-      if (w.id !== basename(f, ".json")) throw new Error(`${WORD_FOLDERS[type]}/${f}: id "${w.id}" does not match filename`);
-      return w;
-    });
+/** Every .json/.md file under `root`, relative and "/"-separated, like the site loader's glob keys minus "/data/". */
+function listDataFiles(root: string, dir = ""): string[] {
+  const out: string[] = [];
+  for (const entry of readdirSync(join(root, dir), { withFileTypes: true })) {
+    const rel = dir ? `${dir}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) out.push(...listDataFiles(root, rel));
+    else if (isDataFile(rel)) out.push(rel);
   }
-  const articles: ArticleFile[] = [];
-  const artRoot = join(root, "articles");
-  for (const caseId of existsSync(artRoot) ? readdirSync(artRoot).sort() : []) {
-    for (const f of listFiles(join(artRoot, caseId), ".md")) {
-      const { data, body } = parseFrontmatter(readFileSync(join(artRoot, caseId, f), "utf8"));
-      const rel = `articles/${caseId}/${f}`;
-      articles.push(parseOrThrowFile(rel, () => ArticleFileSchema.parse({ ...data, position: Number(data.position), case: caseId, slug: basename(f, ".md"), text: body })));
-    }
-  }
-  return { declensions, cases, words, articles };
+  return out;
 }
 
+export function readDataFromDisk(root: string): DataFiles {
+  // declensions.json is required on disk: reading it first throws with its path when it is missing.
+  const declensions = parseJsonFile(join(root, "declensions.json"), (v) => DeclensionsFileSchema.parse(v));
+  const d: DataFiles = { declensions, cases: [], words: { noun: [], pronoun: [], numeral: [], question: [], prepostposition: [] }, articles: [] };
+  for (const rel of listDataFiles(root).sort()) {
+    const kind = classifyDataPath(rel);
+    // Same acceptance rules as buildDataFiles: a file the site loader would refuse fails validation too.
+    if (!kind) throw unexpectedDataFile(rel);
+    const file = join(root, rel);
+    const fileName = rel.split("/").pop();
+    if (kind.kind === "case") {
+      const c = parseJsonFile(file, (v) => CaseFileSchema.parse(v));
+      if (`${c.id}.json` !== fileName) throw new Error(`${rel}: id "${c.id}" does not match filename`);
+      d.cases.push(c);
+    } else if (kind.kind === "word") {
+      const w = parseJsonFile(file, (v) => wordFileSchemaFor(kind.type).parse(v));
+      if (`${w.id}.json` !== fileName) throw new Error(`${rel}: id "${w.id}" does not match filename`);
+      d.words[kind.type].push(w);
+    } else if (kind.kind === "article") {
+      const { data, body } = parseFrontmatter(readFileSync(file, "utf8"));
+      d.articles.push(parseOrThrowFile(rel, () => ArticleFileSchema.parse({ ...data, position: Number(data.position), case: kind.caseId, slug: kind.slug, text: body })));
+    }
+  }
+  return d;
+}
+
+/**
+ * "unlisted-article" is an article file its case does not list. The admin's two-step article save (file, then case)
+ * and delete (case, then file) pass through exactly that state, so the admin API does not refuse a write over it.
+ */
+export type ReferenceProblemKind = "reference" | "unlisted-article";
+export interface ReferenceProblem { kind: ReferenceProblemKind; message: string }
+
 export function checkReferences(d: DataFiles): string[] {
-  const problems: string[] = [];
+  return findReferenceProblems(d).map((p) => p.message);
+}
+
+export function findReferenceProblems(d: DataFiles): ReferenceProblem[] {
+  const problems: ReferenceProblem[] = [];
+  const push = (message: string, kind: ReferenceProblemKind = "reference") => { problems.push({ kind, message }); };
   const caseIds = new Set(d.cases.map((c) => c.id));
   const declIds = new Set(d.declensions.map((x) => x.id));
   const ppIds = new Set(d.words.prepostposition.map((p) => p.id));
@@ -67,33 +86,33 @@ export function checkReferences(d: DataFiles): string[] {
     for (const w of d.words[type]) {
       const where = `${WORD_FOLDERS[type]}/${w.id}.json`;
       const other = idOwner.get(w.id);
-      if (other) problems.push(`${where}: id "${w.id}" is already used by ${other}`);
+      if (other) push(`${where}: id "${w.id}" is already used by ${other}`);
       else idOwner.set(w.id, where);
       for (const c of w.cases) {
-        if (!caseIds.has(c.case)) problems.push(`${where}: unknown case "${c.case}"`);
-        if (c.declension && !declIds.has(c.declension)) problems.push(`${where}: unknown declension "${c.declension}"`);
-        for (const e of c.examples ?? []) if (e.pposition && !ppIds.has(e.pposition)) problems.push(`${where}: unknown pposition "${e.pposition}"`);
+        if (!caseIds.has(c.case)) push(`${where}: unknown case "${c.case}"`);
+        if (c.declension && !declIds.has(c.declension)) push(`${where}: unknown declension "${c.declension}"`);
+        for (const e of c.examples ?? []) if (e.pposition && !ppIds.has(e.pposition)) push(`${where}: unknown pposition "${e.pposition}"`);
       }
     }
   }
   for (const c of d.cases) {
     const where = `cases/${c.id}.json`;
-    for (const a of c.articles ?? []) if (!articleKeys.has(`${c.id}/${a}`)) problems.push(`${where}: unknown article "${a}"`);
-    for (const q of c.questions ?? []) if (q.pposition && !ppIds.has(q.pposition)) problems.push(`${where}: unknown pposition "${q.pposition}"`);
+    for (const a of c.articles ?? []) if (!articleKeys.has(`${c.id}/${a}`)) push(`${where}: unknown article "${a}"`);
+    for (const q of c.questions ?? []) if (q.pposition && !ppIds.has(q.pposition)) push(`${where}: unknown pposition "${q.pposition}"`);
     for (const g of c.groups ?? []) for (const w of g.words) {
-      if (!nounIds.has(w)) problems.push(`${where}: unknown noun "${w}" in group`);
+      if (!nounIds.has(w)) push(`${where}: unknown noun "${w}" in group`);
       // Case renders custom groups with db.noun.query(g.words) unfiltered; a noun without a form for this case would show an empty row.
-      else if (!nounCase.has(`${w}|${c.id}`)) problems.push(`${where}: noun "${w}" in group has no form for this case`);
+      else if (!nounCase.has(`${w}|${c.id}`)) push(`${where}: noun "${w}" in group has no form for this case`);
     }
     for (const x of c.declensions ?? []) {
       const id = typeof x === "string" ? x : x.declension;
-      if (!declIds.has(id)) problems.push(`${where}: unknown declension "${id}"`);
+      if (!declIds.has(id)) push(`${where}: unknown declension "${id}"`);
       if (typeof x === "string") continue;
       for (const g of x.groups) for (const w of g.words) {
-        if (!nounIds.has(w)) problems.push(`${where}: unknown noun "${w}" in group`);
+        if (!nounIds.has(w)) push(`${where}: unknown noun "${w}" in group`);
         // Case renders a declension group as db.noun.query(g.words).filter(inDecl), so a listed noun without
         // { case: c.id, declension: id } would pass validation and silently vanish from the page.
-        else if (!nounDecl.has(`${w}|${c.id}|${id}`)) problems.push(`${where}: noun "${w}" in declension "${id}" group has no "${id}" form for this case`);
+        else if (!nounDecl.has(`${w}|${c.id}|${id}`)) push(`${where}: noun "${w}" in declension "${id}" group has no "${id}" form for this case`);
       }
     }
   }
@@ -102,8 +121,8 @@ export function checkReferences(d: DataFiles): string[] {
   const listed = new Set(d.cases.flatMap((c) => (c.articles ?? []).map((a) => `${c.id}/${a}`)));
   for (const a of d.articles) {
     const where = `articles/${a.case}/${a.slug}.md`;
-    if (!caseIds.has(a.case)) problems.push(`${where}: unknown case "${a.case}"`);
-    else if (!listed.has(`${a.case}/${a.slug}`)) problems.push(`${where}: not listed in cases/${a.case}.json articles`);
+    if (!caseIds.has(a.case)) push(`${where}: unknown case "${a.case}"`);
+    else if (!listed.has(`${a.case}/${a.slug}`)) push(`${where}: not listed in cases/${a.case}.json articles`, "unlisted-article");
   }
   return problems;
 }

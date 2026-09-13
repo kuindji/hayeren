@@ -1,7 +1,8 @@
 import { checkReferences, readDataFromDisk, type DataFiles } from "@/data/validate";
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
+import { buildDataFiles } from "@/data/loader";
 
 const base = (): DataFiles => ({
   declensions: [{ id: "ա", name: { russian: "ա" } }],
@@ -105,4 +106,38 @@ it("the real data/ folder is valid", () => {
   expect(checkReferences(d)).toEqual([]);
   expect(d.words.noun.length).toBeGreaterThan(0);
   expect(d.cases.length).toBeGreaterThan(0);
+});
+
+// The site loader throws on any .json/.md file it does not recognise, so the validator must refuse the same files
+// rather than pass a data/ folder that then breaks the site and the admin.
+describe("readDataFromDisk rejects files the site loader rejects", () => {
+  const withFile = (rel: string, content: string, fn: (dir: string) => void) => {
+    const dir = mkdtempSync(join(tmpdir(), "hayeren-validate-"));
+    try {
+      cpSync("data", dir, { recursive: true });
+      mkdirSync(join(dir, dirname(rel)), { recursive: true });
+      writeFileSync(join(dir, rel), content);
+      fn(dir);
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  };
+
+  it.each([
+    ["verbs/go.json", JSON.stringify({ id: "go", cases: [] })],
+    ["nouns/readme.md", "not an article"],
+    ["articles/possessive/extra.json", "{}"],
+    ["articles/possessive/nested/deep.md", "---\ntitle: T\nlanguage: russian\nposition: 0\n---\nx\n"],
+    ["cases/nested/x.json", "{}"],
+    ["notes.md", "stray"],
+  ])("%s", (rel, content) => {
+    withFile(rel, content, (dir) => {
+      expect(() => buildDataFiles({ [`/data/${rel}`]: rel.endsWith(".md") ? content : (JSON.parse(content) as unknown) })).toThrow(/unexpected file/);
+      expect(() => readDataFromDisk(dir)).toThrow(new RegExp(`${rel.replace(/[.]/g, "\\.")}: unexpected file in data/`));
+    });
+  });
+
+  it("ignores files the loader never globs (neither .json nor .md)", () => {
+    withFile("nouns/.DS_Store", "x", (dir) => expect(checkReferences(readDataFromDisk(dir))).toEqual([]));
+  });
 });
