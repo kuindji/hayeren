@@ -122,22 +122,22 @@
       },
       "negative": {
         "1pl": {
-          "armenian": "*չենք* կարդա"
+          "armenian": "*չենք* կարդ*ա*"
         },
         "1sg": {
-          "armenian": "*չեմ* կարդա"
+          "armenian": "*չեմ* կարդ*ա*"
         },
         "2pl": {
-          "armenian": "*չեք* կարդա"
+          "armenian": "*չեք* կարդ*ա*"
         },
         "2sg": {
-          "armenian": "*չես* կարդա"
+          "armenian": "*չես* կարդ*ա*"
         },
         "3pl": {
-          "armenian": "*չեն* կարդա"
+          "armenian": "*չեն* կարդ*ա*"
         },
         "3sg": {
-          "armenian": "*չի* կարդա"
+          "armenian": "*չի* կարդ*ա*"
         }
       },
       "tense": "conditional"
@@ -168,22 +168,22 @@
       },
       "negative": {
         "1pl": {
-          "armenian": "*չէինք* կարդա"
+          "armenian": "*չէինք* կարդ*այինք*"
         },
         "1sg": {
-          "armenian": "*չէի* կարդա"
+          "armenian": "*չէի* կարդ*այի*"
         },
         "2pl": {
-          "armenian": "*չէիք* կարդա"
+          "armenian": "*չէիք* կարդ*այիք*"
         },
         "2sg": {
-          "armenian": "*չէիր* կարդա"
+          "armenian": "*չէիր* կարդ*այիր*"
         },
         "3pl": {
-          "armenian": "*չէին* կարդա"
+          "armenian": "*չէին* կարդ*ային*"
         },
         "3sg": {
-          "armenian": "*չէր* կարդա"
+          "armenian": "*չէր* կարդ*ար*"
         }
       },
       "tense": "conditional-past"

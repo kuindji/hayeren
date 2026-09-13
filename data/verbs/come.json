@@ -9,7 +9,7 @@
   "tenses": [
     {
       "comment": {
-        "russian": "причастие на -իս вместо -ում"
+        "russian": "причастие на -իս вместо -ում. отрицание не из конспекта"
       },
       "forms": {
         "1pl": {
@@ -55,6 +55,9 @@
       "tense": "present"
     },
     {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
       "forms": {
         "1pl": {
           "armenian": "գալ*իս էինք*"
@@ -99,6 +102,9 @@
       "tense": "imperfect"
     },
     {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
       "forms": {
         "1pl": {
           "armenian": "եկել *ենք*"
@@ -143,6 +149,9 @@
       "tense": "perfect"
     },
     {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
       "forms": {
         "1pl": {
           "armenian": "եկել *էինք*"
@@ -210,6 +219,9 @@
       "tense": "imperative"
     },
     {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
       "forms": {
         "1pl": {
           "armenian": "եկ*անք*"

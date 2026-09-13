@@ -8,6 +8,9 @@
   },
   "tenses": [
     {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
       "forms": {
         "1pl": {
           "armenian": "խմ*ենք*"
@@ -51,6 +54,9 @@
       "tense": "optative"
     },
     {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
       "forms": {
         "1pl": {
           "armenian": "խմ*եինք*"

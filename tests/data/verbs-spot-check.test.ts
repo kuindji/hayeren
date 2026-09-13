@@ -32,6 +32,7 @@ it.each([
   ["get-lost", "imperative", "2pl", false, "կորեք"],
   ["get-up", "perfect", "1sg", false, "վեր եմ կացել"],
   ["man-gal", "conditional", "1sg", false, "ման կգամ"],
+  ["man-gal", "aorist", "1sg", true, "ման չեկա"],
   ["make-happy", "aorist", "3sg", false, "ուրախացրեց"],
 ])("%s %s %s negative=%s is %s", (verb, tense, person, negative, expected) => {
   expect(form(verb, tense, person, negative)).toBe(expected);
@@ -43,6 +44,29 @@ it("every tense entry with affirmative forms has a negative for each of those pe
     const persons = Object.keys(t.forms ?? {});
     for (const p of persons) expect(t.negative ?? {}, `${v.id}/${t.tense}/${p} has no negative`).toHaveProperty(p);
   }
+});
+
+it("conditional and conditional-past negatives mark the changing verb ending", () => {
+  for (const v of d.verbs) {
+    for (const t of v.tenses) {
+      if (t.tense !== "conditional" && t.tense !== "conditional-past") continue;
+      for (const [person, f] of Object.entries(t.negative ?? {})) {
+        const armenian = (f as { armenian?: string }).armenian ?? "";
+        const rest = armenian.replace(/^[^*]*\*[^*]*\*/, "");
+        expect(rest, `${v.id}/${t.tense}/${person} negative "${armenian}" has no marked verb ending`).toMatch(/\*[^*]+\*/);
+      }
+    }
+  }
+});
+
+it.each([
+  ["make-happy", "conditional"],
+  ["man-gal", "conditional"],
+  ["man-gal", "necessitative"],
+])("%s/%s negative carries the derived-negative comment", (verb, tense) => {
+  const v = d.verbs.find((x) => x.id === verb);
+  const t = v?.tenses.find((x) => x.tense === tense);
+  expect(t?.comment?.russian ?? "").toContain("отрицание не из конспекта");
 });
 
 it("the transcribed data has the expected counts", () => {

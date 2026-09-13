@@ -364,6 +364,9 @@
       "tense": "optative-past"
     },
     {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
       "forms": {
         "1pl": {
           "armenian": "ման *կ*գ*անք*"
@@ -386,22 +389,22 @@
       },
       "negative": {
         "1pl": {
-          "armenian": "ման *չենք* գա"
+          "armenian": "ման *չենք* գ*ա*"
         },
         "1sg": {
-          "armenian": "ման *չեմ* գա"
+          "armenian": "ման *չեմ* գ*ա*"
         },
         "2pl": {
-          "armenian": "ման *չեք* գա"
+          "armenian": "ման *չեք* գ*ա*"
         },
         "2sg": {
-          "armenian": "ման *չես* գա"
+          "armenian": "ման *չես* գ*ա*"
         },
         "3pl": {
-          "armenian": "ման *չեն* գա"
+          "armenian": "ման *չեն* գ*ա*"
         },
         "3sg": {
-          "armenian": "ման *չի* գա"
+          "armenian": "ման *չի* գ*ա*"
         }
       },
       "tense": "conditional"
@@ -432,27 +435,30 @@
       },
       "negative": {
         "1pl": {
-          "armenian": "ման *չէինք* գա"
+          "armenian": "ման *չէինք* գ*այինք*"
         },
         "1sg": {
-          "armenian": "ման *չէի* գա"
+          "armenian": "ման *չէի* գ*այի*"
         },
         "2pl": {
-          "armenian": "ման *չէիք* գա"
+          "armenian": "ման *չէիք* գ*այիք*"
         },
         "2sg": {
-          "armenian": "ման *չէիր* գա"
+          "armenian": "ման *չէիր* գ*այիր*"
         },
         "3pl": {
-          "armenian": "ման *չէին* գա"
+          "armenian": "ման *չէին* գ*ային*"
         },
         "3sg": {
-          "armenian": "ման *չէր* գա"
+          "armenian": "ման *չէր* գ*ար*"
         }
       },
       "tense": "conditional-past"
     },
     {
+      "comment": {
+        "russian": "отрицание не из конспекта"
+      },
       "forms": {
         "1pl": {
           "armenian": "*պիտի* ման գ*անք*"
@@ -588,22 +594,22 @@
       },
       "negative": {
         "1pl": {
-          "armenian": "*չ*ման եկ*անք*"
+          "armenian": "ման *չ*եկ*անք*"
         },
         "1sg": {
-          "armenian": "*չ*ման եկ*ա*"
+          "armenian": "ման *չ*եկ*ա*"
         },
         "2pl": {
-          "armenian": "*չ*ման եկ*աք*"
+          "armenian": "ման *չ*եկ*աք*"
         },
         "2sg": {
-          "armenian": "*չ*ման եկ*ար*"
+          "armenian": "ման *չ*եկ*ար*"
         },
         "3pl": {
-          "armenian": "*չ*ման եկ*ան*"
+          "armenian": "ման *չ*եկ*ան*"
         },
         "3sg": {
-          "armenian": "*չ*ման եկ*ավ*"
+          "armenian": "ման *չ*եկ*ավ*"
         }
       },
       "tense": "aorist"
