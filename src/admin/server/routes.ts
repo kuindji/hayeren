@@ -1,6 +1,7 @@
-import { existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
-import { join, dirname, resolve, sep } from "node:path";
+import { existsSync, mkdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
+import { join, basename, dirname, resolve, sep } from "node:path";
 import { execFileSync } from "node:child_process";
+import { randomUUID } from "node:crypto";
 // Relative, not "@/...": vite.admin.config.ts imports plugin.ts -> routes.ts while Vite is bundling its
 // own config file, a context where the "@/" alias from vite.config.ts's `resolve.alias` (app-graph only)
 // does not apply, so an aliased import here breaks `bun run admin` at startup even though vitest (which
@@ -11,7 +12,7 @@ import {
 } from "../../data/schema.ts";
 import { stableStringify } from "../../data/json.ts";
 import { parseFrontmatter, serializeFrontmatter } from "../../data/frontmatter.ts";
-import { readDataFromDisk, checkReferences } from "../../data/validate.ts";
+import { readDataFromDisk, checkReferences, findReferenceProblems, type DataFiles } from "../../data/validate.ts";
 import { z } from "zod";
 
 export interface ApiRequest { method: string; path: string; body: string }
@@ -38,9 +39,33 @@ function assertWithinRoot(root: string, file: string): ApiResponse | null {
   return resolvedFile.startsWith(resolvedRoot) ? null : bad("path escapes root");
 }
 
-function writeJson(path: string, value: unknown): void {
+// Write a temp file next to the target, then rename it over the target: an interrupted write (killed dev server,
+// full disk) leaves the previous content, never a truncated file. The ".tmp" name is never globbed or validated.
+function writeFileAtomic(path: string, content: string): void {
   mkdirSync(dirname(path), { recursive: true });
-  writeFileSync(path, stableStringify(value));
+  const tmp = join(dirname(path), `.${basename(path)}.${randomUUID()}.tmp`);
+  try {
+    writeFileSync(tmp, content, { flag: "wx" });
+    renameSync(tmp, path);
+  } catch (e) {
+    rmSync(tmp, { force: true });
+    throw e;
+  }
+}
+
+const writeJson = (path: string, value: unknown): void => writeFileAtomic(path, stableStringify(value));
+
+// Refuse (409) a write whose result would have reference problems that the data on disk does not have already.
+// Problems already present never block, so a repair write on invalid data still goes through. An unlisted article
+// file never blocks either: the admin's article save and delete pass through that state. If the current data
+// cannot be read at all (a schema-invalid file), the write is not blocked; GET /validate reports that.
+function refuseNewReferenceProblems(root: string, stage: (d: DataFiles) => DataFiles): ApiResponse | null {
+  let current: DataFiles;
+  try { current = readDataFromDisk(root); } catch { return null; }
+  const blocking = (d: DataFiles) => findReferenceProblems(d).filter((p) => p.kind !== "unlisted-article").map((p) => p.message);
+  const existing = new Set(blocking(current));
+  const introduced = blocking(stage(current)).filter((m) => !existing.has(m));
+  return introduced.length ? bad(`write refused, it would introduce reference problems: ${introduced.join("; ")}`, 409) : null;
 }
 
 // The interface (Task 10 brief) fixes this signature as async so callers can `await` it uniformly even
@@ -63,14 +88,22 @@ export async function handleApi(req: ApiRequest, root: string): Promise<ApiRespo
     const file = join(root, a, `${b}.json`);
     const escape = assertWithinRoot(root, file);
     if (escape) return escape;
-    if (req.method === "DELETE") { if (!existsSync(file)) return bad("not found", 404); rmSync(file); return ok(); }
+    const type = FOLDER_TO_TYPE[a];
+    if (!type) return bad(`unknown word folder "${a}"`);
+    const withoutWord = (d: DataFiles) => d.words[type].filter((w) => w.id !== b);
+    if (req.method === "DELETE") {
+      if (!existsSync(file)) return bad("not found", 404);
+      const refused = refuseNewReferenceProblems(root, (d) => ({ ...d, words: { ...d.words, [type]: withoutWord(d) } }));
+      if (refused) return refused;
+      rmSync(file); return ok();
+    }
     if (req.method === "PUT") {
-      const type = FOLDER_TO_TYPE[a];
-      if (!type) return bad(`unknown word folder "${a}"`);
       const word = parseBody(wordFileSchemaFor(type), req.body);
       if (isResponse(word)) return word;
       if (word.id !== b) return bad("id does not match path");
       for (const other of FOLDERS) if (other !== a && existsSync(join(root, other, `${b}.json`))) return bad(`id "${b}" is already used in ${other}`);
+      const refused = refuseNewReferenceProblems(root, (d) => ({ ...d, words: { ...d.words, [type]: [...withoutWord(d), word] } }));
+      if (refused) return refused;
       writeJson(file, word); return ok();
     }
   }
@@ -82,6 +115,8 @@ export async function handleApi(req: ApiRequest, root: string): Promise<ApiRespo
     const c = parseBody(CaseFileSchema, req.body);
     if (isResponse(c)) return c;
     if (c.id !== a) return bad("id does not match path");
+    const refused = refuseNewReferenceProblems(root, (d) => ({ ...d, cases: [...d.cases.filter((x) => x.id !== c.id), c] }));
+    if (refused) return refused;
     writeJson(file, c); return ok();
   }
   if (head === "declensions" && parts.length === 1 && req.method === "PUT") {
@@ -90,6 +125,8 @@ export async function handleApi(req: ApiRequest, root: string): Promise<ApiRespo
     const file = join(root, "declensions.json");
     const escape = assertWithinRoot(root, file);
     if (escape) return escape;
+    const refused = refuseNewReferenceProblems(root, (data) => ({ ...data, declensions: d }));
+    if (refused) return refused;
     writeJson(file, d); return ok();
   }
   if (head === "articles" && parts.length === 3) {
@@ -123,8 +160,7 @@ export async function handleApi(req: ApiRequest, root: string): Promise<ApiRespo
         && roundTrip.data.position === art.position
         && reparsedBody === art.text;
       if (!roundTripOk) return bad("article frontmatter does not round-trip safely (likely a newline or stray value in a field)");
-      mkdirSync(dirname(file), { recursive: true });
-      writeFileSync(file, serialized);
+      writeFileAtomic(file, serialized);
       return ok();
     }
   }

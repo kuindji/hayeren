@@ -45,3 +45,16 @@ it("refuses to save an empty list, with a visible message (decision 4)", () => {
   fireEvent.click(screen.getByText("Сохранить"));
   expect(fetchMock).not.toHaveBeenCalled();
 });
+
+it("shows the API's refusal text when saving would leave dangling references", async () => {
+  vi.stubGlobal("fetch", vi.fn().mockResolvedValue({
+    ok: false,
+    status: 409,
+    json: () => Promise.resolve({ error: 'write refused, it would introduce reference problems: nouns/table.json: unknown declension "ա"' }),
+  }));
+  page();
+  fireEvent.change(screen.getAllByLabelText("Комментарий")[0]!, { target: { value: "x" } });
+  fireEvent.click(screen.getByText("Сохранить"));
+  expect(await screen.findByRole("alert")).toHaveTextContent('nouns/table.json: unknown declension "ա"');
+  expect(screen.queryByText("Сохранено")).not.toBeInTheDocument();
+});
