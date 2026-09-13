@@ -34,7 +34,7 @@ index below.
 | 0 | `present` | Настоящее | Present | խմում եմ / չեմ խմում |
 | 1 | `imperfect` | Прошедшее несовершенное (имперфект) | Imperfect | խմում էի / չէի խմում |
 | 2 | `perfect` | Перфект | Present perfect | խմել եմ / չեմ խմել |
-| 3 | `pluperfect` | Плюсквамперфект | Past perfect | խմել էի / չէի խմել |
+| 3 | `pluperfect` | Давнопрошедшее время | Past perfect | խմել էի / չէի խմել |
 | 4 | `future` | Будущее | Future | խմելու եմ / չեմ խմելու |
 | 5 | `future-past` | Будущее в прошедшем | Future in the past | խմելու էի / չէի խմելու |
 | 6 | `optative` | Желательное будущее | Optative | խմեմ / չխմեմ |
