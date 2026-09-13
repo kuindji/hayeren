@@ -36,7 +36,12 @@ it(
 
     const css = execSync("cat dist/assets/*.css").toString();
     expect(css).toContain("tailwindcss v4");
-    expect(css).toContain("--color-light:#fff3e2");
+    expect(css).toContain("--color-light:#fff8e7");
+    expect(css).toContain("--color-dark:#5940a0");
+    expect(css).toContain("--color-danger:#a11d48");
+    expect(css).toContain("--color-paper:#f7ebd3");
+    expect(css).toContain("--color-primary:#4a2c20");
+    expect(css).toContain("--color-secondary:#6e5548");
     expect(css).toContain(".alphabet-letter");
   },
   120_000,

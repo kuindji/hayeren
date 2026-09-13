@@ -33,7 +33,7 @@
 }
 
 .search-field {
-  background-color: #fff;
+  background-color: var(--color-paper);
   border-width: 1px;
   border-style: solid;
   border-color: var(--color-light);
@@ -50,6 +50,8 @@
 
   input {
     flex: 1;
+    color: var(--color-primary);
+    background-color: transparent;
     font-family: var(--font-secondary);
     font-size: 1.2rem;
     line-height: 1.2rem;

@@ -1,24 +1,26 @@
 @theme static {
-  --color-light: #fff3e2;
-  --color-light-25: rgb(255 243 226 / 25%);
-  --color-light-80: rgb(255 243 226 / 80%);
-  --color-light-secondary: #fcd868;
-  --color-light-secondary-50: rgb(252 216 104 / 50%);
-  --color-dark: #cd6045;
-  --color-dark-10: rgb(205 96 69 / 10%);
-  --color-dark-50: rgb(205 96 69 / 50%);
-  --color-dark-80: rgb(205 96 69 / 80%);
-  --color-dark-secondary: #e59c16;
-  --color-paper: #fff;
-  --color-paper-70: rgb(255 255 255 / 70%);
-  --color-primary: #2d3a3d;
-  --color-primary-15: rgb(45 58 61 / 15%);
-  --color-primary-20: rgb(45 58 61 / 20%);
-  --color-primary-50: rgb(45 58 61 / 50%);
-  --color-primary-80: rgb(45 58 61 / 80%);
-  --color-secondary: #4c526b;
-  --color-secondary-30: rgb(76 82 107 / 30%);
-  --color-secondary-50: rgb(76 82 107 / 50%);
+  /* Arroz con Dulce by Richard Martinez, mapped from the shared base16 catalogue. */
+  --color-light: #fff8e7;
+  --color-light-25: rgb(255 248 231 / 25%);
+  --color-light-80: rgb(255 248 231 / 80%);
+  --color-light-secondary: #ead6b8;
+  --color-light-secondary-50: rgb(234 214 184 / 50%);
+  --color-dark: #5940a0;
+  --color-dark-10: rgb(89 64 160 / 10%);
+  --color-dark-50: rgb(89 64 160 / 50%);
+  --color-dark-80: rgb(89 64 160 / 80%);
+  --color-dark-secondary: #855500;
+  --color-danger: #a11d48;
+  --color-paper: #f7ebd3;
+  --color-paper-70: rgb(247 235 211 / 70%);
+  --color-primary: #4a2c20;
+  --color-primary-15: rgb(74 44 32 / 15%);
+  --color-primary-20: rgb(74 44 32 / 20%);
+  --color-primary-50: rgb(74 44 32 / 50%);
+  --color-primary-80: rgb(74 44 32 / 80%);
+  --color-secondary: #6e5548;
+  --color-secondary-30: rgb(110 85 72 / 30%);
+  --color-secondary-50: rgb(110 85 72 / 50%);
 
   --font-main: "Lora", serif;
   --font-secondary: "Raleway", sans-serif;
